@@ -1,21 +1,29 @@
 import {
-  IconBasket,
+  IconBoxSeam,
+  IconBusinessplan,
   IconCoin,
-  IconDiscount2,
+  IconGavel,
+  IconNotes,
   IconReceipt2,
-  IconStars,
-  IconUserPlus
+  IconTruckLoading,
+  IconUser,
+  IconUserPlus,
+  IconUsers
 } from '@tabler/icons'
 
 import type { StatCardType } from '@/types/component.type'
 
 export const icons = {
   user: IconUserPlus,
-  discount: IconDiscount2,
+  discount: IconBusinessplan,
   receipt: IconReceipt2,
   coin: IconCoin,
-  sales: IconBasket,
-  order: IconStars
+  sales: IconBoxSeam,
+  order: IconTruckLoading,
+  legalfirms: IconGavel,
+  employee: IconUsers,
+  agreements: IconNotes,
+  users: IconUser
 }
 
 export const statCards: StatCardType[] = [
@@ -33,37 +41,37 @@ export const statCards: StatCardType[] = [
   },
   {
     diff: 12,
-    icon: 'sales',
+    icon: 'discount',
     title: 'Accountants',
     value: '2,800'
   },
   {
     diff: 7,
-    icon: 'sales',
+    icon: 'legalfirms',
     title: 'Legal Firms',
     value: '400'
   },
   {
     diff: 2,
-    icon: 'sales',
+    icon: 'employee',
     title: 'Employees',
     value: '400'
   },
   {
     diff: 3,
-    icon: 'order',
+    icon: 'sales',
     title: 'Packages',
     value: '500'
   },
   {
     diff: 6,
-    icon: 'order',
+    icon: 'agreements',
     title: 'Agreements',
     value: '500'
   },
   {
     diff: 15,
-    icon: 'order',
+    icon: 'users',
     title: 'Users',
     value: '800'
   }
