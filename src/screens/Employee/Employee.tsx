@@ -153,6 +153,19 @@ function Employee() {
       JSON.stringify(data.userid)
     )}`
   }
+  const deletedata=function(data:any){
+    console.log(data);
+
+    const deleteresponse = async()=>{
+      try{
+        const deleted = await axios.delete('https://localhost:7190/api/Employee/DeleteEmployee'+data.userid)
+        console.log(deleted);
+      }catch(err){
+        console.error("Error deleting",err);
+      }
+    }
+    deleteresponse();
+  }
 
   return (
     <Table striped withBorder withColumnBorders>
@@ -222,6 +235,7 @@ function Employee() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon icon-tabler icon-tabler-trash"
+                onClick={() => deletedata(x)}
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"

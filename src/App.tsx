@@ -2,7 +2,6 @@ import type { ColorScheme } from '@mantine/core'
 import { ColorSchemeProvider, MantineProvider } from '@mantine/core'
 import { useHotkeys, useLocalStorage } from '@mantine/hooks'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-
 import Layout from '@/components/Layout/Layout'
 import {
   AddEmployee,
