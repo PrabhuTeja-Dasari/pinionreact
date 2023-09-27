@@ -35,7 +35,7 @@ export default function StatsGrid({ data }: { data: StatCardType[] }) {
     const Icon = icons[stat.icon]
 
     return (
-      <Paper withBorder p="md" radius="md" key={stat.title}>
+      <Paper withBorder p="md" radius="md" key={stat.title} className='hvr-shadow'>
         <Group position="apart">
           <Text size="xs" color="dimmed" className={classes.title}>
             {stat.title}
