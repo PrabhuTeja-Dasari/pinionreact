@@ -89,9 +89,7 @@ function Employee() {
 
             workemail: employeedata.data[i].workEmail,
 
-            financialAppraisalCycle:
-              employeedata.data[i].financialAppraisalCycle,
-
+            financialAppraisalCycle: employeedata.data[i].financialAppraisalCycle,
             priorExperience: employeedata.data[i].priorExperience,
             companyid: employeedata.data[i].companyId
           }
