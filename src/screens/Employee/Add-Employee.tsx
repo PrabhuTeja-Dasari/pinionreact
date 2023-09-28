@@ -101,7 +101,7 @@ return (
   <form >
     <Stepper active={active}>
       <Stepper.Step label="First step" description="Office Information">
-      <TextInput label="Employee Id" placeholder="Employee Id" onChange={(e:any) => Setdata({ ...data, empid: e.target.value })} required  />
+      <TextInput label="Employee Id" variant='filled' placeholder="Employee Id" onChange={(e:any) => Setdata({ ...data, empid: e.target.value })} required  />
         <DatePicker placeholder="Joining Date" label="Joining Date"onChange={(selectedDate: Date | null) => {
     if (selectedDate !== null) {
       const formattedDate = formatDate(selectedDate);
