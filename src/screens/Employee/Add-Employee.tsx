@@ -101,7 +101,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       <form >
     <Stepper active={active}>
       <Stepper.Step label="First step" description="Tell us who you'd like to add">
-        <div className='d-flex flex-row main-container'>
+        <div className='d-flex flex-row main-container center'>
          <form>
               <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
               <div className='d-flex flex-row sub-container w-100'>
@@ -112,7 +112,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               </div>
 
               <div className='mb-3 ml-3 w-100'>
-                <p className='m-0'>Middle Intial (optional)</p>
+                <p className='m-0'>Middle Name (optional)</p>
                 <input type="text" className='input-style w-100'/>
                </div>
                 </div>
@@ -141,13 +141,15 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                   
                   <div className='d-flex flex-row workerBtn'>
 
-                 <input type="radio" id='radobtn'/>
+                 <input type="radio" id='radobtn'/> 
                  <div>
                     <label htmlFor='radobtn'>Employee</label><br/>
                     <label htmlFor='radobtn'>Worker paid on hourly or salaried wage 
-                    with rights and benfits received through employeement.</label>
+                    with rights and benfits received through employeement.</label> 
                  </div>
-                 </div>
+                 
+
+                </div>
 
                  </div>
          </form>
