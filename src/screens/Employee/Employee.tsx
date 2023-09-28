@@ -2,6 +2,7 @@ import { Table, Button, TextInput } from '@mantine/core'
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import {IconSearch} from '@tabler/icons'
 import './Employee.css'
 function Employee() {
   interface employeedata {
@@ -38,7 +39,7 @@ function Employee() {
   const [GetData, SetData] = useState<employeedata[]>([])
   const [GetId, SetId] = useState<companyid[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
+const[searchquery,setsearchquery]=useState<string>('');
 
   useEffect(() => {
     const getdataresponse = async () => {
@@ -175,8 +176,8 @@ function Employee() {
    <div className='card' style={{ overflowX: 'auto' }}>
     <div className='card-body'>
       <div className='col-md-3' style={{float:'right'}} >
-        <TextInput placeholder='Search'></TextInput>
-      </div><br></br>
+      <TextInput variant='filled' placeholder='Search' value={searchquery} radius="md" onChange={(e)=>setsearchquery(e.target.value)}/>
+      </div><br></br><br></br>
     <Table striped withBorder withColumnBorders>
       <thead>
         <tr>
@@ -193,7 +194,10 @@ function Employee() {
         </tr>
       </thead>
       <tbody>
-        {GetData.map((x, index) => (
+      {GetData.filter((x) => {
+            const fullName = `${x.firstname} ${x.lastname} ${x.workmobile}`.toLowerCase();
+            return fullName.includes(searchquery.toLowerCase());
+          }).map((x, index) => (
           <tr key={index}>
             <td>{index + 1}</td>
             <td>{x.workemail}</td>

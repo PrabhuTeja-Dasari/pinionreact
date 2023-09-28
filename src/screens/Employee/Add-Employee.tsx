@@ -100,7 +100,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       <div className="card-body">
       <form >
     <Stepper active={active}>
-      <Stepper.Step label="First step" description="Tell us who you'd like to add">
+      <Stepper.Step label="First step" description="Personal Information">
         <div className='d-flex flex-row main-container'>
          <form>
               <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
@@ -155,11 +155,11 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
         </div>
       </Stepper.Step>
 
-      <Stepper.Step label="Second step" description="Tell us about Prefered Name's role" >
+      <Stepper.Step label="Second step" description="Office Information" >
      
       </Stepper.Step>
 
-      <Stepper.Step label="Third step" description="How will Name be compensated ?">
+      <Stepper.Step label="Third step" description="Office Information">
         
         </Stepper.Step> 
 

@@ -54,7 +54,7 @@ export const statCards: StatCardType[] = [
   {
     diff: 2,
     icon: 'employee',
-    title: 'Team Members',
+    title: 'Employees',
     value: '400'
   },
   {
