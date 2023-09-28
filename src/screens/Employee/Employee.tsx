@@ -168,6 +168,8 @@ function Employee() {
   }
 
   return (
+   <div className='card'>
+    <div className='card-body'>
     <Table striped withBorder withColumnBorders>
       <thead>
         <tr>
@@ -257,6 +259,8 @@ function Employee() {
         ))}
       </tbody>
     </Table>
+    </div>
+   </div>
   )
 }
 export default Employee
