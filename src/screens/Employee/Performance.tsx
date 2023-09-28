@@ -1,7 +1,7 @@
 function Performance(){
     return(
         <>
-        Performance Working
+        Performance Tab
         </>
     )
 }

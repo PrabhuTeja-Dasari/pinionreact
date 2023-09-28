@@ -2,7 +2,7 @@ function Timetracking(){
 
     return(
         <>
-        Time Tracking Working
+        Time Tracking Tab
         </>
     )
 }

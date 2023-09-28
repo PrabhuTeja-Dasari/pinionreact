@@ -2,7 +2,7 @@ function Timeoff(){
 
 return(
     <>
-    Time Off Working
+    Time Off Tab
     </>
 )
 }

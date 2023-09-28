@@ -1,4 +1,4 @@
-import { Table, Button } from '@mantine/core'
+import { Table, Button, TextInput } from '@mantine/core'
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -150,7 +150,7 @@ function Employee() {
     }
 
     getdataresponse()
-  })
+  },[]);
   const editdata = function (data: any) {
     window.location.href = `/EditEmployee?data=${encodeURIComponent(
       JSON.stringify(data.userid)
@@ -172,8 +172,11 @@ function Employee() {
   }
 
   return (
-   <div className='card'>
+   <div className='card' style={{ overflowX: 'auto' }}>
     <div className='card-body'>
+      <div className='col-md-3' style={{float:'right'}} >
+        <TextInput placeholder='Search'></TextInput>
+      </div><br></br>
     <Table striped withBorder withColumnBorders>
       <thead>
         <tr>
