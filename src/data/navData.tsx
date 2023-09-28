@@ -13,11 +13,12 @@ export const navData: NavLinkType[] = [
     ]
   },
   {
-    label: 'Peoples',
+    label: 'People',
     icon: IconUser,
     links: [
-      { label: 'Add Team Member', link: '/AddEmployee' },
       { label: 'Team Members', link: '/Employee' },
+      { label: 'Add Team Member', link: '/AddEmployee' },
+      
       { label: 'Performance', link: '/performance' }
     ]
   },
