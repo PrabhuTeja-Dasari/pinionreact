@@ -37,10 +37,13 @@ function Employee() {
 
   const [GetData, SetData] = useState<employeedata[]>([])
   const [GetId, SetId] = useState<companyid[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
 
   useEffect(() => {
     const getdataresponse = async () => {
       try {
+        setIsLoading(true);
         const employeedata = await axios.get(
           'https://localhost:7190/api/Employee/GetAllEmployees'
         )
@@ -139,8 +142,8 @@ function Employee() {
           finalcompany.push(final)
         }
         const flattenedFinalCompany: employeedata[] = finalcompany.flat()
-
-        SetData(flattenedFinalCompany)
+        SetData(flattenedFinalCompany);
+        setIsLoading(false);
       } catch (err) {
         console.error('Error fetching Data:', err)
       }
@@ -160,6 +163,7 @@ function Employee() {
       try{
         const deleted = await axios.delete('https://localhost:7190/api/Employee/DeleteEmployee'+data.userid)
         console.log(deleted);
+        alert('Team Member Deleted Successfully')
       }catch(err){
         console.error("Error deleting",err);
       }
