@@ -10,7 +10,7 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import type { NavLinkType } from '@/types/component.types'
+import type { NavLinkType } from '@/types/component.type'
 
 const useStyles = createStyles((theme) => ({
   control: {

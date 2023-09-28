@@ -1,15 +1,32 @@
-import { IconGauge, IconUser } from '@tabler/icons'
+import { IconGauge, IconUser,IconBuilding,IconClockHour4 } from '@tabler/icons'
 
 import type { NavLinkType } from '@/types/component.type'
 
 export const navData: NavLinkType[] = [
   { label: 'Dashboard', icon: IconGauge, link: '/' },
   {
-    label: 'Employees',
+    label: 'Company',
+    icon: IconBuilding,
+    links: [
+      { label: 'Company Details', link: '/companydetails' },
+      { label: 'Documents', link: '/documents' }
+    ]
+  },
+  {
+    label: 'Peoples',
     icon: IconUser,
     links: [
-      { label: 'Add Employee', link: '/AddEmployee' },
-      { label: 'Employee', link: '/Employee' }
+      { label: 'Add Team Member', link: '/AddEmployee' },
+      { label: 'Team Members', link: '/Employee' },
+      { label: 'Performance', link: '/performance' }
+    ]
+  },
+  {
+    label: 'Time Tools',
+    icon: IconClockHour4,
+    links: [
+      { label: 'Time Off', link: '/timeoff' },
+      { label: 'Time Tracking', link: '/timetracking' }
     ]
   }
   // { label: 'Analytics', icon: IconPresentationAnalytics, link: '/analytics' },
