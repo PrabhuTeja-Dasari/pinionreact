@@ -8,7 +8,13 @@ import {
   Dashboard,
   EditEmployee,
   Employee,
-  NotFound
+  NotFound,
+  Performance,
+  TimeOff,
+  TimeTracking,
+  CompanyDetails,
+  Documents
+  
 } from '@/screens'
 
 function App() {
@@ -40,6 +46,11 @@ function App() {
               <Route path="/Employee" element={<Employee />} />
               <Route path="/AddEmployee" element={<AddEmployee />} />
               <Route path="/EditEmployee" element={<EditEmployee />} />
+              <Route path='/Performance' element={<Performance/>}/>
+              <Route path='/TimeOff' element={<TimeOff/>}/>
+              <Route path='/TimeTracking' element={<TimeTracking/>}/>
+              <Route path='/CompanyDetails' element={<CompanyDetails/>}/>
+              <Route path='/Documents' element={<Documents/>}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
