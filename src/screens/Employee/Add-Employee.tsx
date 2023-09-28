@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Stepper, Button, Group, TextInput, PasswordInput, Code,Select,FileInput,NumberInput   } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
+import './Add-Employee.css'
 import axios from 'axios'
 function AddEmployee(){
   const [active, setActive] = useState(0);
@@ -100,6 +101,58 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       <form >
     <Stepper active={active}>
       <Stepper.Step label="First step" description="Tell us who you'd like to add">
+        <div className='d-flex flex-row main-container'>
+         <form>
+              <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
+              <div className='d-flex flex-row sub-container w-100'>
+
+              <div className='w-100'>
+                <p>First Name</p>
+                <input type="text"  className='input-style w-100'/>
+              </div>
+
+              <div className='mb-3 ml-3 w-100'>
+                <p className='m-0'>Middle Intial (optional)</p>
+                <input type="text" className='input-style w-100'/>
+               </div>
+                </div>
+
+               <p className='last-name-style'>Last Name</p>
+                <input type='text' className='input-style-2 w-100'/>
+
+               <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
+               <p>Gusto will use this name to refer to this person in communications 
+                where their legal first name is required (offer letter, onboarding emails, org etc)</p>
+                <input type='text' className='input-style-2 w-100'/> 
+
+                <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
+               <p>Use an existing address that's not associated with your company. This team member will use 
+                this email to sign in to Gusto and receive certain personal info.
+               </p>
+                <input type='text' className='input-style-2 w-100'/>
+
+                <h1 className='Prefered-first-name mt-3 pb-2'>country</h1>
+                <select className='input-style-2 w-100 mb-5'>
+                   <option value="firstName">India</option>
+                   <option value="lastName">United States</option>
+                </select>
+                <h1 className='Prefered-first-name pt-3'>Worker type</h1>  
+                 <div className='d-flex flex-column'>
+                  
+                  <div className='d-flex flex-row workerBtn'>
+
+                 <input type="radio" id='radobtn'/>
+                 <div>
+                    <label htmlFor='radobtn'>Employee</label><br/>
+                    <label htmlFor='radobtn'>Worker paid on hourly or salaried wage 
+                    with rights and benfits received through employeement.</label>
+                 </div>
+                 </div>
+
+                 </div>
+         </form>
+
+        </div>
       </Stepper.Step>
 
       <Stepper.Step label="Second step" description="Tell us about Prefered Name's role" >
