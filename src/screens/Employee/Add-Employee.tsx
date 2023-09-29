@@ -109,17 +109,17 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                   
                  <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label" value="Individual Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
+                 <input type="radio" id='radobtn1' className='mt-1 mr-2' name="label" value="Individual Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
                  <div>
-                    <label htmlFor='radobtn' className='label-one'>Individual contractor</label><br/>
-                    <label htmlFor='radobtn' className='label-two'>Indepdent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
+                    <label htmlFor='radobtn1' className='label-one'>Individual contractor</label><br/>
+                    <label htmlFor='radobtn1' className='label-two'>Indepdent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
                  </div>
                  </div>
                  <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label" value="Business Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
+                 <input type="radio" id='radobtn2' className='mt-1 mr-2' name="label" value="Business Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
                  <div>
-                    <label htmlFor='radobtn' className='label-one'>Business contractor</label><br/>
-                    <label htmlFor='radobtn' className='label-two'>Indepdent Professional working on behalf of a Business.</label>
+                    <label htmlFor='radobtn2' className='label-one'>Business contractor</label><br/>
+                    <label htmlFor='radobtn2' className='label-two'>Indepdent Professional working on behalf of a Business.</label>
                  </div>
                  </div>
                  </div>

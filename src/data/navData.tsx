@@ -16,8 +16,8 @@ export const navData: NavLinkType[] = [
     label: 'People',
     icon: IconUser,
     links: [
-      { label: 'Team Members', link: '/Employee' },
-      { label: 'Add Team Member', link: '/AddEmployee' },
+      { label: 'Team Members', link: '/TeamMembers' },
+      { label: 'Add Team Member', link: '/AddTeamMember' },
       
       { label: 'Performance', link: '/performance' }
     ]

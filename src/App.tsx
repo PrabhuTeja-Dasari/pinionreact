@@ -44,8 +44,8 @@ function App() {
           <Layout>
             <Routes>
               <Route index element={<Dashboard />} />
-              <Route path="/Employee" element={<Employee />} />
-              <Route path="/AddEmployee" element={<AddEmployee />} />
+              <Route path="/TeamMembers" element={<Employee />} />
+              <Route path="/AddTeamMember" element={<AddEmployee />} />
               <Route path="/EditEmployee" element={<EditEmployee />} />
               <Route path='/Performance' element={<Performance/>}/>
               <Route path='/TimeOff' element={<TimeOff/>}/>
