@@ -74,12 +74,12 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Last Name' value={data.lname} onChange={e=>Setdata({...data,lname:e.target.value})}/>
 
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
-               <p>MyBizWhiz will use this name to refer to this person in communications 
+               <p className='label-text'>MyBizWhiz will use this name to refer to this person in communications 
                 where their legal first name is required (offer letter, onboarding emails, org etc)</p>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Prefered First Name' value={data.pfname} onChange={e=>Setdata({...data,pfname:e.target.value})}/> 
 
                 <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
-               <p>Use an existing address that's not associated with your company. This team member will use 
+               <p className='label-text'>Use an existing address that's not associated with your company. This team member will use 
                 this email to sign in to MyBizWhiz and receive certain personal info.
                </p>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Personal Email' value={data.pemail} onChange={e=>Setdata({...data,pemail:e.target.value})}/>
@@ -126,7 +126,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               <h1 className='pb-4 main-heading'>Tell us about Prefered {data.fname}'s role</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
-              <p className='last-name-style'>Which location to select and learn about thier potential impacts on your business.</p>
+              <p className='last-name-style label-text'>Which location to select and learn about thier potential impacts on your business.</p>
                 <select className='input-style-2 w-100 mb-5' value={data.location} onChange={e=>Setdata({...data,location:e.target.value})}>
                 <option value="" disabled >Select-</option>
                    <option value="work from home">Work from home</option>
@@ -136,7 +136,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Work State</h1>
-                <p className='last-name-style'>If this employee work from home,tell us the state where they work and live</p>
+                <p className='last-name-style label-text'>If this employee work from home,tell us the state where they work and live</p>
                 <select className='input-style-2 w-100 mb-5' onChange={e=>Setdata({...data,state:e.target.value})} value={data.state}>
                    <option value="" disabled >Select State-</option> 
                    <option value="India">India</option>
@@ -144,18 +144,18 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 </select>
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
-               <p className='last-name-style'>Choose from your existing set of jobs or enter a new one.</p>
+               <p className='last-name-style label-text'>Choose from your existing set of jobs or enter a new one.</p>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Job Title' value={data.jobtitle} onChange={e=>Setdata({...data,jobtitle:e.target.value})}/>
 
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
-               <p className='last-name-style'>Your employee's first day of work at your company.</p>
+               <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
                 <input type='date' className='input-style-2 w-100' value={data.jdate} onChange={e=>Setdata({...data,jdate:e.target.value})}/> 
 
                 <h1 className='Prefered-first-name mt-3'>Department</h1>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Department' value={data.deptid} onChange={e=>Setdata({...data,deptid:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
-                <p className='last-name-style'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
+                <p className='last-name-style label-text'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})}/> 
       </Stepper.Step>
       <Stepper.Step label="Compensation Information">
@@ -188,7 +188,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <div className='d-flex flex-row workerBtn p-2'>
                  <input type="checkbox" id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commision:e.target.value})}/>
                  <div>
-                    <label htmlFor='radobtn' className='label-two' >This employee will receive commissions or other types of additional compensation.</label>
+                    <label htmlFor='radobtn' className='label-two ' >This employee will receive commissions or other types of additional compensation.</label>
                  </div>
                  </div>
 
@@ -201,7 +201,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
                 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Does {data.fname} have a special tax exemption status? (This is not common.)</h1>
-                <p className='last-name-style'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
+                <p className='last-name-style label-text'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
                 <select className='input-style-2 w-100 mb-5' value={data.tax} onChange={e=>Setdata({...data,tax:e.target.value})}>
                   <option value='' disabled >Select Special Excemption Tax</option>
                    <option value="Yes">Yes</option>
