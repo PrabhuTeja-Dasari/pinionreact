@@ -12,7 +12,6 @@ import {
 } from '@tabler/icons'
 
 import type { StatCardType } from '@/types/component.type'
-
 export const icons = {
   user: IconUserPlus,
   discount: IconBusinessplan,
@@ -25,6 +24,7 @@ export const icons = {
   agreements: IconNotes,
   users: IconUser
 }
+
 
 export const statCards: StatCardType[] = [
   {
@@ -54,7 +54,7 @@ export const statCards: StatCardType[] = [
   {
     diff: 2,
     icon: 'employee',
-    title: 'Team Members',
+    title: 'Employees',
     value: '400'
   },
   {
