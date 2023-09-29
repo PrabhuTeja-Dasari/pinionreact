@@ -17,6 +17,8 @@ import {
   
   
 } from '@/screens'
+import ViewEmployee from "@/screens/Employee/View-Employee";
+import Document from "@/screens/Employee/Document"
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -52,6 +54,8 @@ function App() {
               <Route path='/TimeTracking' element={<TimeTracking/>}/>
               <Route path='/CompanyDetails' element={<CompanyDetails/>}/>
               <Route path='/Documents' element={<Documents/>}/>
+              <Route path='/ViewEmployee' element ={<ViewEmployee/>}/>
+              <Route path ='/Document' element={<Document/>}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
