@@ -20,7 +20,7 @@ import {
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
+    key: 'Pinion-Color-Scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true
   })
