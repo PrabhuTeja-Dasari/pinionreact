@@ -21,6 +21,7 @@ const HeaderBar: React.FC<HeaderBarType> = ({ opened, setOpened }) => {
   const { colorScheme } = useMantineColorScheme()
   const theme = useMantineTheme()
   return (
+    
     <Header
       height={60}
       p="xs"
@@ -36,6 +37,7 @@ const HeaderBar: React.FC<HeaderBarType> = ({ opened, setOpened }) => {
         src={Pinion}
       />
       <MediaQuery largerThan="lg" styles={{ display: 'none' }}>
+        
         <Burger
           opened={opened}
           onClick={() => setOpened((o) => !o)}
@@ -44,7 +46,7 @@ const HeaderBar: React.FC<HeaderBarType> = ({ opened, setOpened }) => {
           mx="xl"
         />
       </MediaQuery>
-      {/* <div className="mr-6 hidden w-full justify-end md:flex">
+      {/* <div hidden w-full justify-end md:flex">
         <NavAction />
       </div> */}
 

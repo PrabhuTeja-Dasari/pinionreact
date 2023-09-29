@@ -48,14 +48,18 @@ function AddEmployee(){
 
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
   return(
-    <div className="card">
-      <div className="card-body">
-      <div className='d-flex flex-row main-container'>
 
+    <div className='container'>
+      <div className='row'>
+      <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <form >
     <Stepper active={active}>
       <Stepper.Step label="Personal Information">
-         
+      <div className='container'>
+          <div className='row'>
+          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
+          <div className='card'>
+            <div className='card-body'>
               <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
               <div className='d-flex flex-row sub-container w-100'>
 
@@ -118,11 +122,21 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                  </div>
                  </div>
-        
+                 </div>
+                </div>
+                </div>
+                </div>
+                </div>
 
       </Stepper.Step>
 
       <Stepper.Step label="Role Information">
+        
+      <div className='container'>
+          <div className='row'>
+          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
+          <div className='card'>
+            <div className='card-body'>
               <h1 className='pb-4 main-heading'>Tell us about Prefered {data.fname}'s role</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
@@ -157,8 +171,19 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
                 <p className='last-name-style label-text'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})}/> 
+
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
       </Stepper.Step>
       <Stepper.Step label="Compensation Information">
+      <div className='container'>
+          <div className='row'>
+          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
+          <div className='card'>
+            <div className='card-body'>
               <h1 className='pb-4 main-heading'>How will {data.fname} be compansated ?</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
@@ -206,95 +231,129 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                   <option value='' disabled >Select Special Excemption Tax</option>
                    <option value="Yes">Yes</option>
                    <option value="No">No</option>
-                </select>      
+                </select>    
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>  
                 </Stepper.Step>
 
       <Stepper.Completed>
       <h1 className='pb-4 main-heading'>Review {data.fname}'s Information</h1>
-      <div className='col-md-12'>
-        <div className='col-md-4'>
+      <div className='container'>
+        <div className='row'>
+        <div className='col-12 col-md-12 col-lg-12 col-xl-12 p-4'>
           <div className='card'>
             <div className='card-body'>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Personal</h1><br></br>
-           
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>First Name</h1>
+            <div className='d-flex flex-row justify-content-between'>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
+           <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
+           </div>
+            <h1 className='Prefered-first-name mt-3  pb-2'>First Name</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Middle Initial</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Middle Initial</h1>
             <p>56</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Last Name</h1>
+            <h1 className='Prefered-first-name mt-3   pb-2'>Last Name</h1>
             <p>56</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Prefered First Name</h1>
+            <h1 className='Prefered-first-name mt-3   pb-2'>Prefered First Name</h1>
             <p>56</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Personal Email</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Personal Email</h1>
             <p>56</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Country</h1>
+            <h1 className='Prefered-first-name mt-3   pb-2'>Country</h1>
             <p>56</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Worker Type</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Worker Type</h1>
             <p>56</p>
             <hr/>
+            </div>
             </div>
           </div>
         </div><br></br>
 
-        <div className='col-md-4'>
-          <div className='card '>
-            <div className='card-body '>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Role</h1><br></br>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Work Location</h1>
+        <div className='container'>
+          <div className='row'>
+
+          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
+          <div className='card'>
+            <div className='card-body'>
+            <div className='d-flex flex-row justify-content-between'>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
+            </div>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Work Location</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Work State</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Work State</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Job Title</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Job Title</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Start Date</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Start Date</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Department</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Department</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Manager</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Manager</h1>
             <p>23</p>
 
             </div>
           </div>
+          </div>
+          </div>
         </div><br></br>
-        <div className='col-md-4'>
-          <div className='card '>
+        <div className='container'>
+          <div className='row'>
+          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
+          <div className='card'>
             <div className='card-body '>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Compensation</h1><br></br>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Employement Type</h1>
+            <div className='d-flex flex-row justify-content-between'>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2 '>Edit</h1>
+            </div>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Amount </h1>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Amount </h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Employement Status</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
             <p>23</p>
             <hr/>
-            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Does have a special tax exemption status?</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Does have a special tax exemption status?</h1>
             <p>23</p>
             </div>
+          </div>
           </div>
         </div>
       </div>
-      <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>{data.fname}'s Start Date</h1>
+      </div>
+      <div className='container mt-3'>
+          <div className='row'>
+          <div className='col-12 col-md-12 col-lg-12 col-xl-12 p-4'>
+          <div className='card'>
+            <div className='card-body'>
+      <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
       <label className='label-text'>{data.jdate}</label>
-      MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.
+      <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
       </Stepper.Completed>
     </Stepper>
     </form>
     </div>
 
-    <Group style={{ justifyContent: 'flex-end'}} mt="xl">
+    <Group className="p-4" style={{ justifyContent: 'flex-end'}} mt="xl">
       {active !== 0 && (
         <Button variant="default" onClick={prevStep}>
           Back
@@ -304,11 +363,9 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       }
       {active>2 && <Button variant='default' onClick={submitdata}>Submit</Button>}
     </Group>
-
-
-       
       </div>
     </div>
+ 
   )
 }
 function formatDate(date: Date): string {
