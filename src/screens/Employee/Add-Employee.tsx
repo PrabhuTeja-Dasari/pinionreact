@@ -210,7 +210,85 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 </Stepper.Step>
 
       <Stepper.Completed>
-     
+      <h1 className='pb-4 main-heading'>Review {data.fname}'s Information</h1>
+      <div className='col-md-12'>
+        <div className='col-md-4'>
+          <div className='card'>
+            <div className='card-body'>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Personal</h1><br></br>
+           
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>First Name</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Middle Initial</h1>
+            <p>56</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Last Name</h1>
+            <p>56</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Prefered First Name</h1>
+            <p>56</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Personal Email</h1>
+            <p>56</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Country</h1>
+            <p>56</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Worker Type</h1>
+            <p>56</p>
+            <hr/>
+            </div>
+          </div>
+        </div><br></br>
+
+        <div className='col-md-4'>
+          <div className='card '>
+            <div className='card-body '>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Role</h1><br></br>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Work Location</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Work State</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Job Title</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Start Date</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Department</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Manager</h1>
+            <p>23</p>
+
+            </div>
+          </div>
+        </div><br></br>
+        <div className='col-md-4'>
+          <div className='card '>
+            <div className='card-body '>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Compensation</h1><br></br>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Employement Type</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Amount </h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Employement Status</h1>
+            <p>23</p>
+            <hr/>
+            <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Does have a special tax exemption status?</h1>
+            <p>23</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>{data.fname}'s Start Date</h1>
+      <label className='label-text'>{data.jdate}</label>
+      MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.
       </Stepper.Completed>
     </Stepper>
     </form>

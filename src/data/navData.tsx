@@ -1,9 +1,9 @@
-import { IconGauge, IconUser,IconBuilding,IconClockHour4 } from '@tabler/icons'
+import { IconLayoutDashboard, IconUser,IconBuilding,IconClockHour4 } from '@tabler/icons'
 
 import type { NavLinkType } from '@/types/component.type'
 
 export const navData: NavLinkType[] = [
-  { label: 'Dashboard', icon: IconGauge, link: '/' },
+  { label: 'Dashboard', icon: IconLayoutDashboard, link: '/' },
   {
     label: 'Company',
     icon: IconBuilding,
