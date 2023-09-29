@@ -252,25 +252,25 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
            <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
            </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>First Name</h1>
-            <p>23</p>
+            <p>{data.fname}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Middle Initial</h1>
-            <p>56</p>
+            <p>{data.mname}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3   pb-2'>Last Name</h1>
-            <p>56</p>
+            <p>{data.lname}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3   pb-2'>Prefered First Name</h1>
-            <p>56</p>
+            <p>{data.pfname}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Personal Email</h1>
-            <p>56</p>
+            <p>{data.pemail}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3   pb-2'>Country</h1>
-            <p>56</p>
+            <p>{data.Country}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Worker Type</h1>
-            <p>56</p>
+            <p>{data.worker}</p>
             <hr/>
             </div>
             </div>
@@ -288,22 +288,22 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work Location</h1>
-            <p>23</p>
+            <p>{data.location}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work State</h1>
-            <p>23</p>
+            <p>{data.state}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Job Title</h1>
-            <p>23</p>
+            <p>{data.jobtitle}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Start Date</h1>
-            <p>23</p>
+            <p>{data.jdate}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Department</h1>
-            <p>23</p>
+            <p>{data.deptid}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Manager</h1>
-            <p>23</p>
+            <p>{data.manager}</p>
 
             </div>
           </div>
@@ -320,16 +320,16 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <h1 className='Prefered-first-name mt-3 pb-2 '>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
-            <p>23</p>
+            <p>{data.empmode}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Amount </h1>
-            <p>23</p>
+            <p>{data.amount} {data.per}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
-            <p>23</p>
+            <p>{data.empstatus}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Does have a special tax exemption status?</h1>
-            <p>23</p>
+            <p>{data.tax}</p>
             </div>
           </div>
           </div>
