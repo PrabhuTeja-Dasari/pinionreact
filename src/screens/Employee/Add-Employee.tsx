@@ -102,7 +102,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
       <form >
     <Stepper active={active}>
-      <Stepper.Step label="First step" description="Tell us who you'd like to add">
+      <Stepper.Step label="Personal Information">
          
               <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
               <div className='d-flex flex-row sub-container w-100'>
@@ -122,20 +122,22 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <input type='text' className='input-style-2 w-100'/>
 
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
-               <p>Gusto will use this name to refer to this person in communications 
+               <p>MyBizWhiz will use this name to refer to this person in communications 
                 where their legal first name is required (offer letter, onboarding emails, org etc)</p>
                 <input type='text' className='input-style-2 w-100'/> 
 
                 <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
                <p>Use an existing address that's not associated with your company. This team member will use 
-                this email to sign in to Gusto and receive certain personal info.
+                this email to sign in to MyBizWhiz and receive certain personal info.
                </p>
                 <input type='text' className='input-style-2 w-100'/>
 
-                <h1 className='Prefered-first-name mt-3 pb-2'>country</h1>
+                <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
                 <select className='input-style-2 w-100 mb-5'>
+                  <option value=''>Select-</option>
                    <option value="firstName">India</option>
                    <option value="lastName">United States</option>
+                   <option value="">United Kingdom</option>
                 </select>
                 <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
                  <div className='d-flex flex-column'>
@@ -168,21 +170,23 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
       </Stepper.Step>
 
-      <Stepper.Step label="Second step" description="Tell us about Prefered Name's role" >
+      <Stepper.Step label="Role Information">
               <h1 className='pb-4 main-heading'>Tell us about Prefered Name's role</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will Selva work ?</h1>
               <p className='last-name-style'>Which location to select and learn about thier potential impacts on your business.</p>
                 <select className='input-style-2 w-100 mb-5'>
+                <option value="" disabled selected>Select-</option>
                    <option value="work from home">Work from home</option>
-                   <option value="lastName">United States</option>
+                   <option value="Work from office">Work from office</option>
+                   <option value="hybrid">Hybrid</option>
                 </select>
 
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Work State</h1>
                 <p className='last-name-style'>If this employee work from home,tell us the state where they work and live</p>
                 <select className='input-style-2 w-100 mb-5'>
-                  <option value="">Select State</option>
+                   <option value="" disabled selected>Select State-</option> 
                    <option value="firstName">India</option>
                    <option value="lastName">United States</option>
                 </select>
@@ -202,12 +206,13 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <p className='last-name-style'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
                 <input type='text' className='input-style-2 w-100'/> 
       </Stepper.Step>
-      <Stepper.Step label="Third step" description="Tell us about Prefered Name's role" >
+      <Stepper.Step label="Compensation Information">
               <h1 className='pb-4 main-heading'>How will Selva be compansated ?</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Employeement type</h1>
  
                 <select className='input-style-2 w-100 mb-5'>
+                  <option value='0'>Select-</option>
                    <option value="Salary/No overtime">Salary/No overtime</option>
                    <option value="lastName">United States</option>
                 </select>
@@ -237,16 +242,18 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
                <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
                <select className='input-style-2 w-100 mb-5'>
-                   <option value="Salary/No overtime">Salary/No overtime</option>
-                   <option value="lastName">United States</option>
+                <option value=''>Select-</option>
+                   <option value="Salary/No overtime">Active</option>
+                   <option value="lastName">Inactive</option>
                 </select>
 
                 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Does Salva have a special tax exemption status?(This is not common.)</h1>
                 <p className='last-name-style'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
                 <select className='input-style-2 w-100 mb-5'>
-                   <option value="Salary/No overtime">Salary/No overtime</option>
-                   <option value="lastName">United States</option>
+                  <option value=''>Select-</option>
+                   <option value="Salary/No overtime">Yes</option>
+                   <option value="lastName">No</option>
                 </select>      
                 </Stepper.Step>
 
