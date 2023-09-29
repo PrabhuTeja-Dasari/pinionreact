@@ -1,4 +1,6 @@
-import { Table, Button, TextInput } from '@mantine/core'
+import { Table, Button, TextInput,  useMantineColorScheme,
+  useMantineTheme } from '@mantine/core'
+
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -171,9 +173,12 @@ const[searchquery,setsearchquery]=useState<string>('');
     }
     deleteresponse();
   }
+  const { colorScheme } = useMantineColorScheme()
+  const theme = useMantineTheme()
 
   return (
-   <div className='card' style={{ overflowX: 'auto' }}>
+    
+   <div className='card' style={{ overflowX: 'auto', mixBlendMode: colorScheme === 'light' ? 'darken' : 'exclusion' }}>
     <div className='card-body'>
       <div className='col-md-3' style={{float:'right'}} >
       <TextInput variant='filled' placeholder='Search' value={searchquery} radius="md" onChange={(e)=>setsearchquery(e.target.value)}/>

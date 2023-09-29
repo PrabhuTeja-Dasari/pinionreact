@@ -36,6 +36,7 @@ function AddEmployee(){
     tax:''
 
   })
+
   const submitdata=(e:any)=>{
     e.preventDefault();
     console.log(data);
@@ -302,7 +303,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       )}
       {active !== 3 && <Button variant='default' onClick={nextStep}>Save and Continue</Button>
       }
-      {active>2 && <Button variant='default' onClick={submitdata}>Submit</Button>}
+      {active>2 && <Button variant='default' onClick={submitdata}>Add {data.fname} and exit</Button>}
+      {active>2 && <Button variant='default' onClick={submitdata}>Add {data.fname} and setup for payroll</Button>}
     </Group>
 
 
@@ -311,12 +313,5 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
     </div>
   )
 }
-function formatDate(date: Date): string {
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-  return date.toLocaleDateString(undefined, options);
-}
+
 export default AddEmployee;
