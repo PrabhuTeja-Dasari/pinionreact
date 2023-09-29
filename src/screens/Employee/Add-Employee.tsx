@@ -99,11 +99,12 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
    <div className=''>
     <div className="card">
       <div className="card-body">
+      <div className='d-flex flex-row main-container'>
+
       <form >
     <Stepper active={active}>
       <Stepper.Step label="First step" description="Tell us who you'd like to add">
-        <div className='d-flex flex-row main-container'>
-         <form>
+         
               <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
               <div className='d-flex flex-row sub-container w-100'>
 
@@ -113,7 +114,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               </div>
 
               <div className='mb-3 ml-3 w-100'>
-                <p className='m-0'>Middle Intial (optional)</p>
+                <p className='m-0'>Middle Name (optional)</p>
                 <input type="text" className='input-style w-100'/>
                </div>
                 </div>
@@ -137,38 +138,134 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                    <option value="firstName">India</option>
                    <option value="lastName">United States</option>
                 </select>
-                <h1 className='Prefered-first-name pt-3'>Worker type</h1>  
-                 <div className='d-flex flex-column'>
-                  
-                  <div className='d-flex flex-row workerBtn'>
+                <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
+              
+
+                  <div className='d-flex flex-row '>
 
                  <input type="radio" id='radiobtn'/>
                  <div>
                     <label htmlFor='radiobtn'>Employee</label><br/>
                     <label htmlFor='radiobtn'>Worker paid on hourly or salaried wage 
                     with rights and benefits received through employeement.</label>
-                 </div>
-                 </div>
+
+                <div className='d-flex flex-row workerBtn p-2'>
+                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label"/>
+                 <div>
+                    <label htmlFor='radobtn' className='label-one'>Employee</label><br/>
+                    <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
+                    with rights and benfits received through employeement.</label>
 
                  </div>
-         </form>
+                 </div>
+                  
+                 <div className='d-flex flex-row workerBtn p-2'>
+                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label"/>
+                 <div>
+                    <label htmlFor='radobtn' className='label-one'>Individual contractor</label><br/>
+                    <label htmlFor='radobtn' className='label-two'>Indepdent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
+                 </div>
+                 </div>
+                 <div className='d-flex flex-row workerBtn p-2'>
+                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label"/>
+                 <div>
+                    <label htmlFor='radobtn' className='label-one'>Business contractor</label><br/>
+                    <label htmlFor='radobtn' className='label-two'>Indepdent Professional working on behalf of a Business.</label>
+                 </div>
+                 </div>
+                 </div>
+       </div>
 
-        </div>
       </Stepper.Step>
 
       <Stepper.Step label="Second step" description="Tell us about Prefered Name's role" >
-     
-      </Stepper.Step>
+              <h1 className='pb-4 main-heading'>Tell us about Prefered Name's role</h1>
+              
+              <h1 className='Prefered-first-name mt-3 pb-2'>Where will Selva work ?</h1>
+              <p className='last-name-style'>Which location to select and learn about thier potential impacts on your business.</p>
+                <select className='input-style-2 w-100 mb-5'>
+                   <option value="work from home">Work from home</option>
+                   <option value="lastName">United States</option>
+                </select>
 
-      <Stepper.Step label="Third step" description="How will Name be compensated ?">
-        
-        </Stepper.Step> 
+
+                <h1 className='Prefered-first-name mt-3 pb-2'>Work State</h1>
+                <p className='last-name-style'>If this employee work from home,tell us the state where they work and live</p>
+                <select className='input-style-2 w-100 mb-5'>
+                  <option value="">Select State</option>
+                   <option value="firstName">India</option>
+                   <option value="lastName">United States</option>
+                </select>
+
+                <h1 className='Prefered-first-name mt-3 pb-2'>Job title</h1>
+               <p className='last-name-style'>Choose from your existing set of jobs or enter a new one.</p>
+                <input type='text' className='input-style-2 w-100'/>
+
+               <h1 className='Prefered-first-name mt-3'>Start date</h1>
+               <p className='last-name-style'>Your employee's first day of work at your company.</p>
+                <input type='date' className='input-style-2 w-100'/> 
+
+                <h1 className='Prefered-first-name mt-3'>Department</h1>
+                <input type='text' className='input-style-2 w-100'/>
+
+                <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
+                <p className='last-name-style'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
+                <input type='text' className='input-style-2 w-100'/> 
+      </Stepper.Step>
+      <Stepper.Step label="Third step" description="Tell us about Prefered Name's role" >
+              <h1 className='pb-4 main-heading'>How will Selva be compansated ?</h1>
+              
+              <h1 className='Prefered-first-name mt-3 pb-2'>Employeement type</h1>
+ 
+                <select className='input-style-2 w-100 mb-5'>
+                   <option value="Salary/No overtime">Salary/No overtime</option>
+                   <option value="lastName">United States</option>
+                </select>
+
+                <div className='d-flex flex-row'>
+                  <div>
+                <h1 className='Prefered-first-name mt-3 pb-2'>Amount</h1>
+                <input type='text' className='input-style-3 mr-2 year-input ' />
+                </div>
+
+                <div>
+                <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Per</h1>
+                <select className='input-style-2 w-100 ml-2  mb-2'>
+                  <option value="">Select Month/Year</option>
+                   <option value="Month">Month</option>
+                   <option value="Year">Year</option>
+                </select>
+                </div>
+                </div>
+
+                <div className='d-flex flex-row workerBtn p-2'>
+                 <input type="checkbox" id='radobtn' className=' mr-2' name="label"/>
+                 <div>
+                    <label htmlFor='radobtn' className='label-two'>This employee will receive commissions or other types of additional compensation.</label>
+                 </div>
+                 </div>
+
+               <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
+               <select className='input-style-2 w-100 mb-5'>
+                   <option value="Salary/No overtime">Salary/No overtime</option>
+                   <option value="lastName">United States</option>
+                </select>
+
+                
+                <h1 className='Prefered-first-name mt-3 pb-2'>Does Salva have a special tax exemption status?(This is not common.)</h1>
+                <p className='last-name-style'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
+                <select className='input-style-2 w-100 mb-5'>
+                   <option value="Salary/No overtime">Salary/No overtime</option>
+                   <option value="lastName">United States</option>
+                </select>      
+                </Stepper.Step>
 
       <Stepper.Completed>
      
       </Stepper.Completed>
     </Stepper>
     </form>
+    </div>
 
     <Group style={{ justifyContent: 'flex-end'}} mt="xl">
       {active !== 0 && (
@@ -176,7 +273,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
           Back
         </Button>
       )}
-      {active !== 3 && <Button variant='default' onClick={nextStep}>Next step</Button>}
+      {active !== 3 && <Button variant='default' onClick={nextStep}>Save and Continue</Button>}
       {active>2 && <Button variant='default' onClick={submitdata}>Submit</Button>}
     </Group>
       </div>
