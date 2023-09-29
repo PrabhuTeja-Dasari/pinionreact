@@ -7,6 +7,7 @@ function AddEmployee(){
   const [active, setActive] = useState(0);
   const [data,Setdata]=useState({
     fname:'',
+    mname:'',
     lname:'',
     dob:'',
     gender:'',
@@ -19,75 +20,26 @@ function AddEmployee(){
     empmode:'',
     workmobile:'',
     workemail:'',
-    financial:''
+    financial:'',
+    pfname:'',
+    Country:'',
+    worker:'',
+    location:'',
+    state:'',
+    jobtitle:'',
+    deptid:'',
+    manager:'',
+    amount:'',
+    per:'',
+    commision:'',
+    empstatus:'',
+    tax:''
 
   })
   const submitdata=(e:any)=>{
     e.preventDefault();
     console.log(data);
-    const technicalarea=async()=>{
-      try{
-        const technicalresponse = await axios.get('https://localhost:7190/api/TechnicalArea/GetTechnicalData');
-        const practiceresponse = await axios.get('https://localhost:7190/api/PracticeArea/GetAllAreas');
-        const aspnetuseresponse=await axios.get('https://localhost:7190/api/AspnetUser/GetAllUsers');
-const designationresponse=await axios.get('https://localhost:7190/api/Designation/GetAllDesignation');
-const locationresponse = await axios.get('https://localhost:7190/api/Location/GetAllLocations');
-const companyresponse = await axios.get('https://localhost:7190/api/Company/GetAllCompany');
-{/* september 25,2023 converting to yyyt-mm-ddT00:00:00*/}
-const originldate=new Date(data.jdate);
-originldate.setDate(originldate.getDate()+1);
-const Joiningdate=originldate.toISOString().slice(0, 10) + 'T00:00:00';
-const dobdate=new Date(data.dob);
-dobdate.setDate(dobdate.getDate()+1);
-const dateofbirth=dobdate.toISOString().slice(0,10) +'T00:00:00';
-const financial=new Date(data.financial);
-financial.setDate(financial.getDate()+1);
-const finance=financial.toISOString().slice(0,10) +'T00:00:00';
-        var obj={
-          "userId": aspnetuseresponse.data[0].userId,
-          "empID": data.empid,
-          "firstName": data.fname,
-          "middleName": "",
-          "lastName": data.lname,
-          "designationId": designationresponse.data[0].designationId,
-          "departmentId": 0,
-          "joiningDate": Joiningdate,
-          "currentLocationId": locationresponse.data[0].locationId,
-          "baseLocationId": locationresponse.data[0].locationId,
-          "gender": data.gender,
-          "maritalStatus": data.marital,
-          "empStatus": "active",
-          "empMode": data.empmode,
-          "reportingManagerId": aspnetuseresponse.data[0].userId,
-          "companyId": companyresponse.data[0].id,
-          "createdBy": aspnetuseresponse.data[0].userId,
-          "modifiedBy": aspnetuseresponse.data[0].userId,
-          "isActive": true,
-          "photo": "1",
-          "personalEmail": data.pemail,
-          "dateofBirth": dateofbirth,
-          "displayName": data.dname,
-          "counsellorId": aspnetuseresponse.data[0].userId,
-          "workMobile": data.workmobile,
-          "workEmail": data.workemail,
-          "practiceAreaId": practiceresponse.data[0].practiceId,
-          "technicalAreaId": technicalresponse.data[0].technicalAreaId,
-          "excludeTmslock": true,
-          "financialAppraisalCycle": finance,
-          "priorExperience": 0
-        }
-        console.log(obj);
-        let json = JSON.stringify(obj);
-        console.log(json)
-
-        const insertemployee=await axios.post('https://localhost:7190/api/Employee/AddEmployees',JSON.parse(json));
-        console.log(insertemployee)
-        
-      }catch(err){
-        console.error(err);
-      }
-    }
-    technicalarea();
+   
   }
   const nextStep = () =>
   setActive((current) => {
@@ -102,46 +54,48 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
       <form >
     <Stepper active={active}>
-      <Stepper.Step label="First step" description="Personal Information">
+      <Stepper.Step label="Personal Information">
          
               <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
               <div className='d-flex flex-row sub-container w-100'>
 
               <div className='w-100'>
                 <p>First Name</p>
-                <input type="text"  className='input-style w-100'/>
+                <input type="text"  className='input-style w-100' placeholder='Enter First Name' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/>
               </div>
 
               <div className='mb-3 ml-3 w-100'>
-                <p className='m-0'>Middle Intial (optional)</p>
-                <input type="text" className='input-style w-100'/>
+                <p className='m-0'>Middle Initial (optional)</p>
+                <input type="text" placeholder='Enter Middle Initial' className='input-style w-100' value={data.mname} onChange={e=>Setdata({...data,mname:e.target.value})}/>
                </div>
                 </div>
 
                <p className='last-name-style'>Last Name</p>
-                <input type='text' className='input-style-2 w-100'/>
+                <input type='text' className='input-style-2 w-100' placeholder='Enter Last Name' value={data.lname} onChange={e=>Setdata({...data,lname:e.target.value})}/>
 
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
-               <p>Gusto will use this name to refer to this person in communications 
+               <p>MyBizWhiz will use this name to refer to this person in communications 
                 where their legal first name is required (offer letter, onboarding emails, org etc)</p>
-                <input type='text' className='input-style-2 w-100'/> 
+                <input type='text' className='input-style-2 w-100' placeholder='Enter Prefered First Name' value={data.pfname} onChange={e=>Setdata({...data,pfname:e.target.value})}/> 
 
                 <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
                <p>Use an existing address that's not associated with your company. This team member will use 
-                this email to sign in to Gusto and receive certain personal info.
+                this email to sign in to MyBizWhiz and receive certain personal info.
                </p>
-                <input type='text' className='input-style-2 w-100'/>
+                <input type='text' className='input-style-2 w-100' placeholder='Enter Personal Email' value={data.pemail} onChange={e=>Setdata({...data,pemail:e.target.value})}/>
 
-                <h1 className='Prefered-first-name mt-3 pb-2'>country</h1>
-                <select className='input-style-2 w-100 mb-5'>
+                <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
+                <select className='input-style-2 w-100 mb-5' value={data.Country} onChange={e=>Setdata({...data,Country:e.target.value})}>
+                  <option value=''>Select-</option>
                    <option value="firstName">India</option>
                    <option value="lastName">United States</option>
+                   <option value="">United Kingdom</option>
                 </select>
                 <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
                  <div className='d-flex flex-column'>
                   
                 <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label"/>
+                <input type="radio" id='radobtn' className='mt-1 mr-2' name="label" value="Employee" onChange={e => Setdata({...data, worker: e.target.value})} />
                  <div>
                     <label htmlFor='radobtn' className='label-one'>Employee</label><br/>
                     <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
@@ -150,14 +104,14 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                   
                  <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label"/>
+                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label" value="Individual Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
                  <div>
                     <label htmlFor='radobtn' className='label-one'>Individual contractor</label><br/>
                     <label htmlFor='radobtn' className='label-two'>Indepdent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
                  </div>
                  </div>
                  <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label"/>
+                 <input type="radio" id='radobtn' className='mt-1 mr-2' name="label" value="Business Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
                  <div>
                     <label htmlFor='radobtn' className='label-one'>Business contractor</label><br/>
                     <label htmlFor='radobtn' className='label-two'>Indepdent Professional working on behalf of a Business.</label>
@@ -168,60 +122,63 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
       </Stepper.Step>
 
-      <Stepper.Step label="Second step" description="Office Information" >
-              <h1 className='pb-4 main-heading'>Tell us about Prefered Name's role</h1>
+      <Stepper.Step label="Role Information">
+              <h1 className='pb-4 main-heading'>Tell us about Prefered {data.fname}'s role</h1>
               
-              <h1 className='Prefered-first-name mt-3 pb-2'>Where will Selva work ?</h1>
+              <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
               <p className='last-name-style'>Which location to select and learn about thier potential impacts on your business.</p>
-                <select className='input-style-2 w-100 mb-5'>
+                <select className='input-style-2 w-100 mb-5' value={data.location} onChange={e=>Setdata({...data,location:e.target.value})}>
+                <option value="" disabled >Select-</option>
                    <option value="work from home">Work from home</option>
-                   <option value="lastName">United States</option>
+                   <option value="Work from office">Work from office</option>
+                   <option value="hybrid">Hybrid</option>
                 </select>
 
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Work State</h1>
                 <p className='last-name-style'>If this employee work from home,tell us the state where they work and live</p>
-                <select className='input-style-2 w-100 mb-5'>
-                  <option value="">Select State</option>
-                   <option value="firstName">India</option>
-                   <option value="lastName">United States</option>
+                <select className='input-style-2 w-100 mb-5' onChange={e=>Setdata({...data,state:e.target.value})} value={data.state}>
+                   <option value="" disabled >Select State-</option> 
+                   <option value="India">India</option>
+                   <option value="United States">United States</option>
                 </select>
 
-                <h1 className='Prefered-first-name mt-3 pb-2'>Job title</h1>
+                <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
                <p className='last-name-style'>Choose from your existing set of jobs or enter a new one.</p>
-                <input type='text' className='input-style-2 w-100'/>
+                <input type='text' className='input-style-2 w-100' placeholder='Enter Job Title' value={data.jobtitle} onChange={e=>Setdata({...data,jobtitle:e.target.value})}/>
 
-               <h1 className='Prefered-first-name mt-3'>Start date</h1>
+               <h1 className='Prefered-first-name mt-3'>Start Date</h1>
                <p className='last-name-style'>Your employee's first day of work at your company.</p>
-                <input type='date' className='input-style-2 w-100'/> 
+                <input type='date' className='input-style-2 w-100' value={data.jdate} onChange={e=>Setdata({...data,jdate:e.target.value})}/> 
 
                 <h1 className='Prefered-first-name mt-3'>Department</h1>
-                <input type='text' className='input-style-2 w-100'/>
+                <input type='text' className='input-style-2 w-100' placeholder='Enter Department' value={data.deptid} onChange={e=>Setdata({...data,deptid:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
                 <p className='last-name-style'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
-                <input type='text' className='input-style-2 w-100'/> 
+                <input type='text' className='input-style-2 w-100' placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})}/> 
       </Stepper.Step>
-      <Stepper.Step label="Third step" description="Office Information" >
-              <h1 className='pb-4 main-heading'>How will Selva be compansated ?</h1>
+      <Stepper.Step label="Compensation Information">
+              <h1 className='pb-4 main-heading'>How will {data.fname} be compansated ?</h1>
               
-              <h1 className='Prefered-first-name mt-3 pb-2'>Employeement type</h1>
+              <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
  
-                <select className='input-style-2 w-100 mb-5'>
-                   <option value="Salary/No overtime">Salary/No overtime</option>
-                   <option value="lastName">United States</option>
+                <select className='input-style-2 w-100 mb-5' value={data.empmode} onChange={e=>Setdata({...data,empmode:e.target.value})}>
+                  <option value='' disabled >Select Employement Type</option>
+                   <option value="Permanent">Permanent</option>
+                   <option value="Contract">Contract</option>
                 </select>
 
                 <div className='d-flex flex-row'>
                   <div>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Amount</h1>
-                <input type='text' className='input-style-3 mr-2 year-input ' />
+                <input type='text' className='input-style-3 mr-2 year-input ' value={data.amount} onChange={e=>Setdata({...data,amount:e.target.value})} placeholder='Enter Amount' />
                 </div>
 
                 <div>
                 <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Per</h1>
-                <select className='input-style-2 w-100 ml-2  mb-2'>
-                  <option value="">Select Month/Year</option>
+                <select className='input-style-2 w-100 ml-2  mb-2' value={data.per} onChange={e=>Setdata({...data,per:e.target.value})}>
+                  <option value="" disabled  >Select Month/Year</option>
                    <option value="Month">Month</option>
                    <option value="Year">Year</option>
                 </select>
@@ -229,24 +186,26 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 </div>
 
                 <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="checkbox" id='radobtn' className=' mr-2' name="label"/>
+                 <input type="checkbox" id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commision:e.target.value})}/>
                  <div>
-                    <label htmlFor='radobtn' className='label-two'>This employee will receive commissions or other types of additional compensation.</label>
+                    <label htmlFor='radobtn' className='label-two' >This employee will receive commissions or other types of additional compensation.</label>
                  </div>
                  </div>
 
                <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
-               <select className='input-style-2 w-100 mb-5'>
-                   <option value="Salary/No overtime">Salary/No overtime</option>
-                   <option value="lastName">United States</option>
+               <select className='input-style-2 w-100 mb-5' value={data.empstatus} onChange={e=>Setdata({...data,empstatus:e.target.value})}>
+                <option value=''  disabled>Select Employement Status</option>
+                   <option value="Active">Active</option>
+                   <option value="Inactive">Inactive</option>
                 </select>
 
                 
-                <h1 className='Prefered-first-name mt-3 pb-2'>Does Salva have a special tax exemption status?(This is not common.)</h1>
+                <h1 className='Prefered-first-name mt-3 pb-2'>Does {data.fname} have a special tax exemption status? (This is not common.)</h1>
                 <p className='last-name-style'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
-                <select className='input-style-2 w-100 mb-5'>
-                   <option value="Salary/No overtime">Salary/No overtime</option>
-                   <option value="lastName">United States</option>
+                <select className='input-style-2 w-100 mb-5' value={data.tax} onChange={e=>Setdata({...data,tax:e.target.value})}>
+                  <option value='' disabled >Select Special Excemption Tax</option>
+                   <option value="Yes">Yes</option>
+                   <option value="No">No</option>
                 </select>      
                 </Stepper.Step>
 
@@ -263,7 +222,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
           Back
         </Button>
       )}
-      {active !== 3 && <Button variant='default' onClick={nextStep}>Save and Continue</Button>}
+      {active !== 3 && <Button variant='default' onClick={nextStep}>Save and Continue</Button>
+      }
       {active>2 && <Button variant='default' onClick={submitdata}>Submit</Button>}
     </Group>
 
