@@ -1,6 +1,5 @@
 import { Table, Button, TextInput,  useMantineColorScheme,
-  useMantineTheme } from '@mantine/core'
-
+  useMantineTheme,Card } from '@mantine/core'
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -177,9 +176,7 @@ const[searchquery,setsearchquery]=useState<string>('');
   const theme = useMantineTheme()
 
   return (
-    
-   <div className='card' style={{ overflowX: 'auto', mixBlendMode: colorScheme === 'light' ? 'darken' : 'exclusion' }}>
-    <div className='card-body'>
+    <Card p="xl">
       <div className='col-md-3' style={{float:'right'}} >
       <TextInput variant='filled' placeholder='Search' value={searchquery} radius="md" onChange={(e)=>setsearchquery(e.target.value)}/>
       </div><br></br><br></br>
@@ -279,8 +276,7 @@ const[searchquery,setsearchquery]=useState<string>('');
         ))}
       </tbody>
     </Table>
-    </div>
-   </div>
-  )
+    </Card>
+      )
 }
 export default Employee
