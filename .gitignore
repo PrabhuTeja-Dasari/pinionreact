@@ -26,3 +26,6 @@ dist-ssr
 
 #husky
 .husky
+
+#vs
+.vs
