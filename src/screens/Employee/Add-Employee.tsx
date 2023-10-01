@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Stepper, Button, Group, TextInput, PasswordInput, Code,Select,FileInput,NumberInput   } from '@mantine/core';
+import { Stepper, Button, Group, TextInput, PasswordInput, Code,Select,FileInput,NumberInput,Container,Card} from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
 import axios from 'axios'
@@ -46,6 +46,13 @@ function AddEmployee(){
   setActive((current) => {
     return current < 3 ? current + 1 : current;
   });
+  const innerstyle = {
+    borderTop: '0px',
+    borderLeft: '0px',
+    borderRight: '0px',
+    backgroundColor: '#f0f5f7 !important',
+  };
+  
 
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
   return(
@@ -56,7 +63,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       <form >
     <Stepper active={active}>
       <Stepper.Step label="Personal Information">
-      <div className='container'>
+        <Container>
           <div className='row'>
           <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='card'>
@@ -67,6 +74,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               <div className='w-100'>
                 <p>First Name</p>
                 <input type="text"  className='input-style w-100' placeholder='Enter First Name' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/>
+                {/* <TextInput style={innerstyle}  placeholder='Enter First Name' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/> */}
               </div>
 
               <div className='mb-3 ml-3 w-100'>
@@ -127,7 +135,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 </div>
                 </div>
                 </div>
-                </div>
+                </Container>
 
       </Stepper.Step>
 

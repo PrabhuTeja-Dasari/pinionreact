@@ -14,7 +14,7 @@
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    background-color: #f0f5f7;
+    background-color: #f0f5f7 !important;
 }
 
 .input-style-2 {
