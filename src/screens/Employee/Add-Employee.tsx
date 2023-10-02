@@ -223,12 +223,11 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
       <Stepper.Completed>
       <h1 className='pb-4 main-heading'>Review {data.fname}'s Information</h1>
-      <div className='container'>
+  <Container>
         <div className='row'>
         <div className='col-12 col-md-12 col-lg-12 col-xl-12 p-4'>
-          <div className='card'>
-            <div className='card-body'>
-            <div className='d-flex flex-row justify-content-between'>
+        <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <div className='d-flex flex-row justify-content-between'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
            <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
            </div>
@@ -253,18 +252,14 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <h1 className='Prefered-first-name mt-3  pb-2'>Worker Type</h1>
             <p>{data.worker}</p>
             <hr/>
-            </div>
-            </div>
+            </Card>
           </div>
         </div><br></br>
 
-        <div className='container'>
+      <Container>
           <div className='row'>
-
-          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
-          <div className='card'>
-            <div className='card-body'>
-            <div className='d-flex flex-row justify-content-between'>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <div className='d-flex flex-row justify-content-between'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
             <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
             </div>
@@ -285,18 +280,13 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Manager</h1>
             <p>{data.manager}</p>
-
-            </div>
+            </Card>
           </div>
-          </div>
-          </div>
-        </div><br></br>
-        <div className='container'>
+        </Container><br></br>
+        <Container>
           <div className='row'>
-          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
-          <div className='card'>
-            <div className='card-body '>
-            <div className='d-flex flex-row justify-content-between'>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+           <div className='d-flex flex-row justify-content-between'>
             <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
             <h1 className='Prefered-first-name mt-3 pb-2 '>Edit</h1>
             </div>
@@ -311,25 +301,19 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Does have a special tax exemption status?</h1>
             <p>{data.tax}</p>
-            </div>
-          </div>
-          </div>
+            </Card>
         </div>
-      </div>
-      </div>
-      <div className='container mt-3'>
+      </Container>
+    </Container>
+      <Container>
           <div className='row'>
-          <div className='col-12 col-md-12 col-lg-12 col-xl-12 p-4'>
-          <div className='card'>
-            <div className='card-body'>
-      <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+           <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
       <label className='label-text'>{data.jdate}</label>
       <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.</p>
+      </Card>
       </div>
-      </div>
-      </div>
-      </div>
-      </div>
+      </Container>
       </Stepper.Completed>
     </Stepper>
     </form>
