@@ -199,7 +199,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  <input type="checkbox" id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commision:e.target.value})}/>
                  <div>
                     <label htmlFor='radobtn' className='label-two ' ></label>
-                    {/* <Checkbox label="This employee will receive commissions or other types of additional compensation."/> */}
+                    This employee will receive commissions or other types of additional compensation.
                  </div>
                  </div>
                 <div className='Employement-status-section'>
@@ -333,7 +333,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
     </div>
 
     <Group className="p-4" style={{ justifyContent: 'flex-end'}} mt="xl">
-      {active !== 0 && (
+      {active !== 0 &&  active !==3 &&(
         <Button variant="default" onClick={prevStep}>
           Back
         </Button>
