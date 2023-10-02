@@ -11,6 +11,7 @@ body {
 
     height: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
  
 }
@@ -70,7 +71,11 @@ body {
 
 }
 
+.compansation-subcontainer{
+margin: 15px;
 
+
+}
 
 
 
@@ -184,7 +189,7 @@ body {
 
 
 .reviw-information {
-
+margin-bottom: 15px;
 }
 
 

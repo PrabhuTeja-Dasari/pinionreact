@@ -61,7 +61,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       <Stepper.Step label="Personal Information">
         <Container>
           <div className='row'>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card shadow="sm"  radius="md" withBorder>
+            <div className='p-lg'>
             <div className='card-body'>
               {/* <h1 className='pb-4 main-heading'></h1> */}
               <Title order={4} id="main-heading">Tell us who you'd like to add</Title>
@@ -126,6 +127,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
                  </div>
                  </div>
+                 </div>
                  </Card>
                 </div>
                 </Container>
@@ -136,8 +138,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
         
       <Container>
           <div className='row'>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
-            
+          <Card shadow="sm"  radius="md" withBorder>
+            <div className='p-lg'>
               <h1 className='pb-4 main-heading'>Tell us about Prefered {data.fname}'s role</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
@@ -166,14 +168,15 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
                 <p className='last-name-style label-text'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
                 <TextInput id="inputStyle2" placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})} className='w-100'/>
-               
+                </div>
                 </Card>
                 </div>
                 </Container>
       </Stepper.Step>
       <Stepper.Step label="Compensation Information">
-     <Container>
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
+     <Container >
+        <Card shadow="sm"  radius="md" withBorder>
+          <div className='p-lg '>
               <h1 className='pb-4 main-heading'>How will {data.fname} be compansated ?</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
@@ -218,103 +221,114 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                    <option value="No">No</option>
                 </select>    
                 </div>
+                </div>
                 </Card>
                 </Container>  
                 </Stepper.Step>
 
       <Stepper.Completed>
       <h1 className='pb-4 main-heading'>Review {data.fname}'s Information</h1>
+      <div className='compansation-subcontainer'>
   <Container>
         <div className='row'>
         <div className='col-12 col-md-12 col-lg-12 col-xl-12 p-4'>
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
+        <Card shadow="sm"  radius="md" withBorder>
+          <div className='p-lg'>
           <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
            <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
            </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>First Name</h1>
-            <p>{data.fname}</p>
+            <p>{data.fname || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Middle Initial</h1>
-            <p>{data.mname}</p>
+            <p>{data.mname || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3   pb-2'>Last Name</h1>
-            <p>{data.lname}</p>
+            <p>{data.lname || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3   pb-2'>Prefered First Name</h1>
-            <p>{data.pfname}</p>
+            <p>{data.pfname || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Personal Email</h1>
-            <p>{data.pemail}</p>
+            <p>{data.pemail || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3   pb-2'>Country</h1>
-            <p>{data.Country}</p>
+            <p>{data.Country || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Worker Type</h1>
-            <p>{data.worker}</p>
+            <p>{data.worker || '\u00A0'}</p>
             <hr/>
+            </div>
             </Card>
           </div>
-        </div><br></br>
+        </div>
 
       <Container>
           <div className='reviw-information'>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card shadow="sm"  radius="md" withBorder>
+            <div className='p-lg'>
           <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
             <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work Location</h1>
-            <p>{data.location}</p>
+            <p>{data.location || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work State</h1>
-            <p>{data.state}</p>
+            <p>{data.state || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Job Title</h1>
-            <p>{data.jobtitle}</p>
+            <p>{data.jobtitle || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Start Date</h1>
-            <p>{data.jdate}</p>
+            <p>{data.jdate || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Department</h1>
-            <p>{data.deptid}</p>
+            <p>{data.deptid || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Manager</h1>
-            <p>{data.manager}</p>
+            <p>{data.manager || '\u00A0'}</p>
+            </div>
             </Card>
           </div>
-        </Container><br></br>
+        </Container>
         <Container>
-          <div className='row'>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+        
+          <Card shadow="sm" radius="md" withBorder>
+            <div className='p-lg '>
            <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
             <h1 className='Prefered-first-name mt-3 pb-2 '>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
-            <p>{data.empmode}</p>
+            <p>{data.empmode || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Amount </h1>
-            <p>{data.amount} {data.per}</p>
+            <p>{data.amount || '\u00A0'} {data.per || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
-            <p>{data.empstatus}</p>
+            <p>{data.empstatus || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Does have a special tax exemption status?</h1>
-            <p>{data.tax}</p>
+            <p>{data.tax || '\u00A0'}</p>
+            </div>
             </Card>
-        </div>
+        
       </Container>
     </Container>
       <Container>
           <div className='biz-whiz'>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card shadow="sm"  radius="md" withBorder>
+            <div className='p-lg'>
            <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
       <label className='label-text'>{data.jdate}</label>
       <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.</p>
+      </div>
       </Card>
       </div>
       </Container>
+      </div>
       </Stepper.Completed>
     </Stepper>
     </form>
