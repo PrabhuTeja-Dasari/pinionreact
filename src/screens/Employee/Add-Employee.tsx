@@ -3,6 +3,7 @@ import { Stepper, Button, Group,Title , TextInput,Radio, PasswordInput, Code,Sel
 import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
 import axios from 'axios'
+import { e } from 'vitest/dist/index-5aad25c1';
 function AddEmployee(){
   const [active, setActive] = useState(0);
   const [data,Setdata]=useState({
@@ -67,26 +68,32 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               <div className='d-flex flex-row sub-container w-100'>
 
               <div className='w-100'>
-                <TextInput placeholder='Enter First Name' label="First Name"  id='customInputStyle' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/>
+              <TextInput
+  placeholder='Enter First Name'
+  label="First Name"
+  id='customInputStyle'
+  value={data.fname}
+  onChange={(e) => Setdata({ ...data, fname: e.target.value })}
+/>
               </div>
 
               <div className='mb-3 ml-3 w-100'>
-                <TextInput placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={e=>Setdata({...data,mname:e.target.value})}/>
+                <TextInput placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
                </div>
                 </div>
 
-                <TextInput placeholder='Enter Last Name' label="Last Name" id="inputStyle2" value={data.lname} onChange={e=>Setdata({...data,lname:e.target.value})} />
+                <TextInput placeholder='Enter Last Name' label="Last Name" id="inputStyle2" value={data.lname} onChange={(e)=>Setdata({...data,lname:e.target.value})} />
 
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
                <p className='label-text'>MyBizWhiz will use this name to refer to this person in communications 
                 where their legal first name is required (offer letter, onboarding emails, org etc)</p>
-                <TextInput placeholder=' Enter Prefered First Name'id="inputStyle2" value={data.pfname} onChange={e=>Setdata({...data,pfname:e.target.value})}/>
+                <TextInput placeholder=' Enter Prefered First Name'id="inputStyle2" value={data.pfname} onChange={(e)=>Setdata({...data,pfname:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
                <p className='label-text'>Use an existing address that's not associated with your company. This team member will use 
                 this email to sign in to MyBizWhiz and receive certain personal info.
                </p>
-                <TextInput id="inputStyle2" value={data.pemail} placeholder='Enter Personal Email' onChange={e=>Setdata({...data,pemail:e.target.value})}/>
+                <TextInput id="inputStyle2" value={data.pemail} placeholder='Enter Personal Email' onChange={(e)=>Setdata({...data,pemail:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
                 <Select placeholder="Select Country" id="inputStyle2" value={data.Country|| ''} data={['India', 'United States', 'United Kingdom']} onChange={(selectedOption) => Setdata({ ...data, Country: selectedOption||'' })}/>              
@@ -155,12 +162,10 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
   }}  />
 
                 <h1 className='Prefered-first-name mt-3'>Department</h1>
-                <input type='text' className='input-style-2 w-100' placeholder='Enter Department' value={data.deptid} onChange={e=>Setdata({...data,deptid:e.target.value})}/>
-
+                <TextInput id="inputStyle2" placeholder='Enter Department Name' value={data.deptid} onChange={(e)=>Setdata({...data,deptid:e.target.value})}/>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
                 <p className='last-name-style label-text'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
-                <input type='text' className='input-style-2 w-100' placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})}/> 
-
+                <TextInput id="inputStyle2" placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})} className='w-100'/>
                 </div>
                 </div>
                 </div>
