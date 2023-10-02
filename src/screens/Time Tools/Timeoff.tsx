@@ -1,11 +1,10 @@
+import {Card} from '@mantine/core';
 function Timeoff(){
 
 return(
-    <div className="card">
-        <div className="card-body">
-            <h4>Time Off Tab Working</h4>
-        </div>
-        </div>
+    <Card>
+        <p>Time Off Working</p>
+    </Card>
 )
 }
 export default Timeoff;

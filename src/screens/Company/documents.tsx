@@ -1,11 +1,10 @@
+import {Card} from '@mantine/core';
 function Documents(){
 
     return(
-       <div className="card">
-        <div className="card-body">
-            <h4>Document Tab Working</h4>
-        </div>
-        </div>
+       <Card>
+        <p>Document Tab Working</p>
+       </Card>
     )
 }
 export default Documents;
