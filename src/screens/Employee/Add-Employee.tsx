@@ -53,7 +53,7 @@ function AddEmployee(){
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
   return(
 
-    <div className='container'>
+    <div className='main-container'>
       <div className='row'>
       <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <form >
@@ -65,25 +65,21 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <div className='card-body'>
               {/* <h1 className='pb-4 main-heading'></h1> */}
               <Title order={4} id="main-heading">Tell us who you'd like to add</Title>
-              <div className='d-flex flex-row sub-container w-100'>
-
-              <div className='w-100'>
+              <div className='Personal-Information-container'>
               <TextInput
   placeholder='Enter First Name'
   label="First Name"
   id='customInputStyle'
+  className='first-name'
   value={data.fname}
   onChange={(e) => Setdata({ ...data, fname: e.target.value })}
 />
-              </div>
-
-              <div className='mb-3 ml-3 w-100'>
-                <TextInput placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
+            
+                <TextInput className='middile-name' placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
                </div>
-                </div>
+                
 
                 <TextInput placeholder='Enter Last Name' label="Last Name" id="inputStyle2" value={data.lname} onChange={(e)=>Setdata({...data,lname:e.target.value})} />
-
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
                <p className='label-text'>MyBizWhiz will use this name to refer to this person in communications 
                 where their legal first name is required (offer letter, onboarding emails, org etc)</p>
@@ -98,30 +94,36 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
                 <Select placeholder="Select Country" id="inputStyle2" value={data.Country|| ''} data={['India', 'United States', 'United Kingdom']} onChange={(selectedOption) => Setdata({ ...data, Country: selectedOption||'' })}/>              
                 <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
-                 <div className='d-flex flex-column'>
-                <div className='d-flex flex-row workerBtn p-2'>
+                 <div className='worker-type-container'>
+                
+                <div className='rodio-btn-container'>
                   <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
-                 <div>
-                    <label htmlFor='radobtn' className='label-one'>Employee</label><br/>
+                 <div className='labels-conatiner'>
+                    <label htmlFor='radobtn' className='label-one'>Employee</label>
                     <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
                     with rights and benfits received through employeement.</label>
                  </div>
                  </div>
-                  
-                 <div className='d-flex flex-row workerBtn p-2'>
-                  <Radio value="Individual Contractor" id="radobtn" className='mt-1 mr-2' name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Individual Contractor"}/>
-                 <div>
-                    <label htmlFor='radobtn1' className='label-one'>Individual contractor</label><br/>
-                    <label htmlFor='radobtn1' className='label-two'>Indepdent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
+                 <div className='rodio-btn-container'>
+                  <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                 <div className='labels-conatiner'>
+                    <label htmlFor='radobtn' className='label-one'>Employee</label>
+                    <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
+                    with rights and benfits received through employeement.</label>
                  </div>
                  </div>
-                 <div className='d-flex flex-row workerBtn p-2'>
-                  <Radio value="Business Contractor" id="radobtn" className='mt-1 mr-2' name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Business Contractor"}/>
-                 <div>
-                    <label htmlFor='radobtn2' className='label-one'>Business contractor</label><br/>
-                    <label htmlFor='radobtn2' className='label-two'>Indepdent Professional working on behalf of a Business.</label>
+
+
+
+                 <div className='rodio-btn-container'>
+                  <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                 <div className='labels-conatiner'>
+                    <label htmlFor='radobtn' className='label-one'>Employee</label>
+                    <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
+                    with rights and benfits received through employeement.</label>
                  </div>
                  </div>
+
                  </div>
                  </div>
                  </Card>
@@ -177,20 +179,18 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
               <Select placeholder="Select Employement Type" id="inputStyle2" data={['Permanent', 'Contract']} value={data.empmode} onChange={(selectedOption) => Setdata({ ...data, empmode: selectedOption || '' })} />   
 
-                <div className='d-flex flex-row'>
+                <div className='Employement-type-section'>
                   <div>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Amount</h1>
                 <TextInput id="inputStyle3" placeholder='Enter Amount Value' className='mr-2 year-input' value={data.amount} onChange={e=>Setdata({...data,amount:e.target.value})}/>
                 </div>
-
-                <div>
-                <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Per</h1>
-                <select className='input-style-2 w-100 ml-2  mb-2'  value={data.per} onChange={e=>Setdata({...data,per:e.target.value})}>
+                <div className='per-year'>
+                <h1 className='Prefered-first-name'>Per</h1>
+                <select className='input-style-2'  value={data.per} onChange={e=>Setdata({...data,per:e.target.value})}>
                   <option value="" disabled  >Select Month/Year</option>
                    <option value="Month">Month</option>
                    <option value="Year">Year</option>
-                </select>
-                   
+                </select> 
                 </div>
                 </div>
 
@@ -201,15 +201,15 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                     {/* <Checkbox label="This employee will receive commissions or other types of additional compensation."/> */}
                  </div>
                  </div>
-
-               <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
-               <select className='input-style-2 w-100 mb-5' value={data.empstatus} onChange={e=>Setdata({...data,empstatus:e.target.value})}>
+                <div className='Employement-status-section'>
+               <h1 className='Prefered-first-name'>Employement Status</h1>
+               <select className='input-style-2' value={data.empstatus} onChange={e=>Setdata({...data,empstatus:e.target.value})}>
                 <option value=''  disabled>Select Employement Status</option>
                    <option value="Active">Active</option>
                    <option value="Inactive">Inactive</option>
                 </select>
-
-                
+                </div>
+                <div className='Employement-status-section'>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Does {data.fname} have a special tax exemption status? (This is not common.)</h1>
                 <p className='last-name-style label-text'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
                 <select className='input-style-2 w-100 mb-5' value={data.tax} onChange={e=>Setdata({...data,tax:e.target.value})}>
@@ -217,6 +217,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                    <option value="Yes">Yes</option>
                    <option value="No">No</option>
                 </select>    
+                </div>
                 </Card>
                 </Container>  
                 </Stepper.Step>
@@ -227,7 +228,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
         <div className='row'>
         <div className='col-12 col-md-12 col-lg-12 col-xl-12 p-4'>
         <Card shadow="sm" padding="lg" radius="md" withBorder>
-          <div className='d-flex flex-row justify-content-between'>
+          <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
            <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
            </div>
@@ -257,9 +258,9 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
         </div><br></br>
 
       <Container>
-          <div className='row'>
+          <div className='reviw-information'>
           <Card shadow="sm" padding="lg" radius="md" withBorder>
-          <div className='d-flex flex-row justify-content-between'>
+          <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
             <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
             </div>
@@ -286,7 +287,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
         <Container>
           <div className='row'>
           <Card shadow="sm" padding="lg" radius="md" withBorder>
-           <div className='d-flex flex-row justify-content-between'>
+           <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
             <h1 className='Prefered-first-name mt-3 pb-2 '>Edit</h1>
             </div>
@@ -306,7 +307,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       </Container>
     </Container>
       <Container>
-          <div className='row'>
+          <div className='biz-whiz'>
           <Card shadow="sm" padding="lg" radius="md" withBorder>
            <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
       <label className='label-text'>{data.jdate}</label>
