@@ -106,22 +106,20 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                  </div>
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                  <Radio value="Employee" id=" radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
                  <div className='labels-conatiner'>
-                    <label htmlFor='radobtn' className='label-one'>Employee</label>
-                    <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
-                    with rights and benfits received through employeement.</label>
+                    <label htmlFor='radobtn1' className='label-one'>Individual Contractor</label>
+                    <label htmlFor='radobtn1' className='label-two'>Indepedent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
                  </div>
                  </div>
 
 
 
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                  <Radio value="Employee" id=" radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
                  <div className='labels-conatiner'>
-                    <label htmlFor='radobtn' className='label-one'>Employee</label>
-                    <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
-                    with rights and benfits received through employeement.</label>
+                    <label htmlFor='radobtn2' className='label-one'>Business Contractor</label>
+                    <label htmlFor='radobtn2' className='label-two'>Indepedent Professional working on behalf of a business.</label>
                  </div>
                  </div>
 
