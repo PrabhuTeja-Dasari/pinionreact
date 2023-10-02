@@ -61,8 +61,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       <Stepper.Step label="Personal Information">
         <Container>
           <div className='row'>
-          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
-          <div className='card'>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
             <div className='card-body'>
               {/* <h1 className='pb-4 main-heading'></h1> */}
               <Title order={4} id="main-heading">Tell us who you'd like to add</Title>
@@ -125,8 +124,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                  </div>
                  </div>
-                </div>
-                </div>
+                 </Card>
                 </div>
                 </Container>
 
@@ -136,9 +134,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
         
       <Container>
           <div className='row'>
-          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
-          <div className='card'>
-            <div className='card-body'>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            
               <h1 className='pb-4 main-heading'>Tell us about Prefered {data.fname}'s role</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
@@ -167,9 +164,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
                 <p className='last-name-style label-text'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
                 <TextInput id="inputStyle2" placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})} className='w-100'/>
-                </div>
-                </div>
-                </div>
+               
+                </Card>
                 </div>
                 </Container>
       </Stepper.Step>
