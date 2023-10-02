@@ -1,4 +1,4 @@
-import { Stack } from '@mantine/core'
+import { Stack,Card } from '@mantine/core'
 
 import { StatsGrid } from '@/components/common'
 import { statCards } from '@/utils/data'
@@ -9,6 +9,7 @@ function Home() {
     <div className="grid ">
       <Stack ml="xl" mt="xl" >
         <StatsGrid  data={statCards}   />
+
       </Stack>
     </div>
   )
