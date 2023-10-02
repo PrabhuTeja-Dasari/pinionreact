@@ -8,3 +8,10 @@
   text-decoration: none;
   display: inline-block;
 }
+
+.main-conatiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
