@@ -133,7 +133,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
       <Stepper.Step label="Role Information">
         
-      <div className='container'>
+      <Container>
           <div className='row'>
           <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='card'>
@@ -170,10 +170,10 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 </div>
                 </div>
                 </div>
-                </div>
+                </Container>
       </Stepper.Step>
       <Stepper.Step label="Compensation Information">
-      <div className='container'>
+     <Container>
           <div className='row'>
           <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='card'>
@@ -230,7 +230,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                 </div>
                 </div>
                 </div>
-                </div>  
+                </Container>  
                 </Stepper.Step>
 
       <Stepper.Completed>
