@@ -4,6 +4,7 @@ import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
 import axios from 'axios'
 import { e } from 'vitest/dist/index-5aad25c1';
+import { Checkbox } from 'flowbite-react';
 function AddEmployee(){
   const [active, setActive] = useState(0);
   const [data,Setdata]=useState({
@@ -174,40 +175,34 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       </Stepper.Step>
       <Stepper.Step label="Compensation Information">
      <Container>
-          <div className='row'>
-          <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
-          <div className='card'>
-            <div className='card-body'>
+        <Card shadow="sm" padding="lg" radius="md" withBorder>
               <h1 className='pb-4 main-heading'>How will {data.fname} be compansated ?</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
- 
-                <select className='input-style-2 w-100 mb-5' value={data.empmode} onChange={e=>Setdata({...data,empmode:e.target.value})}>
-                  <option value='' disabled >Select Employement Type</option>
-                   <option value="Permanent">Permanent</option>
-                   <option value="Contract">Contract</option>
-                </select>
+              <Select placeholder="Select Employement Type" id="inputStyle2" data={['Permanent', 'Contract']} value={data.empmode} onChange={(selectedOption) => Setdata({ ...data, empmode: selectedOption || '' })} />   
 
                 <div className='d-flex flex-row'>
                   <div>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Amount</h1>
-                <input type='text' className='input-style-3 mr-2 year-input ' value={data.amount} onChange={e=>Setdata({...data,amount:e.target.value})} placeholder='Enter Amount' />
+                <TextInput id="inputStyle3" placeholder='Enter Amount Value' className='mr-2 year-input' value={data.amount} onChange={e=>Setdata({...data,amount:e.target.value})}/>
                 </div>
 
                 <div>
                 <h1 className='Prefered-first-name mt-3 mr-2  pb-2'>Per</h1>
-                <select className='input-style-2 w-100 ml-2  mb-2' value={data.per} onChange={e=>Setdata({...data,per:e.target.value})}>
+                <select className='input-style-2 w-100 ml-2  mb-2'  value={data.per} onChange={e=>Setdata({...data,per:e.target.value})}>
                   <option value="" disabled  >Select Month/Year</option>
                    <option value="Month">Month</option>
                    <option value="Year">Year</option>
                 </select>
+                   
                 </div>
                 </div>
 
                 <div className='d-flex flex-row workerBtn p-2'>
                  <input type="checkbox" id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commision:e.target.value})}/>
                  <div>
-                    <label htmlFor='radobtn' className='label-two ' >This employee will receive commissions or other types of additional compensation.</label>
+                    <label htmlFor='radobtn' className='label-two ' ></label>
+                    {/* <Checkbox label="This employee will receive commissions or other types of additional compensation."/> */}
                  </div>
                  </div>
 
@@ -226,10 +221,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                    <option value="Yes">Yes</option>
                    <option value="No">No</option>
                 </select>    
-                </div>
-                </div>
-                </div>
-                </div>
+                </Card>
                 </Container>  
                 </Stepper.Step>
 

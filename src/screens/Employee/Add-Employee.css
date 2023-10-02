@@ -67,8 +67,19 @@
 .year-input {
     height: 36px;
 }
+#yearInput{
+    height: 36px;
+}
 
 .input-style-3 {
+    width: 600px;
+    display: flex;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: #f0f5f7;
+}
+#inputStyle3{
     width: 600px;
     display: flex;
     border-top: 0px;
