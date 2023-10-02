@@ -1,4 +1,4 @@
-import {Container,Card , Text,Button,Tabs,Table  } from '@mantine/core';
+import {Container,Card , Text,Button,Tabs,Table,Avatar,TextInput,Pagination   } from '@mantine/core';
 import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
 
 import './Employee.css'
@@ -44,11 +44,14 @@ function Employee() {
 </Tabs.List>
 
       <Tabs.Panel value="active">
+       <div>
+       <TextInput placeholder='Search People...'/>
+       </div>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
       <th>#</th>
-      <th>Name</th>
+      <th >Name</th>
       <th>Department</th>
       <th>Job Title</th>
       <th>Employement Type</th>
@@ -57,16 +60,20 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td>PrabhuTeja</td>
+          <td><Avatar color="cyan" radius="xl">MK</Avatar> PrabhuTeja</td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    <Pagination total={10} />
       </Tabs.Panel>
 
       <Tabs.Panel value="onboarding">
+      <div>
+       <TextInput placeholder='Search People...'/>
+       </div>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -80,16 +87,21 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td>Testing</td>
+          <td><Avatar color="cyan" radius="xl">MK</Avatar> Testing</td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    <Pagination total={10} />
+
       </Tabs.Panel>
 
       <Tabs.Panel value="offboarding">
+      <div>
+       <TextInput placeholder='Search People...'/>
+       </div>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -103,15 +115,20 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td>Testing123</td>
+          <td><Avatar color="cyan" radius="xl">MK</Avatar> Testing123</td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    <Pagination total={10} />
+
       </Tabs.Panel>
       <Tabs.Panel value="dismissed">
+      <div>
+       <TextInput placeholder='Search People...' />
+       </div>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -125,13 +142,15 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td>Testing1234567890</td>
+          <td><Avatar color="cyan" radius="xl">MK</Avatar> Testing1234567890</td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    <Pagination total={10} />
+
       </Tabs.Panel>
     </Tabs>
       </Card>
