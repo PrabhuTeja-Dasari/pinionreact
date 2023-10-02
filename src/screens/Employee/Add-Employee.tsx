@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Stepper, Button, Group, TextInput, PasswordInput, Code,Select,FileInput,NumberInput,Container,Card} from '@mantine/core';
+import { Stepper, Button, Group,Title , TextInput,Radio, PasswordInput, Code,Select,FileInput,NumberInput,Container,Card} from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
 import axios from 'axios'
@@ -46,13 +46,7 @@ function AddEmployee(){
   setActive((current) => {
     return current < 3 ? current + 1 : current;
   });
-  const innerstyle = {
-    borderTop: '0px',
-    borderLeft: '0px',
-    borderRight: '0px',
-    backgroundColor: '#f0f5f7 !important',
-  };
-  
+
 
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
   return(
@@ -68,47 +62,38 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
           <div className='col-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='card'>
             <div className='card-body'>
-              <h1 className='pb-4 main-heading'>Tell us who you'd like to add</h1>
+              {/* <h1 className='pb-4 main-heading'></h1> */}
+              <Title order={4} id="main-heading">Tell us who you'd like to add</Title>
               <div className='d-flex flex-row sub-container w-100'>
 
               <div className='w-100'>
-                <p>First Name</p>
-                <input type="text"  className='input-style w-100' placeholder='Enter First Name' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/>
-                {/* <TextInput style={innerstyle}  placeholder='Enter First Name' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/> */}
+                <TextInput placeholder='Enter First Name' label="First Name"  id='customInputStyle' value={data.fname} onChange={e=>Setdata({...data,fname:e.target.value})}/>
               </div>
 
               <div className='mb-3 ml-3 w-100'>
-                <p className='m-0'>Middle Initial (optional)</p>
-                <input type="text" placeholder='Enter Middle Initial' className='input-style w-100' value={data.mname} onChange={e=>Setdata({...data,mname:e.target.value})}/>
+                <TextInput placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={e=>Setdata({...data,mname:e.target.value})}/>
                </div>
                 </div>
 
-               <p className='last-name-style'>Last Name</p>
-                <input type='text' className='input-style-2 w-100' placeholder='Enter Last Name' value={data.lname} onChange={e=>Setdata({...data,lname:e.target.value})}/>
+                <TextInput placeholder='Enter Last Name' label="Last Name" id="inputStyle2" value={data.lname} onChange={e=>Setdata({...data,lname:e.target.value})} />
 
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
                <p className='label-text'>MyBizWhiz will use this name to refer to this person in communications 
                 where their legal first name is required (offer letter, onboarding emails, org etc)</p>
-                <input type='text' className='input-style-2 w-100' placeholder='Enter Prefered First Name' value={data.pfname} onChange={e=>Setdata({...data,pfname:e.target.value})}/> 
+                <TextInput placeholder=' Enter Prefered First Name'id="inputStyle2" value={data.pfname} onChange={e=>Setdata({...data,pfname:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
                <p className='label-text'>Use an existing address that's not associated with your company. This team member will use 
                 this email to sign in to MyBizWhiz and receive certain personal info.
                </p>
-                <input type='text' className='input-style-2 w-100' placeholder='Enter Personal Email' value={data.pemail} onChange={e=>Setdata({...data,pemail:e.target.value})}/>
+                <TextInput id="inputStyle2" value={data.pemail} placeholder='Enter Personal Email' onChange={e=>Setdata({...data,pemail:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
-                <select className='input-style-2 w-100 mb-5' value={data.Country} onChange={e=>Setdata({...data,Country:e.target.value})}>
-                  <option value=''>Select-</option>
-                   <option value="firstName">India</option>
-                   <option value="lastName">United States</option>
-                   <option value="">United Kingdom</option>
-                </select>
+                <Select placeholder="Select Country" id="inputStyle2" value={data.Country|| ''} data={['India', 'United States', 'United Kingdom']} onChange={(selectedOption) => Setdata({ ...data, Country: selectedOption||'' })}/>              
                 <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
                  <div className='d-flex flex-column'>
-                  
                 <div className='d-flex flex-row workerBtn p-2'>
-                <input type="radio" id='radobtn' className='mt-1 mr-2' name="label" value="Employee" onChange={e => Setdata({...data, worker: e.target.value})} />
+                  <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
                  <div>
                     <label htmlFor='radobtn' className='label-one'>Employee</label><br/>
                     <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
@@ -117,14 +102,14 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                   
                  <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn1' className='mt-1 mr-2' name="label" value="Individual Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
+                  <Radio value="Individual Contractor" id="radobtn" className='mt-1 mr-2' name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Individual Contractor"}/>
                  <div>
                     <label htmlFor='radobtn1' className='label-one'>Individual contractor</label><br/>
                     <label htmlFor='radobtn1' className='label-two'>Indepdent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
                  </div>
                  </div>
                  <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="radio" id='radobtn2' className='mt-1 mr-2' name="label" value="Business Contractor" onChange={e=>Setdata({...data,worker:e.target.value})}/>
+                  <Radio value="Business Contractor" id="radobtn" className='mt-1 mr-2' name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Business Contractor"}/>
                  <div>
                     <label htmlFor='radobtn2' className='label-one'>Business contractor</label><br/>
                     <label htmlFor='radobtn2' className='label-two'>Indepdent Professional working on behalf of a Business.</label>
@@ -150,29 +135,24 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
               <p className='last-name-style label-text'>Which location to select and learn about thier potential impacts on your business.</p>
-                <select className='input-style-2 w-100 mb-5' value={data.location} onChange={e=>Setdata({...data,location:e.target.value})}>
-                <option value="" disabled >Select-</option>
-                   <option value="work from home">Work from home</option>
-                   <option value="Work from office">Work from office</option>
-                   <option value="hybrid">Hybrid</option>
-                </select>
-
-
+              <Select placeholder="Select Location" id="inputStyle2" data={['Work From Home', 'Work From Office', 'Hybrid']} value={data.location} onChange={(selectedOption) => Setdata({ ...data, location: selectedOption || '' })} />              
                 <h1 className='Prefered-first-name mt-3 pb-2'>Work State</h1>
                 <p className='last-name-style label-text'>If this employee work from home,tell us the state where they work and live</p>
-                <select className='input-style-2 w-100 mb-5' onChange={e=>Setdata({...data,state:e.target.value})} value={data.state}>
-                   <option value="" disabled >Select State-</option> 
-                   <option value="India">India</option>
-                   <option value="United States">United States</option>
-                </select>
+                <Select placeholder="Select Location" id="inputStyle2" data={['Visakhapatnam,IN', 'Hyderabad,IN', 'Chicago,US']} value={data.location} onChange={(selectedOption) => Setdata({ ...data, location: selectedOption || '' })} />     
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
                <p className='last-name-style label-text'>Choose from your existing set of jobs or enter a new one.</p>
-                <input type='text' className='input-style-2 w-100' placeholder='Enter Job Title' value={data.jobtitle} onChange={e=>Setdata({...data,jobtitle:e.target.value})}/>
+               <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''}/>
 
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
                <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
-                <input type='date' className='input-style-2 w-100' value={data.jdate} onChange={e=>Setdata({...data,jdate:e.target.value})}/> 
+               
+                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100'value={data.jdate ? new Date(data.jdate) : null} onChange={(selectedDate: Date | null) => {
+    if (selectedDate !== null) {
+      const formattedDate = formatDate(selectedDate);
+      Setdata({ ...data, dob: formattedDate });
+    }
+  }}  />
 
                 <h1 className='Prefered-first-name mt-3'>Department</h1>
                 <input type='text' className='input-style-2 w-100' placeholder='Enter Department' value={data.deptid} onChange={e=>Setdata({...data,deptid:e.target.value})}/>
@@ -377,6 +357,14 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
     </div>
  
   )
+  function formatDate(date: Date): string {
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    return date.toLocaleDateString(undefined, options);
+  }
 }
 
 export default AddEmployee;
