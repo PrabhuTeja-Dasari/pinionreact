@@ -1,6 +1,6 @@
 import { Container,Card } from '@mantine/core';
 import './View-Employee.css';
-import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination   } from '@mantine/core';
+import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination    } from '@mantine/core';
 
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
@@ -31,6 +31,7 @@ function ViewEmployee(){
 }else{
     console.log("Not Found")
 }  
+
     return(
         <Container size="xl">
         <Card shadow="sm" radius="md" withBorder>
@@ -40,50 +41,170 @@ function ViewEmployee(){
         <p><span className="teamMebername">Team member</span>/Srikanth</p>
         </div>
 
-        <div className="teamMemberSection-2">
-        <p className="profile-section"></p>
-        <div className="input-name-section">
-        <p className="teamMembername-2">Srikanth</p>
-        <Tabs radius="md" defaultValue="gallery">
+<div className="teamMemberSection-2">
+
+<Avatar color="cyan" radius="xl" >MK</Avatar>
+
+    <div className="input-name-section">
+    <p className="teamMembername-2">Srikanth</p>
+    <Tabs radius="md" defaultValue="Job & Pay">
       <Tabs.List>
-        <Tabs.Tab value="gallery" >
-          Gallery
+        <Tabs.Tab value="Job & Pay" >
+        Job & Pay
         </Tabs.Tab>
-        <Tabs.Tab value="messages" >
-          Messages
+        <Tabs.Tab value="Personal" >
+        Personal
         </Tabs.Tab>
-        <Tabs.Tab value="settings">
-          Settings
+        <Tabs.Tab value="Performance">
+        Performance
+        </Tabs.Tab>
+        <Tabs.Tab value="Time Off">
+        Time Off
+        </Tabs.Tab>
+        <Tabs.Tab value="Apps">
+        Apps
+        </Tabs.Tab>
+        <Tabs.Tab value="Documents">
+        Documents
+        </Tabs.Tab>
+        <Tabs.Tab value="Benefits">
+        Benefits
+        </Tabs.Tab>
+        <Tabs.Tab value="Notes">
+        Notes
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="gallery">
-        Gallery tab content
+      <Tabs.Panel value="Job & Pay">
+
+      </Tabs.Panel>
+      <Tabs.Panel value="Personal">
+      <Container>
+        personal
+            </Container>
       </Tabs.Panel>
 
-      <Tabs.Panel value="messages">
-        Messages tab content
+      <Tabs.Panel value="Performance">
+      <Container>
+        performance
+            </Container>
       </Tabs.Panel>
-
-      <Tabs.Panel value="settings">
-        Settings tab content
+      <Tabs.Panel value="Time Off">
+      <Container>
+        timeoff
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Apps">
+      <Container>
+        apps
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Documents">
+      <Container>
+      Documents
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Benefits">
+      <Container>
+        benefits
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Notes">
+      <Container>
+        notes
+            </Container>
       </Tabs.Panel>
     </Tabs>
     </div>
+</div>
+
     <div className="sub-container">
-     <div className='sub-conatener-down-section'>
 
+    <div id='subContainerDownSection-2'>
+    <h3>Employee Details</h3>
+    <div id='subContainerDownSection-3'>
+    <div className='subContainerDownSection-4'>
+    <p className='department-p'>department</p>
+    <p className='department-p'>manager</p>
+    <p className='department-p'>Start date</p>
+    </div>
+    <div>
+    <p className='color-p'>edit</p>
+    </div>
+    </div>
+    <div id='subContainerDownSection-2'>
+    <h3>Manager Role</h3>
+    <div id='subContainerDownSection-3'>
+        <div className='subContainerDownSection-4'>
+        <p className='department-p'>Direct Reports</p>
+        <p className='color-p'>Add or remove direct reports</p>
+        </div>
+        <div>
+        <p className='color-p'>edit</p>
+        </div>
+        </div>
+    </div>
+    <div id='subContainerDownSection-2'>
+    <h3>Email</h3>
+    <div id='subContainerDownSection-3'>
+        <div className='subContainerDownSection-4'>
+        <p className='department-p'>Personal Email</p>
+        <p className='department-p'>Work Email</p>
+        </div>
+        <div>
+        <p className='color-p'>edit</p>
+        </div>
+        </div>
+    </div>
 
-     </div>
+    <div id='subContainerDownSection-2'>
+    <h3>Work Address</h3>
+    <div id='subContainerDownSection-3'>
+        <div className='subContainerDownSection-4'>
+        <p className='department-p'>Current Address</p>
+        <p className='workerPhone'>Phone</p>
+        </div>
+        <div>
+        <p className='color-p'>edit</p>
+        </div>
+        </div>
+    </div>
+
+    <div id='subContainerDownSection-2'>
+    <h3>Employment Status</h3>
+    <div id='subContainerDownSection-3'>
+        <div className='subContainerDownSection-4'>
+        <p className='workerphone'>Status</p>
+        </div>
+        <div>
+        <p className='color-p'>edit</p>
+        </div>
+        </div>
+    </div>
+    <div id='subContainerDownSection-2'>
+    <h3>Compensation</h3>
+    <div id='subContainerDownSection-3'>
+        <div className='subContainerDownSection-4'>
+        <p className='department-p'>Employee Type <span className='spanel'>dublicate</span></p>
+        <p className='department-pp'>Job Title <span className='spanel'>dublicate</span></p>
+        <p className='department-pp'>Wage <span className='spanel'>dublicate</span></p>
+        <p className='department-p'>Default hours <span className='spanel'>dublicate</span></p>
+        <p className='department-p'>Job Class Code <span className='spanel'>dublicate</span></p>
+        </div>
+        <div>
+        <p className='color-p'>edit</p>
+        </div>
+        </div>
+    </div>
+
     </div>
 
 
 
-
-
 </div>
 
 </div>
+
             </Card>
         </Container>
     )

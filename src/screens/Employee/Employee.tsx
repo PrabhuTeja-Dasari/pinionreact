@@ -29,22 +29,18 @@ useEffect(()=>{
       const getteammembers=await axios.get('https://localhost:7190/api/employee/getallemployees');
      console.log(getteammembers.data);
      const teammbersdata=getteammembers.data;
-    
-     const uniqueIds = Array.from(new Set(teammbersdata.map((item: { empStatus: any; }) => item.empStatus)));
-     console.log(uniqueIds);
-     const finaldata=[];
-     for(var i=0;i<uniqueIds.length;i++)
+     const finaldesignid=[];
+     for(var i=0;i<teammbersdata.length;i++)
      {
-      console.log(uniqueIds[i]);
-  const final = teammbersdata.filter((e: { empStatus: any; })=>e.empStatus===uniqueIds[i]);
-  console.log(final);
-  finaldata.push(final);
+      var obj={
+        "designid":teammbersdata[i].designationId
+      }
+      finaldesignid.push(obj);
      }
-     console.log(finaldata);
-    Setdata(finaldata[0]);
-    SetOff(finaldata[1]);
-    const totalpages = Math.ceil(finaldata.length/itemsperpage);
-    console.log(totalpages);
+     const filtereddata =finaldesignid.filter(designid=>designid !==null)
+    console.log(filtereddata);
+    const finaldata = finaldesignid.filter(e=>e.designid==null);
+    console.log(finaldata);
     }catch(err){
       console.error("Error fetching data",err);
     }
@@ -103,17 +99,7 @@ useEffect(()=>{
       <th>Employement Type</th>
       </tr>
       </thead>
-      <tbody>
-       {GetData.slice((currentPage-1)*itemsperpage,currentPage*itemsperpage).map((x,index)=>(
-        <tr key={index}>
-          <td>{index+1}</td>
-          <td>{x.displayName}</td>
-          <td>{x.departmentId || '-'}</td>
-          <td>{'-'}</td>
-          <td><a href="#" onClick={()=>viewteam(x)}>{x.empStatus}</a></td>
-        </tr>
-       ))}
-      </tbody>
+     
     </Table>
     </div>
     </div>
@@ -167,17 +153,7 @@ useEffect(()=>{
       <th>Employement Type</th>
       </tr>
       </thead>
-      <tbody>
-       {GetOff.slice((currentPage-1)*itemsperpage,currentPage*itemsperpage).map((y,index)=>(
-        <tr key={index}>
-          <td>{index+1}</td>
-          <td>{y.displayName}</td>
-          <td>{y.departmentId || '-'}</td>
-          <td>{'-'}</td>
-          <td>{y.empStatus}</td>
-        </tr>
-       ))}
-      </tbody>
+    
     </Table>
     </div>
     </div>
