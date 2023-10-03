@@ -18,35 +18,34 @@ function Employee() {
     departmentId:string;
 
   }
+  interface DesignationData {
+    designationId: any;
+    
+  }
   const[GetData,Setdata]=useState<companydetails[]>([]);
   const[GetOff,SetOff]=useState<companydetails[]>([]);
   const[currentPage,Setcurrentpage]=useState(1);
   const [itemsperpage]=useState(10);
 
-useEffect(()=>{
-  const getdata=async ()=>{
-    try{
-      const getteammembers=await axios.get('https://localhost:7190/api/employee/getallemployees');
-     console.log(getteammembers.data);
-     const teammbersdata=getteammembers.data;
-     const finaldesignid=[];
-     for(var i=0;i<teammbersdata.length;i++)
-     {
-      var obj={
-        "designid":teammbersdata[i].designationId
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const getteammembers = await axios.get('https://localhost:7190/api/employee/getallemployees');
+        const teammbersdata = getteammembers.data;
+        const getdesignation = await axios.get('https://localhost:7190/api/Designation/GetAllDesignation');
+        console.log(getdesignation.data);
+        for(var i=0;i<getdesignation.data.length;i++){
+          console.log(getdesignation.data[i]);
+          const uniquedesignation = teammbersdata.filter((e:any)=>e.designationId==getdesignation.data[i].designationId);
+          console.log(uniquedesignation);
+        }
+      }catch(err){
+        console.error("error fetching data",err);
       }
-      finaldesignid.push(obj);
-     }
-     const filtereddata =finaldesignid.filter(designid=>designid !==null)
-    console.log(filtereddata);
-    const finaldata = finaldesignid.filter(e=>e.designid==null);
-    console.log(finaldata);
-    }catch(err){
-      console.error("Error fetching data",err);
     }
-  }
-  getdata();
-},[])
+
+    fetchData();
+  }, []);
   return (
     <Container size="xl">
      <Card shadow="sm" radius="md" withBorder>
