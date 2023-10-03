@@ -46,9 +46,9 @@ function Employee() {
 </Tabs.List>
 
       <Tabs.Panel value="active">
-       <div>
-       <TextInput placeholder='Search People...'/>
-       </div>
+       <div className='pepole-section'>
+       <TextInput id='inputTextPeople' placeholder='Search People...'/>
+       <div className='nameSection'>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -62,20 +62,23 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td><Avatar color="cyan" radius="xl">MK</Avatar> PrabhuTeja</td>
+          <td className='nameAndicon'><Avatar color="cyan" radius="xl">MK</Avatar> <span className='nameSpan'>PrabhuTeja</span></td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    </div>
+    </div>
     <Pagination total={10} />
       </Tabs.Panel>
 
       <Tabs.Panel value="onboarding">
-      <div>
+
+      <div  className=''>
        <TextInput placeholder='Search People...'/>
-       </div>
+       
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -96,6 +99,7 @@ function Employee() {
         </tr>
       </tbody>
     </Table>
+    </div>
     <Pagination total={10} />
 
       </Tabs.Panel>
