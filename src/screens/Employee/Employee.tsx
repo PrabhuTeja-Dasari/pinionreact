@@ -4,7 +4,9 @@ import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react'
 import './Employee.css'
 function Employee() {
   const iconStyle = { width: rem(12), height: rem(12) };
-
+  const addteam=function(){
+    window.location.href='/AddTeamMember'
+  }
   return (
     <Container size="xl">
      <Card shadow="sm" radius="md" withBorder>
@@ -15,7 +17,7 @@ function Employee() {
       
       </div>
       <div>
-      <Button variant='default'>Add a Team Member</Button>
+      <Button variant='default' onClick={addteam}>Add a Team Member</Button>
       </div>
       
       </div>
@@ -74,9 +76,9 @@ function Employee() {
 
       <Tabs.Panel value="onboarding">
 
-      <div  className=''>
-       <TextInput placeholder='Search People...'/>
-       
+      <div  className='pepole-section'>
+       <TextInput id='inputTextPeople' placeholder='Search People...'/>
+       <div className='nameSection'>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -90,7 +92,7 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td><Avatar color="cyan" radius="xl">MK</Avatar> Testing</td>
+          <td className='nameAndicon'><Avatar color="cyan" radius="xl">MK</Avatar> <span className='nameSpan'>Testing</span></td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
@@ -98,12 +100,13 @@ function Employee() {
       </tbody>
     </Table>
     </div>
+    </div>
     <Pagination total={10} />
       </Tabs.Panel>
       <Tabs.Panel value="offboarding">
-      <div>
-       <TextInput placeholder='Search People...'/>
-       </div>
+      <div  className='pepole-section'>
+       <TextInput id="inputTextPeople" placeholder='Search People...'/>
+       <div className='nameSection'>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -117,20 +120,22 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td><Avatar color="cyan" radius="xl">MK</Avatar> Testing123</td>
+          <td className='nameAndicon'><Avatar color="cyan" radius="xl">MK</Avatar> <span className='nameSpan'>Testing123</span></td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    </div>
+    </div>
     <Pagination total={10} />
 
       </Tabs.Panel>
       <Tabs.Panel value="dismissed">
-      <div>
-       <TextInput placeholder='Search People...' />
-       </div>
+      <div  className='pepole-section'>
+       <TextInput id="inputTextPeople" placeholder='Search People...'/>
+       <div className='nameSection'>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
       <tr>
@@ -144,14 +149,17 @@ function Employee() {
       <tbody>
         <tr>
           <td>1</td>
-          <td><Avatar color="cyan" radius="xl">MK</Avatar> Testing1234567890</td>
+          <td className='nameAndicon'><Avatar color="cyan" radius="xl">MK</Avatar> <span className='nameSpan'>Testing1234567890</span></td>
           <td>-</td>
           <td>Jr.Software Engineer</td>
           <td>Employee</td>
         </tr>
       </tbody>
     </Table>
+    </div>
+    </div>
     <Pagination total={10} />
+    
 
       </Tabs.Panel>
     </Tabs>
