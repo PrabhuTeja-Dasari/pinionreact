@@ -1,9 +1,41 @@
 
+body {
+    margin: 0px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
 .main-container {
-    background-color: white;
+
     height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
  
 }
+
+
+.Personal-Information-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.first-name {
+    flex-grow: 2;
+    margin-right: 10px;
+    
+}
+
+.middile-name {
+    flex-grow: 2;
+}
+
+
 
 .main-heading {
     font-size: 20px;
@@ -17,13 +49,16 @@
     border-right: 0px;
     background-color: #f0f5f7;
 }
+
+
 .input-style-2 {
     display: flex;
     border-top: 0px;
+    flex-grow: 2;
     border-left: 0px;
     border-right: 0px;
     background-color: #f0f5f7;
-    width: 900px;
+   
 
 }
 #inputStyle2 {
@@ -32,16 +67,24 @@
     border-left: 0px;
     border-right: 0px;
     background-color: #f0f5f7;
-    width: 900px;
+
 
 }
+
+.compansation-subcontainer{
+margin: 15px;
+
+
+}
+
+
 
 .last-name-style {
     margin:0px;
 }
 
 .Prefered-first-name {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     display: inline-block;
     word-break:break-word;
@@ -49,30 +92,25 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+
 .br-style {
     height: 1px;
     width: 100px;
     color: black;
 }
 
-.label-one {
-    font-size: 17px;
-    font-weight: 500;
-}
 
-.label-two {
-    font-size: 16px;
-}
 
 .year-input {
     height: 36px;
 }
+
 #yearInput{
     height: 36px;
 }
 
 .input-style-3 {
-    width: 600px;
+
     display: flex;
     border-top: 0px;
     border-left: 0px;
@@ -91,4 +129,77 @@
 .label-text{
    font-size: 14px;
     color: #696969;
+}
+
+
+
+.worker-type-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+   
+}
+.rodio-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px;
+    margin: 10px;
+}
+
+.labels-conatiner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.label-one {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+.label-two {
+        font-size: 16px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+.Employement-type-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.per-year {
+    padding: 18px;
+}
+
+
+.Employement-status-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+
+.reviw-information {
+margin-bottom: 15px;
+}
+
+
+.role-and-edit-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.biz-whiz {
+    padding: 20px;
 }
