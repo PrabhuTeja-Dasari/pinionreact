@@ -5,6 +5,7 @@ import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination   } from '@mantine/co
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 function ViewEmployee(){
+
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const dataparms = params.get('data');
@@ -35,17 +36,15 @@ function ViewEmployee(){
         <Card shadow="sm" radius="md" withBorder>
         <div className="main-container">
 
-<div id="teamMemberSection">
-    <p><span className="teamMebername">Team member</span>/Srikanth</p>
-</div>
+        <div id="teamMemberSection">
+        <p><span className="teamMebername">Team member</span>/Srikanth</p>
+        </div>
 
-<div className="teamMemberSection-2">
-
-    <p className="profile-section"></p>
-
-    <div className="input-name-section">
-    <p className="teamMembername-2">Srikanth</p>
-    <Tabs radius="md" defaultValue="gallery">
+        <div className="teamMemberSection-2">
+        <p className="profile-section"></p>
+        <div className="input-name-section">
+        <p className="teamMembername-2">Srikanth</p>
+        <Tabs radius="md" defaultValue="gallery">
       <Tabs.List>
         <Tabs.Tab value="gallery" >
           Gallery
@@ -71,7 +70,17 @@ function ViewEmployee(){
       </Tabs.Panel>
     </Tabs>
     </div>
-    
+    <div className="sub-container">
+     <div className='sub-conatener-down-section'>
+
+
+     </div>
+    </div>
+
+
+
+
+
 </div>
 
 </div>

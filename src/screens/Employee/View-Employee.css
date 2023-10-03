@@ -145,3 +145,10 @@ body {
 .each_name {
   margin: 10px;
 }
+
+.sub-container {
+  display: flex;
+}
+.sub-conatener-down-section {
+  display: flex;
+}
