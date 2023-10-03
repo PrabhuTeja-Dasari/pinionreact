@@ -1,6 +1,6 @@
 import { Container,Card } from '@mantine/core';
 import './View-Employee.css';
-import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination   } from '@mantine/core';
+import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination    } from '@mantine/core';
 
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
@@ -30,6 +30,7 @@ function ViewEmployee(){
 }else{
     console.log("Not Found")
 }  
+
     return(
         <Container size="xl">
         <Card shadow="sm" radius="md" withBorder>
@@ -41,33 +42,79 @@ function ViewEmployee(){
 
 <div className="teamMemberSection-2">
 
-    <p className="profile-section"></p>
+<Avatar color="cyan" radius="xl" >MK</Avatar>
 
     <div className="input-name-section">
     <p className="teamMembername-2">Srikanth</p>
-    <Tabs radius="md" defaultValue="gallery">
+    <Tabs radius="md" defaultValue="Job & Pay">
       <Tabs.List>
-        <Tabs.Tab value="gallery" >
-          Gallery
+        <Tabs.Tab value="Job & Pay" >
+        Job & Pay
         </Tabs.Tab>
-        <Tabs.Tab value="messages" >
-          Messages
+        <Tabs.Tab value="Personal" >
+        Personal
         </Tabs.Tab>
-        <Tabs.Tab value="settings">
-          Settings
+        <Tabs.Tab value="Performance">
+        Performance
+        </Tabs.Tab>
+        <Tabs.Tab value="Time Off">
+        Time Off
+        </Tabs.Tab>
+        <Tabs.Tab value="Apps">
+        Apps
+        </Tabs.Tab>
+        <Tabs.Tab value="Documents">
+        Documents
+        </Tabs.Tab>
+        <Tabs.Tab value="Benefits">
+        Benefits
+        </Tabs.Tab>
+        <Tabs.Tab value="Notes">
+        Notes
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="gallery">
-        Gallery tab content
+      <Tabs.Panel value="Job & Pay">
+      <Container>
+        job
+            </Container>
       </Tabs.Panel>
 
-      <Tabs.Panel value="messages">
-        Messages tab content
+      <Tabs.Panel value="Personal">
+      <Container>
+        personal
+            </Container>
       </Tabs.Panel>
 
-      <Tabs.Panel value="settings">
-        Settings tab content
+      <Tabs.Panel value="Performance">
+      <Container>
+        performance
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Time Off">
+      <Container>
+        timeoff
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Apps">
+      <Container>
+        apps
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Documents">
+      <Container>
+      Documents
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Benefits">
+      <Container>
+        benefits
+            </Container>
+      </Tabs.Panel>
+      <Tabs.Panel value="Notes">
+      <Container>
+        notes
+            </Container>
       </Tabs.Panel>
     </Tabs>
     </div>
