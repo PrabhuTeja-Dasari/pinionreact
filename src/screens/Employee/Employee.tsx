@@ -99,9 +99,7 @@ function Employee() {
     </Table>
     </div>
     <Pagination total={10} />
-
       </Tabs.Panel>
-
       <Tabs.Panel value="offboarding">
       <div>
        <TextInput placeholder='Search People...'/>
