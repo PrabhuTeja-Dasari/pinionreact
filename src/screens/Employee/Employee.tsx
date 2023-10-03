@@ -1,12 +1,56 @@
 import {Container,Card , Text,Button,Tabs,Table,Avatar,TextInput,Pagination   } from '@mantine/core';
-import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
-
-import './Employee.css'
+import { IconSearch } from '@tabler/icons-react';
+import {useState,useEffect} from 'react'
+import './Employee.css';
+import axios from 'axios';
 function Employee() {
   const iconStyle = { width: rem(12), height: rem(12) };
   const addteam=function(){
     window.location.href='/AddTeamMember'
   }
+  const viewteam=function(data:any){
+    console.log(data);
+    window.location.href=`/ViewEmployee?data=${encodeURIComponent(JSON.stringify(data.userId))}`
+  }
+  type companydetails={
+    empStatus:string,
+    displayName:string,
+    departmentId:string;
+
+  }
+  const[GetData,Setdata]=useState<companydetails[]>([]);
+  const[GetOff,SetOff]=useState<companydetails[]>([]);
+  const[currentPage,Setcurrentpage]=useState(1);
+  const [itemsperpage]=useState(10);
+
+useEffect(()=>{
+  const getdata=async ()=>{
+    try{
+      const getteammembers=await axios.get('https://localhost:7190/api/employee/getallemployees');
+     console.log(getteammembers.data);
+     const teammbersdata=getteammembers.data;
+    
+     const uniqueIds = Array.from(new Set(teammbersdata.map((item: { empStatus: any; }) => item.empStatus)));
+     console.log(uniqueIds);
+     const finaldata=[];
+     for(var i=0;i<uniqueIds.length;i++)
+     {
+      console.log(uniqueIds[i]);
+  const final = teammbersdata.filter((e: { empStatus: any; })=>e.empStatus===uniqueIds[i]);
+  console.log(final);
+  finaldata.push(final);
+     }
+     console.log(finaldata);
+    Setdata(finaldata[0]);
+    SetOff(finaldata[1]);
+    const totalpages = Math.ceil(finaldata.length/itemsperpage);
+    console.log(totalpages);
+    }catch(err){
+      console.error("Error fetching data",err);
+    }
+  }
+  getdata();
+},[])
   return (
     <Container size="xl">
      <Card shadow="sm" radius="md" withBorder>
@@ -47,7 +91,7 @@ function Employee() {
 
       <Tabs.Panel value="active">
        <div className='pepole-section'>
-       <TextInput id='inputTextPeople' placeholder='Search People...'/>
+       <TextInput id='inputTextPeople' icon={<IconSearch size={14} />}  placeholder='Search People...'/>
        <div className='nameSection'>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>
@@ -60,18 +104,24 @@ function Employee() {
       </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td className='nameAndicon'><Avatar color="cyan" radius="xl">MK</Avatar> <span className='nameSpan'>PrabhuTeja</span></td>
-          <td>-</td>
-          <td>Jr.Software Engineer</td>
-          <td>Employee</td>
+       {GetData.slice((currentPage-1)*itemsperpage,currentPage*itemsperpage).map((x,index)=>(
+        <tr key={index}>
+          <td>{index+1}</td>
+          <td>{x.displayName}</td>
+          <td>{x.departmentId || '-'}</td>
+          <td>{'-'}</td>
+          <td><a href="#" onClick={()=>viewteam(x)}>{x.empStatus}</a></td>
         </tr>
+       ))}
       </tbody>
     </Table>
     </div>
     </div>
-    <Pagination total={10} />
+    <Pagination
+  initialPage={currentPage} // Use initialPage to set the initial page
+  onChange={(newPage) => Setcurrentpage(newPage)} // Handle page changes
+  total={Math.ceil(GetData.length / itemsperpage)} // Calculate total pages based on GetData length
+/>
       </Tabs.Panel>
 
       <Tabs.Panel value="onboarding">
@@ -120,18 +170,24 @@ function Employee() {
       </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td className='nameAndicon'><Avatar color="cyan" radius="xl">MK</Avatar> <span className='nameSpan'>Testing123</span></td>
-          <td>-</td>
-          <td>Jr.Software Engineer</td>
-          <td>Employee</td>
+       {GetOff.slice((currentPage-1)*itemsperpage,currentPage*itemsperpage).map((y,index)=>(
+        <tr key={index}>
+          <td>{index+1}</td>
+          <td>{y.displayName}</td>
+          <td>{y.departmentId || '-'}</td>
+          <td>{'-'}</td>
+          <td>{y.empStatus}</td>
         </tr>
+       ))}
       </tbody>
     </Table>
     </div>
     </div>
-    <Pagination total={10} />
+    <Pagination
+  initialPage={currentPage} 
+  onChange={(newPage) => Setcurrentpage(newPage)} 
+  total={Math.ceil(GetData.length / itemsperpage)} 
+/>
 
       </Tabs.Panel>
       <Tabs.Panel value="dismissed">
