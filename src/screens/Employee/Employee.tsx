@@ -33,12 +33,18 @@ function Employee() {
         const getteammembers = await axios.get('https://localhost:7190/api/employee/getallemployees');
         const teammbersdata = getteammembers.data;
         const getdesignation = await axios.get('https://localhost:7190/api/Designation/GetAllDesignation');
-        console.log(getdesignation.data);
+        var filtereddesignation=[];
         for(var i=0;i<getdesignation.data.length;i++){
-          console.log(getdesignation.data[i]);
           const uniquedesignation = teammbersdata.filter((e:any)=>e.designationId==getdesignation.data[i].designationId);
-          console.log(uniquedesignation);
+          if(uniquedesignation.length>0){
+            uniquedesignation.forEach((x: { designationname: any; })=>{
+              x.designationname=getdesignation.data[i].designationName
+            })
+          }
+          filtereddesignation.push(uniquedesignation);
         }
+        const filtereddata=filtereddesignation.filter((arr)=>arr.length>0);
+        console.log(filtereddata);
       }catch(err){
         console.error("error fetching data",err);
       }

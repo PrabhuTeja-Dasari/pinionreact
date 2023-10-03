@@ -76,7 +76,105 @@ function ViewEmployee(){
       </Tabs.List>
 
       <Tabs.Panel value="Job & Pay">
+      <div className="sub-container">
 
+<div id='subContainerDownSection-2'>
+<h3>Employee Details</h3>
+<div id='subContainerDownSection-3'>
+<div className='subContainerDownSection-4'>
+<p className='department-p'>department</p>
+<p className='department-p'>manager</p>
+<p className='department-p'>Start date</p>
+</div>
+<div>
+<p className='color-p'>edit</p>
+</div>
+</div>
+<div id='subContainerDownSection-2'>
+<h3>Manager Role</h3>
+<div id='subContainerDownSection-3'>
+    <div className='subContainerDownSection-4'>
+    <p className='department-p'>Direct Reports</p>
+    <p className='color-p'>Add or remove direct reports</p>
+    </div>
+    <div>
+    <p className='color-p'>edit</p>
+    </div>
+    </div>
+</div>
+<div id='subContainerDownSection-2'>
+<h3>Email</h3>
+<div id='subContainerDownSection-3'>
+    <div className='subContainerDownSection-4'>
+    <p className='department-p'>Personal Email</p>
+    <p className='department-p'>Work Email</p>
+    </div>
+    <div>
+    <p className='color-p'>edit</p>
+    </div>
+    </div>
+</div>
+
+<div id='subContainerDownSection-2'>
+<h3>Work Address</h3>
+<div id='subContainerDownSection-3'>
+    <div className='subContainerDownSection-4'>
+    <p className='department-p'>Current Address</p>
+    <p className='workerPhone'>Phone</p>
+    </div>
+    <div>
+    <p className='color-p'>edit</p>
+    </div>
+    </div>
+</div>
+
+<div id='subContainerDownSection-2'>
+<h3>Employment Status</h3>
+<div id='subContainerDownSection-3'>
+    <div className='subContainerDownSection-4'>
+    <p className='workerphone'>Status</p>
+    </div>
+    <div>
+    <p className='color-p'>edit</p>
+    </div>
+    </div>
+</div>
+<div id='subContainerDownSection-2'>
+<h3>Compensation</h3>
+<div id='subContainerDownSection-3'>
+    <div className='subContainerDownSection-4'>
+        <div className='sub-section-container5'>
+    <h1 className='department-p'>Employee Type </h1>
+    <p>Duplicate</p>
+    </div>
+    <div className='sub-section-container5'>
+    <h1 className='department-pp'>Job Title </h1>
+    <p>Duplicate</p>
+    </div>
+    <div className='sub-section-container5'>
+    <h1 className='department-pp'>Wage </h1>
+    <p>Duplicate</p>
+    </div> 
+    <div className='sub-section-container5'>
+    <h1 className='department-p'>Default hours </h1>
+    <p>Duplicate</p>
+    </div>
+    <div className='sub-section-container5'>
+    <h1 className='department-p'>Job Class Code </h1>
+    <p>Duplicate</p>
+    </div>
+    </div>
+    <div>
+    <p className='color-p'>edit</p>
+    </div>
+    </div>
+</div>
+
+</div>
+
+
+
+</div>
       </Tabs.Panel>
       <Tabs.Panel value="Personal">
       <Container>
@@ -118,90 +216,7 @@ function ViewEmployee(){
     </div>
 </div>
 
-    <div className="sub-container">
-
-    <div id='subContainerDownSection-2'>
-    <h3>Employee Details</h3>
-    <div id='subContainerDownSection-3'>
-    <div className='subContainerDownSection-4'>
-    <p className='department-p'>department</p>
-    <p className='department-p'>manager</p>
-    <p className='department-p'>Start date</p>
-    </div>
-    <div>
-    <p className='color-p'>edit</p>
-    </div>
-    </div>
-    <div id='subContainerDownSection-2'>
-    <h3>Manager Role</h3>
-    <div id='subContainerDownSection-3'>
-        <div className='subContainerDownSection-4'>
-        <p className='department-p'>Direct Reports</p>
-        <p className='color-p'>Add or remove direct reports</p>
-        </div>
-        <div>
-        <p className='color-p'>edit</p>
-        </div>
-        </div>
-    </div>
-    <div id='subContainerDownSection-2'>
-    <h3>Email</h3>
-    <div id='subContainerDownSection-3'>
-        <div className='subContainerDownSection-4'>
-        <p className='department-p'>Personal Email</p>
-        <p className='department-p'>Work Email</p>
-        </div>
-        <div>
-        <p className='color-p'>edit</p>
-        </div>
-        </div>
-    </div>
-
-    <div id='subContainerDownSection-2'>
-    <h3>Work Address</h3>
-    <div id='subContainerDownSection-3'>
-        <div className='subContainerDownSection-4'>
-        <p className='department-p'>Current Address</p>
-        <p className='workerPhone'>Phone</p>
-        </div>
-        <div>
-        <p className='color-p'>edit</p>
-        </div>
-        </div>
-    </div>
-
-    <div id='subContainerDownSection-2'>
-    <h3>Employment Status</h3>
-    <div id='subContainerDownSection-3'>
-        <div className='subContainerDownSection-4'>
-        <p className='workerphone'>Status</p>
-        </div>
-        <div>
-        <p className='color-p'>edit</p>
-        </div>
-        </div>
-    </div>
-    <div id='subContainerDownSection-2'>
-    <h3>Compensation</h3>
-    <div id='subContainerDownSection-3'>
-        <div className='subContainerDownSection-4'>
-        <p className='department-p'>Employee Type <span className='spanel'>dublicate</span></p>
-        <p className='department-pp'>Job Title <span className='spanel'>dublicate</span></p>
-        <p className='department-pp'>Wage <span className='spanel'>dublicate</span></p>
-        <p className='department-p'>Default hours <span className='spanel'>dublicate</span></p>
-        <p className='department-p'>Job Class Code <span className='spanel'>dublicate</span></p>
-        </div>
-        <div>
-        <p className='color-p'>edit</p>
-        </div>
-        </div>
-    </div>
-
-    </div>
-
-
-
-</div>
+    
 
 </div>
 
