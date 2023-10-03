@@ -3,8 +3,6 @@ import { Stepper, Button, Group,Title , TextInput,Radio, PasswordInput, Code,Sel
 import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
 import axios from 'axios'
-import { e } from 'vitest/dist/index-5aad25c1';
-import { Checkbox } from 'flowbite-react';
 function AddEmployee(){
   const [active, setActive] = useState(0);
   const [data,Setdata]=useState({

@@ -4,7 +4,9 @@ import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react'
 import './Employee.css'
 function Employee() {
   const iconStyle = { width: rem(12), height: rem(12) };
-
+  const addteam=function(){
+    window.location.href='/AddTeamMember'
+  }
   return (
     <Container size="xl">
      <Card shadow="sm" radius="md" withBorder>
@@ -15,7 +17,7 @@ function Employee() {
       
       </div>
       <div>
-      <Button variant='default'>Add a Team Member</Button>
+      <Button variant='default' onClick={addteam}>Add a Team Member</Button>
       </div>
       
       </div>
