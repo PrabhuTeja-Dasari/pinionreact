@@ -1,8 +1,9 @@
-import {useState,useEffect} from 'react';
-import axios from 'axios';
-import {Table,Container,Button} from '@mantine/core';
-import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
+import { Container,Card } from '@mantine/core';
+import './View-Employee.css';
+import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination   } from '@mantine/core';
 
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 function ViewEmployee(){
     const location = useLocation();
     const params = new URLSearchParams(location.search);
@@ -30,7 +31,58 @@ function ViewEmployee(){
     console.log("Not Found")
 }  
     return(
-        <></>
+        <Container size="xl">
+        <Card shadow="sm" radius="md" withBorder>
+        <div className="main-container">
+
+<div id="teamMemberSection">
+    <p><span className="teamMebername">Team member</span>/Srikanth</p>
+</div>
+
+<div className="teamMemberSection-2">
+
+    <p className="profile-section"></p>
+
+    <div className="input-name-section">
+    <p className="teamMembername-2">Srikanth</p>
+    <Tabs radius="md" defaultValue="gallery">
+      <Tabs.List>
+        <Tabs.Tab value="gallery" >
+          Gallery
+        </Tabs.Tab>
+        <Tabs.Tab value="messages" >
+          Messages
+        </Tabs.Tab>
+        <Tabs.Tab value="settings">
+          Settings
+        </Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value="gallery">
+        Gallery tab content
+      </Tabs.Panel>
+
+      <Tabs.Panel value="messages">
+        Messages tab content
+      </Tabs.Panel>
+
+      <Tabs.Panel value="settings">
+        Settings tab content
+      </Tabs.Panel>
+    </Tabs>
+    </div>
+    
+</div>
+
+</div>
+            </Card>
+        </Container>
     )
+    function rem(valueInPixels:any) {
+        return `${valueInPixels / 16}rem`; // Assuming 1rem = 16px
+      }
 }
 export default ViewEmployee;
+
+
+

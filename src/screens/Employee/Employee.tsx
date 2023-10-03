@@ -152,9 +152,7 @@ useEffect(()=>{
     </div>
     </div>
     <Pagination total={10} />
-
       </Tabs.Panel>
-
       <Tabs.Panel value="offboarding">
       <div  className='pepole-section'>
        <TextInput id="inputTextPeople" placeholder='Search People...'/>
