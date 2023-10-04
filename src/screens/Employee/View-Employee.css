@@ -32,15 +32,28 @@ body {
   
 }
 
-
-
+.avatar-and-name {
+  display: flex;
+  align-items: center;
+}
+.avatr-style {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
 .teamMembername {
   color: #0d8269;
   font-weight: 500;
   margin: 0px;
 }
 
-
+.teamMembername-2 {
+  padding-left: 10px;
+  font-size: 26px;
+  font-weight: 500;
+  color: black;
+  
+}
 
 .input-box-2 {
   margin: 0px;
@@ -73,10 +86,9 @@ body {
 
 .sub-container {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   padding-right: 0px;
   margin-right: 0px;
-  padding-top: 20px;
 
 }
 .sub-container-down-section {
@@ -100,7 +112,9 @@ h3 {
 #subContainerDownSection-2{
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
+
+  padding-top: 30px;
+
 
 }
 #subContainerDownSection-3 {
@@ -111,7 +125,10 @@ h3 {
   align-items: center;
   
 }
-
+.heading-and-edit-section {
+  display: flex;
+justify-content: space-between;
+}
 .department-p {
   margin-bottom: 5px;
 }
@@ -135,6 +152,7 @@ p {
 .color-p {
   color:#62b2b5;
   font-weight: 700;
+  padding-top: 20px;
  
 }
 
@@ -157,4 +175,74 @@ h2 {
   font-size: 15px;
   color:#62b2b5;
   color: #808080;
+}
+
+
+.sub-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f5f7;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sub-card-container-2 {
+   margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+#inputCard {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 15px;
+}
+
+.paystubs-heading {
+  font-size:20px;
+  font-weight: 700;
+}
+.recent-payStubs {
+  font-size: 17px;
+  color:#62b2b5;
+  font-weight: 700;
+  padding-left: 5px;
+}
+
+.paystubs-p {
+  font-size:17px;
+  font-weight: 500;
+  color: black;
+}
+
+.sub-card-container-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 5px;
+
+}
+.recent-payStubs-2 {
+  font-size: 17px;
+  color:#62b2b5;
+  font-weight: 700;
+  padding-left: 5px;
+ 
+}
+
+.additional-p {
+  font-size: 20px;
+  color: #808080;
+  width: 300px;
+}
+
+.cord-side-section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
 }

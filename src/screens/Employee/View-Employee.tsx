@@ -1,7 +1,7 @@
 import { Container,Card } from '@mantine/core';
 import './View-Employee.css';
 import {Text,Button,Tabs,Table,Avatar,TextInput,Pagination    } from '@mantine/core';
-
+import { useNavigate, Link, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 function ViewEmployee(){
@@ -42,12 +42,11 @@ function ViewEmployee(){
         </div>
 
 <div className="teamMemberSection-2">
-
-<Avatar color="cyan" radius="xl" >MK</Avatar>
-
+<Avatar color="cyan" className='avatr-style' radius="xl" >MK</Avatar>
     <div className="input-name-section">
     <p className="teamMembername-2">Srikanth</p>
     <Tabs radius="md" defaultValue="Job & Pay">
+   
       <Tabs.List>
         <Tabs.Tab value="Job & Pay" >
         Job & Pay
@@ -79,8 +78,13 @@ function ViewEmployee(){
 
     <div className="sub-container">
     <div id='subContainerDownSection-main'>
+
     <div id='subContainerDownSection-2'>
+    <div className='heading-and-edit-section'>
     <h3>Employment details</h3>
+    <p className='color-p'>edit</p>
+    </div>
+
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container5'>
@@ -96,12 +100,14 @@ function ViewEmployee(){
         <p className='addname-p'>Dublicate</p>
         </div>
         </div>
-        <p className='color-p'>edit</p>
         </div>
     </div>
 
     <div id='subContainerDownSection-2'>
-    <h3>Manager role</h3>
+    <div className='heading-and-edit-section'>
+    <h3>manager role</h3>
+    <p className='color-p'>edit</p>
+    </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container5'>
@@ -112,12 +118,14 @@ function ViewEmployee(){
         <p className='color-p'>Add or Remove Direct Reports</p>
         </div>
         </div>
-        <p className='color-p'>edit</p>
         </div>
     </div>
 
     <div id='subContainerDownSection-2'>
+    <div className='heading-and-edit-section'>
     <h3>Email</h3>
+    <p className='color-p'>edit</p>
+    </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container5'>
@@ -129,13 +137,16 @@ function ViewEmployee(){
         <p className='addname-p'>Duplicate</p>
         </div>
         </div>
-        <p className='color-p'>edit</p>
+
         </div>
     </div>
 
 
     <div id='subContainerDownSection-2'>
-    <h3>Work Address</h3>
+    <div className='heading-and-edit-section'>
+    <h3>Work Adress</h3>
+    <p className='color-p'>edit</p>
+    </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container5'>
@@ -147,13 +158,15 @@ function ViewEmployee(){
         <p className='addname-p'>Duplicate</p>
         </div>
         </div>
-        <p className='color-p'>edit</p>
         </div>
     </div>
 
-
+    
     <div id='subContainerDownSection-2'>
-    <h3>Employee Status</h3>
+    <div className='heading-and-edit-section'>
+    <h3>Employee status</h3>
+    <p className='color-p'>edit</p>
+    </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container5'>
@@ -161,12 +174,15 @@ function ViewEmployee(){
         <p className='addname-p'>Duplicate</p>
         </div>
         </div>
-        <p className='color-p'>edit</p>
+
         </div>
     </div>
 
     <div id='subContainerDownSection-2'>
-    <h3>Compensation</h3>
+    <div className='heading-and-edit-section'>
+    <h3>Email</h3>
+    <p className='color-p'>edit</p>
+    </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container5'>
@@ -190,14 +206,59 @@ function ViewEmployee(){
         <p className='addname-p'>Duplicate</p>
         </div>
         </div>
-        <p className='color-p'>edit</p>
+
         </div>   
     </div>
   </div>
 
-    <div>
+    <div  className='cord-side-section'>
   <Card>
-    
+    <div className='sub-card-container'>
+        <h4 className='paystubs-heading'>PayStubs</h4>
+        <div className='sub-card-container-2'>
+        <i className="fa fa-file"></i>
+        <p className='recent-payStubs'>Most recent paystubs (22-3-23)</p>
+        </div>
+        <p className='paystubs-p'>Previous paystubs by payday</p>
+        <TextInput id='inputCard' placeholder='select...'></TextInput>
+        <Button variant="default">Button</Button>
+    </div>  
+  </Card>
+
+  <Card>
+    <div className='sub-card-container'>
+        <h4 className='paystubs-heading'>Additional payrolls</h4>
+        <div className='sub-card-container-3'>
+        <i className="fa fa-file"></i>
+        <p className='recent-payStubs'>Run bonus roll</p>
+        </div>
+        <div className='sub-card-container-3'>
+        <i className="fa fa-file"></i>
+        <p className='recent-payStubs-2'>Run bonus roll</p>
+        </div>
+    </div>  
+  </Card>
+
+  <Card>
+    <div className='sub-card-container'>
+        <h4 className='paystubs-heading'>Onboarding</h4>
+        <p className='additional-p'>there are 2 left check or lists</p>
+        <div className='sub-card-container-3'>
+        <i className="fa fa-file"></i>
+        <p className='recent-payStubs-2'>Run bonus roll</p>
+        </div>
+    </div>  
+  </Card>
+
+  <Card>
+    <div className='sub-card-container'>
+        <h4 className='paystubs-heading'>Actions</h4>
+        <p className='additional-p'>Need to dismiss this employee? we'll walk through it.</p>
+        <div className='sub-card-container-3'>
+        <i className="fa fa-file"></i>
+        <p className='recent-payStubs-2'>Run bonus roll</p>
+        </div>
+    </div>  
   </Card>
     </div>
 
