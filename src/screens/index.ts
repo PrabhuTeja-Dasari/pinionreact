@@ -1,5 +1,5 @@
 export { default as Dashboard } from './Dashboard'
-export { default as AddEmployee } from './Employee/Add-Employee'
+export { default as AddEmployee } from './Employee/AddEmployee'
 export { default as EditEmployee } from './Employee/Edit-Employee'
 export { default as Employee } from './Employee/Employee'
 export { default as NotFound } from './NotFound/NotFound'

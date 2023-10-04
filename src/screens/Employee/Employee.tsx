@@ -25,6 +25,7 @@ function Employee() {
   }
   const[GetData,Setdata]=useState<companydetails[]>([]);
   const[GetOff,SetOff]=useState<companydetails[]>([]);
+  const[getpermanent,Setpermanent]=useState<companydetails[]>([]);
   const[currentPage,Setcurrentpage]=useState(1);
   const [itemsperpage]=useState(10);
 
@@ -60,6 +61,8 @@ function Employee() {
         console.log(finalfiltereddata);
         Setdata(finalfiltereddata[0]);
         SetOff(finalfiltereddata[1]);
+        Setpermanent(finalfiltereddata[2]);
+
       }catch(err){
         console.error("error fetching data",err);
       }
@@ -101,6 +104,11 @@ function Employee() {
   <Tabs.Tab value="dismissed">
     <div className="tab-content">
       Dismissed
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab value="permanent">
+    <div className="tab-content">
+      Permanent
     </div>
   </Tabs.Tab>
 </Tabs.List>
@@ -234,6 +242,42 @@ function Employee() {
     </div>
     <Pagination total={10} />
     
+
+      </Tabs.Panel>
+      <Tabs.Panel value="permanent">
+      <div  className='pepole-section'>
+       <TextInput id="inputTextPeople" placeholder='Search People...'/>
+       <div className='nameSection'>
+      <Table striped highlightOnHover withBorder withColumnBorders>
+     <thead>
+      <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Job Title</th>
+      <th>Employement Type</th>
+      </tr>
+      </thead>
+      <tbody>
+        {getpermanent.slice((currentPage - 1) * itemsperpage, currentPage * itemsperpage).map((x,index)=>(
+          <tr key={index}>
+            <td>{index+1}</td>
+            <td>{x.displayName}</td>
+            <td>{x.departmentId||'-'}</td>
+            <td>{x.designationname}</td>
+            <td>{x.empStatus}</td>
+          </tr>
+        ))}
+      </tbody>
+    
+    </Table>
+    </div>
+    </div>
+    <Pagination
+  initialPage={currentPage} 
+  onChange={(newPage) => Setcurrentpage(newPage)} 
+  total={Math.ceil(GetOff.length / itemsperpage)} 
+/>
 
       </Tabs.Panel>
     </Tabs>
