@@ -7,12 +7,41 @@
 
 
 }
+
+.Date-aligns{
+    margin-top: 10px;
+    margin-bottom : 5px;
+}
+
+.Radio-section{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.look-out-letters{
+    background-color: #f0f5f7;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+
+
 .radio-btn-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     margin: 0px;
-    margin: 10px;
+    margin: 6px;
+}
+
+.Reason.align{
+    margin-top: 5px;
 }
 
 
@@ -29,7 +58,7 @@
 }
 .worker-type-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 10px;
    

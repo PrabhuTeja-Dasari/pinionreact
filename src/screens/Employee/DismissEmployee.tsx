@@ -37,14 +37,15 @@ function DismissEmployee(){
                                 <div className='row'>
                                 <Card>
                                     <div className='p-lg'>
-                                        <div className='card-body'>
-                                        <Box bg="" my="xl" component="a" >
-                                        Look out for letters from your health insurance carriers
-    Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
-    If you get one, make sure to pass that along to MyBizWhiz so we can help.
-        </Box>
-        <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
-        
+                                      
+            <div className='card-body'>
+                <div className='look-out-letters'>
+                Look out for letters from your health insurance carriers
+                Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
+                If you get one, make sure to pass that along to MyBizWhiz so we can help.
+                </div>
+                <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
+        <div className='Date-aligns'>
         <h5>Employee's Last Day</h5>
         <DatePicker id = 'inputStyle2' placeholder="Pick date"  onChange={(selectedDate: Date | null) => {
        
@@ -53,6 +54,8 @@ function DismissEmployee(){
           Setdata({ ...data, emplastdate: formattedDate });
         }
       }} />
+      </div>
+      <div className='Radio-section'> 
      <h1 className='Prefered-first-name pt-3 pb-3'>Did Uday choose to leave ?</h1>  
      <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
                      <div className='worker-type-container'>
@@ -69,20 +72,25 @@ function DismissEmployee(){
                      </div>
                      </div>
                      </div>
+                     </div>
+                     <div className='Reason-align'>
                         <h5>Reason For Dismissal (optional)</h5>
                         <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
-                       <Select placeholder='Choose one'  data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']} onChange={(e:any)=>Setdata({...data,reason:e.target.value})}  />
-                       <Container bg="" my="xl" >
-                        <Card>
+                       <Select placeholder='Choose one' id = 'inputStyle2' data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']} onChange={(e:any)=>Setdata({...data,reason:e.target.value})}  />
+                       </div>
+
+                       <div className='look-out-letters'>
+                        
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
-                       </Card>
-        </Container>
+                       
+                       </div>
+        
         <h5>Uday's Personal Email</h5>
         <p>This is the email that Uday will use to sign into MyBizWhiz later for W-2 forms.</p>
-        <TextInput placeholder='Enter email'></TextInput>
+        <TextInput id = 'inputStyle2' placeholder='Enter email'></TextInput>
         <h5>Dismissal notes (optional)</h5>
         <p>Only admins will see these notes.</p>
-        <Textarea placeholder='For example: Jordan moved out of the country to help his family'></Textarea>
+        <Textarea id = 'inputStyle2' placeholder='For example: Jordan moved out of the country to help his family'></Textarea>
                                         </div>
     
                                     </div>
