@@ -78,7 +78,7 @@ function DismissEmployee(){
                      <div className='Reason-align'>
                         <h5>Reason For Dismissal (optional)</h5>
                         <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
-                       <Select placeholder='Choose one' id = 'inputStyle2' data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']} onChange={(e:any)=>Setdata({...data,reason:e.target.value})}  />
+                        <Select placeholder="Choose One" id="inputStyle2" data={['Carrer advancement', 'Compensation', 'Leave of absence','Personal resons','Relocation','Return to shool','Type of work','other']} value={data.leaving} onChange={(selectedOption) => Setdata({ ...data, leaving: selectedOption || '' })} />     
                        </div>
 
                        <div className='look-out-letters'>
