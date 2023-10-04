@@ -35,12 +35,12 @@ function ViewEmployee(){
     return(
         <Container size="xl">
         <Card shadow="sm" radius="md" withBorder>
-        <div className="main-container">
 
-        <div id="teamMemberSection">
-        <p><span className="teamMebername">Team member</span>/Srikanth</p>
-        </div>
 
+        
+
+<div className="main-container">
+<p className="teamMebername-1"><span className="teamMebername">Team member</span>/Srikanth</p>
 <div className="teamMemberSection-2">
 <Avatar color="cyan" className='avatr-style' radius="xl" >MK</Avatar>
     <div className="input-name-section">
@@ -155,7 +155,7 @@ function ViewEmployee(){
         </div>
         <div className='sub-section-container5'>
         <h2 className='department-pp'>phone </h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>Duplicate </p>
         </div>
         </div>
         </div>
