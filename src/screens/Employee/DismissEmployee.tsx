@@ -30,7 +30,6 @@ function DismissEmployee(){
     return(
         <div id="main-container">
             <div className='row'>
-                <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                     <form>
                         <Stepper active={active}>
                             <Stepper.Step label= 'Enter Dismissal Details'>
@@ -135,7 +134,7 @@ function DismissEmployee(){
     
                         </Stepper>
                     </form>
-                </div>
+            
                 <Group className="p-4" style={{ justifyContent: 'flex-end'}} mt="xl">
           {active !== 0 &&  active !==3 &&(
             <Button variant="default" onClick={prevStep}>
