@@ -5,34 +5,11 @@ import './DismissEmployee.css'
 function DismissEmployee(){
     const [active, setActive] = useState(0);
     const [data,Setdata]=useState({
-        fname:'',
-        mname:'',
-        lname:'',
-        dob:'',
-        gender:'',
-        marital:'',
-        photo:'',
-        pemail:'',
-        dname:'',
-        empid:'',
-        jdate:'',
-        empmode:'',
-        workmobile:'',
-        workemail:'',
-        financial:'',
-        pfname:'',
-        Country:'',
-        worker:'',
-        location:'',
-        state:'',
-        jobtitle:'',
-        deptid:'',
-        manager:'',
-        amount:'',
-        per:'',
-        commision:'',
-        empstatus:'',
-        tax:''
+       emplastdate:'',
+       leaving:'',
+       reason:'',
+       email:'',
+       notes:''
     
       })
     
@@ -74,20 +51,20 @@ function DismissEmployee(){
        
        if (selectedDate !== null) {
           const formattedDate = formatDate(selectedDate);
-          Setdata({ ...data, dob: formattedDate });
+          Setdata({ ...data, emplastdate: formattedDate });
         }
       }} />
      <h1 className='Prefered-first-name pt-3 pb-3'>Did Uday choose to leave ?</h1>  
      <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
                      <div className='worker-type-container'>
                        <div className='radio-btn-container'>
-                      <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                      <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="Yes"} />
                      <div className='labels-container'>
                         <label htmlFor='radobtn' className='label-one'>Yes - Uday is leaving voluntarily</label>
                      </div>
                      </div>
                      <div className='radio-btn-container'>
-                      <Radio value="Employee" id=" radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                      <Radio value="Employee" id=" radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="No"} />
                      <div className='labels-container'>
                         <label htmlFor='radobtn1' className='label-one'>No - Uday didn't choose to leave</label>
                      </div>
@@ -95,7 +72,7 @@ function DismissEmployee(){
                      </div>
                         <h5>Reason For Dismissal (optional)</h5>
                         <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
-                       <Select placeholder='Choose one'  data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']} />
+                       <Select placeholder='Choose one'  data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']} onChange={(e:any)=>Setdata({...data,reason:e.target.value})}  />
                        <Container bg="" my="xl" >
                         <Card>
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
@@ -116,7 +93,43 @@ function DismissEmployee(){
                             </Stepper.Step>
                             <Stepper.Step label ='Review and Dismiss'>
                                 <Card>
-                                <p>Review and dismiss working</p>
+                                <Container>
+                                <div className='row'>
+                                <Card>
+                                    <div className='p-lg'>
+                                        <div className='card-body'>
+                                        <Box bg="" my="xl" component="a" >
+                                        Look out for letters from your health insurance carriers
+    Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
+    If you get one, make sure to pass that along to MyBizWhiz so we can help.
+        </Box>
+        <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
+        
+        <h5>Employee's Last Day</h5>
+        <p>{data.emplastdate}</p>
+     <h1 className='Prefered-first-name pt-3 pb-3'>Did Uday choose to leave ?</h1>  
+     <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
+     <p>{data.leaving}</p>
+                        <h5>Reason For Dismissal (optional)</h5>
+                        <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
+                        <p>{data.reason}</p>
+                       <Container bg="" my="xl" >
+                        <Card>
+                       Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
+                       </Card>
+        </Container>
+        <h5>Uday's Personal Email</h5>
+        <p>This is the email that Uday will use to sign into MyBizWhiz later for W-2 forms.</p>
+        <p>{data.email}</p>
+        <h5>Dismissal notes (optional)</h5>
+        <p>Only admins will see these notes.</p>
+        <p>{data.notes}</p>
+                                        </div>
+    
+                                    </div>
+                                </Card>
+                                </div>
+                            </Container>
                                 </Card>                          
                             </Stepper.Step>
     
