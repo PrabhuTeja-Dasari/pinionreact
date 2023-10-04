@@ -15,7 +15,8 @@ function Employee() {
   type companydetails={
     empStatus:string,
     displayName:string,
-    departmentId:string;
+    departmentId:string,
+    designationname:string
 
   }
   interface DesignationData {
@@ -24,6 +25,7 @@ function Employee() {
   }
   const[GetData,Setdata]=useState<companydetails[]>([]);
   const[GetOff,SetOff]=useState<companydetails[]>([]);
+  const[getpermanent,Setpermanent]=useState<companydetails[]>([]);
   const[currentPage,Setcurrentpage]=useState(1);
   const [itemsperpage]=useState(10);
 
@@ -44,7 +46,23 @@ function Employee() {
           filtereddesignation.push(uniquedesignation);
         }
         const filtereddata=filtereddesignation.filter((arr)=>arr.length>0);
-        console.log(filtereddata);
+        const uniqueIds = Array.from(new Set(teammbersdata.map((item: { empStatus: any; }) => item.empStatus)));
+        const finalarraydata: any[]=[];
+        for(var j=0;j<filtereddata.length;j++){
+          filtereddata[j].forEach((x: any) => {
+          finalarraydata.push(x)
+        })
+        }
+        const finalfiltereddata=[];
+        for(var k=0;k<uniqueIds.length;k++){
+          const filterstatus=finalarraydata.filter(e=>e.empStatus===uniqueIds[k]);
+          finalfiltereddata.push(filterstatus);
+        }
+        console.log(finalfiltereddata);
+        Setdata(finalfiltereddata[0]);
+        SetOff(finalfiltereddata[1]);
+        Setpermanent(finalfiltereddata[2]);
+
       }catch(err){
         console.error("error fetching data",err);
       }
@@ -88,6 +106,11 @@ function Employee() {
       Dismissed
     </div>
   </Tabs.Tab>
+  <Tabs.Tab value="permanent">
+    <div className="tab-content">
+      Permanent
+    </div>
+  </Tabs.Tab>
 </Tabs.List>
 
       <Tabs.Panel value="active">
@@ -104,6 +127,17 @@ function Employee() {
       <th>Employement Type</th>
       </tr>
       </thead>
+      <tbody>
+        {GetData.slice((currentPage - 1) * itemsperpage, currentPage * itemsperpage).map((x,index)=>(
+          <tr key={index}>
+            <td>{index+1}</td>
+            <td>{x.displayName}</td>
+            <td>{x.departmentId|| '-'}</td>
+            <td>{x.designationname}</td>
+            <td>{x.empStatus}</td>
+          </tr>
+        ))}
+      </tbody>
      
     </Table>
     </div>
@@ -158,6 +192,17 @@ function Employee() {
       <th>Employement Type</th>
       </tr>
       </thead>
+      <tbody>
+        {GetOff.slice((currentPage - 1) * itemsperpage, currentPage * itemsperpage).map((x,index)=>(
+          <tr key={index}>
+            <td>{index+1}</td>
+            <td>{x.displayName}</td>
+            <td>{x.departmentId||'-'}</td>
+            <td>{x.designationname}</td>
+            <td>{x.empStatus}</td>
+          </tr>
+        ))}
+      </tbody>
     
     </Table>
     </div>
@@ -165,7 +210,7 @@ function Employee() {
     <Pagination
   initialPage={currentPage} 
   onChange={(newPage) => Setcurrentpage(newPage)} 
-  total={Math.ceil(GetData.length / itemsperpage)} 
+  total={Math.ceil(GetOff.length / itemsperpage)} 
 />
 
       </Tabs.Panel>
@@ -197,6 +242,42 @@ function Employee() {
     </div>
     <Pagination total={10} />
     
+
+      </Tabs.Panel>
+      <Tabs.Panel value="permanent">
+      <div  className='pepole-section'>
+       <TextInput id="inputTextPeople" placeholder='Search People...'/>
+       <div className='nameSection'>
+      <Table striped highlightOnHover withBorder withColumnBorders>
+     <thead>
+      <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Job Title</th>
+      <th>Employement Type</th>
+      </tr>
+      </thead>
+      <tbody>
+        {getpermanent.slice((currentPage - 1) * itemsperpage, currentPage * itemsperpage).map((x,index)=>(
+          <tr key={index}>
+            <td>{index+1}</td>
+            <td>{x.displayName}</td>
+            <td>{x.departmentId||'-'}</td>
+            <td>{x.designationname}</td>
+            <td>{x.empStatus}</td>
+          </tr>
+        ))}
+      </tbody>
+    
+    </Table>
+    </div>
+    </div>
+    <Pagination
+  initialPage={currentPage} 
+  onChange={(newPage) => Setcurrentpage(newPage)} 
+  total={Math.ceil(GetOff.length / itemsperpage)} 
+/>
 
       </Tabs.Panel>
     </Tabs>

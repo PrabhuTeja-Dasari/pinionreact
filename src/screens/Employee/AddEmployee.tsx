@@ -51,7 +51,7 @@ function AddEmployee(){
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
   return(
 
-    <div className='main-container'>
+    <div  id="main-container">
       <div className='row'>
       <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <form >
@@ -65,14 +65,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               {/* <h1 className='pb-4 main-heading'></h1> */}
               <Title order={4} id="main-heading">Tell us who you'd like to add</Title>
               <div className='Personal-Information-container'>
-              <TextInput
-  placeholder='Enter First Name'
-  label="First Name"
-  id='customInputStyle'
-  className='first-name'
-  value={data.fname}
-  onChange={(e) => Setdata({ ...data, fname: e.target.value })}
-/>
+              <TextInput placeholder='Enter First Name' label="First Name" id='customInputStyle' className='first-name' value={data.fname} onChange={(e) => Setdata({ ...data, fname: e.target.value })}/>
             
                 <TextInput className='middile-name' placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
                </div>

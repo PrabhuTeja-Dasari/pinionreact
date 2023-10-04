@@ -7,13 +7,12 @@ body {
     box-sizing: border-box;
 }
 
-.main-container {
+#main-container {
 
     height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
- 
 }
 
 

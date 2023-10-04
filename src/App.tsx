@@ -14,7 +14,7 @@ import {
   TimeTracking,
   CompanyDetails,
   Documents,
-  
+  DismissEmployee
   
 } from '@/screens'
 import ViewEmployee from "@/screens/Employee/View-Employee";
@@ -56,6 +56,7 @@ function App() {
               <Route path='/Documents' element={<Documents/>}/>
               <Route path='/ViewEmployee' element ={<ViewEmployee/>}/>
               <Route path ='/Document' element={<Document/>}/>
+              <Route path='/DismissTeamMember' element={<DismissEmployee/>}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
