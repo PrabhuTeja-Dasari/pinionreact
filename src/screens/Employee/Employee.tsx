@@ -15,7 +15,8 @@ function Employee() {
   type companydetails={
     empStatus:string,
     displayName:string,
-    departmentId:string;
+    departmentId:string,
+    designationname:string
 
   }
   interface DesignationData {
@@ -44,7 +45,21 @@ function Employee() {
           filtereddesignation.push(uniquedesignation);
         }
         const filtereddata=filtereddesignation.filter((arr)=>arr.length>0);
-        console.log(filtereddata);
+        const uniqueIds = Array.from(new Set(teammbersdata.map((item: { empStatus: any; }) => item.empStatus)));
+        const finalarraydata: any[]=[];
+        for(var j=0;j<filtereddata.length;j++){
+          filtereddata[j].forEach((x: any) => {
+          finalarraydata.push(x)
+        })
+        }
+        const finalfiltereddata=[];
+        for(var k=0;k<uniqueIds.length;k++){
+          const filterstatus=finalarraydata.filter(e=>e.empStatus===uniqueIds[k]);
+          finalfiltereddata.push(filterstatus);
+        }
+        console.log(finalfiltereddata);
+        Setdata(finalfiltereddata[0]);
+        SetOff(finalfiltereddata[1]);
       }catch(err){
         console.error("error fetching data",err);
       }
@@ -104,6 +119,17 @@ function Employee() {
       <th>Employement Type</th>
       </tr>
       </thead>
+      <tbody>
+        {GetData.slice((currentPage - 1) * itemsperpage, currentPage * itemsperpage).map((x,index)=>(
+          <tr key={index}>
+            <td>{index+1}</td>
+            <td>{x.displayName}</td>
+            <td>{x.departmentId|| '-'}</td>
+            <td>{x.designationname}</td>
+            <td>{x.empStatus}</td>
+          </tr>
+        ))}
+      </tbody>
      
     </Table>
     </div>
@@ -158,6 +184,17 @@ function Employee() {
       <th>Employement Type</th>
       </tr>
       </thead>
+      <tbody>
+        {GetOff.slice((currentPage - 1) * itemsperpage, currentPage * itemsperpage).map((x,index)=>(
+          <tr key={index}>
+            <td>{index+1}</td>
+            <td>{x.displayName}</td>
+            <td>{x.departmentId||'-'}</td>
+            <td>{x.designationname}</td>
+            <td>{x.empStatus}</td>
+          </tr>
+        ))}
+      </tbody>
     
     </Table>
     </div>
@@ -165,7 +202,7 @@ function Employee() {
     <Pagination
   initialPage={currentPage} 
   onChange={(newPage) => Setcurrentpage(newPage)} 
-  total={Math.ceil(GetData.length / itemsperpage)} 
+  total={Math.ceil(GetOff.length / itemsperpage)} 
 />
 
       </Tabs.Panel>
