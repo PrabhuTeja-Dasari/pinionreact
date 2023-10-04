@@ -276,7 +276,7 @@ function Employee() {
     <Pagination
   initialPage={currentPage} 
   onChange={(newPage) => Setcurrentpage(newPage)} 
-  total={Math.ceil(GetOff.length / itemsperpage)} 
+  total={Math.ceil(getpermanent.length / itemsperpage)} 
 />
 
       </Tabs.Panel>
