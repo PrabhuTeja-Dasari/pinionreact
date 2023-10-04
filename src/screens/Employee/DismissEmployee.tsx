@@ -1,5 +1,6 @@
 import {Stepper, Container, Card, Box,Group, Button, Radio, Select,TextInput,Textarea} from '@mantine/core';
 import { useState, useEffect } from 'react';
+import {IconInfoCircle} from '@tabler/icons'
 import { DatePicker } from '@mantine/dates';
 import './DismissEmployee.css'
 function DismissEmployee(){
@@ -40,6 +41,7 @@ function DismissEmployee(){
                                       
             <div className='card-body'>
                 <div className='look-out-letters'>
+                <IconInfoCircle className='iconcircle'/>
                 Look out for letters from your health insurance carriers
                 Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
                 If you get one, make sure to pass that along to MyBizWhiz so we can help.
@@ -80,7 +82,7 @@ function DismissEmployee(){
                        </div>
 
                        <div className='look-out-letters'>
-                        
+                        <IconInfoCircle className='iconinfocircle'/>&nbsp;
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
                        
                        </div>

@@ -17,6 +17,12 @@
     display: flex;
     flex-direction: column;
 }
+.iconcircle{
+    width: 100px;
+}
+.iconinfocircle{
+    width: 50px;
+}
 
 
 .look-out-letters{
