@@ -14,10 +14,11 @@ import {
   TimeTracking,
   CompanyDetails,
   Documents,
-  DismissEmployee
+ 
   
 } from '@/screens'
 import ViewEmployee from "@/screens/Employee/View-Employee";
+import DismissEmployee from '@/screens/Employee/DismissEmployee'
 import Document from "@/screens/Employee/Document"
 
 function App() {
