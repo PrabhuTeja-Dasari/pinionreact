@@ -171,7 +171,7 @@ h3 {
 #subContainerDownSection-2{
   display: flex;
   flex-direction: column;
-  width: 450px;
+  width: 430px;
   padding-top: 30px;
   flex-wrap: wrap;
 
@@ -182,7 +182,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-   padding-left: 50px; 
+  padding-left: 50px; 
   align-items: center;
   flex-wrap: wrap;
 
@@ -196,7 +196,7 @@ flex-wrap: wrap;
 }
 .department-p {
   margin-bottom: 5px;
-   width: 200px;
+  width: 200px;
   align-self: start;
 }
 .subContainerDownSection-4 {
@@ -350,7 +350,7 @@ h2 {
 .additional-p {
   font-size: 20px;
   color: #808080;
-  width: 300px;
+  width: 200px;
   flex-wrap: wrap;
  
 }
@@ -363,10 +363,7 @@ h2 {
  
 }
 
-@media (max-width: 560px) {
-
-
-
+@media (max-width: 460px) {
 
   .teamMemberSection-2 {
     padding:0px;
@@ -418,16 +415,21 @@ h2 {
    
   .addname-p {
       font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: auto;
   
   }
   .sub-card-container-2{
     margin: 0px;
     padding: 0px;
     flex-wrap: wrap;
+    overflow: auto;
   }
   #subContainerDownSection-main {
     margin: 0px;
     padding: 0px;
+    overflow: auto;
   }
   .sub-card-container {
     padding: 20px;
@@ -444,7 +446,7 @@ h2 {
     font-size: 12px;
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
+    width: 0px;
   
   }
 
@@ -452,24 +454,25 @@ h2 {
   p{
     font-size: 12px;
   }
-
+  #subContainerDownSection-3 {
+      padding: 0px;
+      display: flex;
+  }
   .subContainerDownSection-4 {
     width: 220px;
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .sub-section-container6 {
-     width: 200px;
+     width: 400px;
   }
 
-
-  .department-p {
-    width: 100px;
-  }
   #mobileScreenView {
     display: flex;
     align-items: center;
   }
+
+  
   .teamMembername-2 {
     order: 1;
   }
@@ -482,6 +485,22 @@ h2 {
     display: none;
   }
 
+  p {
+    font-size: 10px;
+  }
+  h1{
+    font-size: 12px;
+  }
+
+  h2{
+    font-size: 12px;
+  }
+  h3{
+    font-size: 12px;
+  }
+  h4{
+    font-size: 12px;
+  }
 }
 
 
