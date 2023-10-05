@@ -49,7 +49,7 @@ const HeaderBar: React.FC<HeaderBarType> = ({ opened, setOpened }) => {
           onClick={() => setOpened((o) => !o)}
           size="sm"
           color={theme.colors.gray[7]}
-          mx="xl"
+     
         />
         
       </MediaQuery>
@@ -58,7 +58,7 @@ const HeaderBar: React.FC<HeaderBarType> = ({ opened, setOpened }) => {
         <NavAction />
       </div> */}
       <div className="hidden md:block textcontainer" >
-        <ToggleButton />
+        <ToggleButton className="small-toggle-button" />
         <Menu shadow="md" width={200}>
         <Menu.Target>
         <Avatar src={null} alt="no image here" id='avatars' className='text-container' />
