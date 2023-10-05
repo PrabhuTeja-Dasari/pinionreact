@@ -49,4 +49,5 @@ export default function SegmentedToggle() {
       {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
     </ActionIcon>
   )
+  
 }
