@@ -30,7 +30,7 @@ body {
     
 }
 
-.middle-name {
+.middile-name {
     flex-grow: 2;
 }
 
@@ -168,7 +168,7 @@ margin: 15px;
     padding: 18px;
 }
 
-amounflex-grow: 2
+
 .Employement-status-section {
     display: flex;
     flex-direction: column;

@@ -151,7 +151,7 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
                <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
                
-                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100'value={data.jdate} onChange={(selectedDate: Date | null) => {
+                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100' value={data.jdate} onChange={(selectedDate: Date | null) => {
     if (selectedDate !== null) {
       const formattedDate = formatDate(selectedDate);
       Setdata({ ...data, jdate: formattedDate });
