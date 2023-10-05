@@ -11,3 +11,10 @@
     padding-bottom: 20px;
     justify-content: space-between;
 }
+
+.smalltogllebutton{
+    width: 40px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    padding: 4px; /* Adjust the padding as needed */
+    font-size: 12px;
+}
