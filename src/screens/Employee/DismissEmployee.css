@@ -95,4 +95,14 @@
      /* align-items: start;  */
 }
 
+.email-section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.textarea-section{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 
