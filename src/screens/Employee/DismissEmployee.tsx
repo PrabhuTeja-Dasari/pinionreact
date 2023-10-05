@@ -62,13 +62,13 @@ function DismissEmployee(){
      <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
                      <div className='worker-type-container'>
                        <div className='radio-btn-container'>
-                      <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="Yes"} />
+                      <Radio value="Yes" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="Yes"} />
                      <div className='labels-container'>
                         <label htmlFor='radobtn' className='label-one'>Yes - Uday is leaving voluntarily</label>
                      </div>
                      </div>
                      <div className='radio-btn-container'>
-                      <Radio value="Employee" id=" radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="No"} />
+                      <Radio value="No" id=" radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="No"} />
                      <div className='labels-container'>
                         <label htmlFor='radobtn1' className='label-one'>No - Uday didn't choose to leave</label>
                      </div>
@@ -89,10 +89,10 @@ function DismissEmployee(){
         
         <h5>Uday's Personal Email</h5>
         <p>This is the email that Uday will use to sign into MyBizWhiz later for W-2 forms.</p>
-        <TextInput id = 'inputStyle2' placeholder='Enter email'></TextInput>
+        <TextInput id = 'inputStyle2' placeholder='Enter email' onChange={e=>Setdata({...data,email:e.target.value})}></TextInput>
         <h5>Dismissal notes (optional)</h5>
         <p>Only admins will see these notes.</p>
-        <Textarea id = 'inputStyle2' placeholder='For example: Jordan moved out of the country to help his family'></Textarea>
+        <Textarea id = 'inputStyle2' placeholder='For example: Jordan moved out of the country to help his family' onChange={e=>Setdata({...data,notes:e.target.value})}></Textarea>
                                         </div>
     
                                     </div>
@@ -101,45 +101,52 @@ function DismissEmployee(){
                             </Container>
                             </Stepper.Step>
                             <Stepper.Step label ='Review and Dismiss'>
-                                <Card>
-                                <Container>
+                            <Container>
                                 <div className='row'>
                                 <Card>
                                     <div className='p-lg'>
-                                        <div className='card-body'>
-                                        <Box bg="" my="xl" component="a" >
-                                        Look out for letters from your health insurance carriers
-    Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
-    If you get one, make sure to pass that along to MyBizWhiz so we can help.
-        </Box>
-        <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
-        
+                                      
+            <div className='card-body'>
+                <div className='look-out-letters'>
+                <IconInfoCircle className='iconcircle'/>
+                Look out for letters from your health insurance carriers
+                Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
+                If you get one, make sure to pass that along to MyBizWhiz so we can help.
+                </div>
+                <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
+        <div className='Date-aligns'>
         <h5>Employee's Last Day</h5>
-        <p>{data.emplastdate}</p>
+        <p><b>{data.emplastdate}</b></p>
+      </div>
+      <div className='Radio-section'> 
      <h1 className='Prefered-first-name pt-3 pb-3'>Did Uday choose to leave ?</h1>  
      <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
-     <p>{data.leaving}</p>
+                    <p><b>{data.leaving}</b></p>
+                     </div>
+                     <div className='Reason-align'>
                         <h5>Reason For Dismissal (optional)</h5>
                         <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
-                        <p>{data.reason}</p>
-                       <Container bg="" my="xl" >
-                        <Card>
+                        <p><b>{data.reason}</b></p>
+                       </div>
+
+                       <div className='look-out-letters'>
+                        <IconInfoCircle className='iconinfocircle'/>&nbsp;
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
-                       </Card>
-        </Container>
+                       
+                       </div>
+        
         <h5>Uday's Personal Email</h5>
         <p>This is the email that Uday will use to sign into MyBizWhiz later for W-2 forms.</p>
-        <p>{data.email}</p>
+        <p><b>{data.email}</b></p>
         <h5>Dismissal notes (optional)</h5>
         <p>Only admins will see these notes.</p>
-        <p>{data.notes}</p>
+        <p><b>{data.notes}</b></p>
                                         </div>
     
                                     </div>
                                 </Card>
                                 </div>
-                            </Container>
-                                </Card>                          
+                            </Container>                       
                             </Stepper.Step>
     
                         </Stepper>

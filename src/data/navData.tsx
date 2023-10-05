@@ -20,7 +20,7 @@ export const navData: NavLinkType[] = [
       { label: 'Add Team Member', link: '/AddTeamMember' },
       { label: 'Performance', link: '/performance' },
       {label:'View Team Member',link:'/ViewEmployee'},
-      {label:'Dismiss Team Member', link:'/DismissTeamMember'}
+      {label:'practice',link:'/practice'}
     ]
   },
   {

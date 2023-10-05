@@ -417,16 +417,19 @@ h2 {
       font-size: 14px;
       display: flex;
       flex-wrap: wrap;
+      overflow: auto;
   
   }
   .sub-card-container-2{
     margin: 0px;
     padding: 0px;
     flex-wrap: wrap;
+    overflow: auto;
   }
   #subContainerDownSection-main {
     margin: 0px;
     padding: 0px;
+    overflow: auto;
   }
   .sub-card-container {
     padding: 20px;
@@ -461,12 +464,8 @@ h2 {
   }
 
   .sub-section-container6 {
-     width: 300px;
+     width: 400px;
   }
-
-
-
-
 
   #mobileScreenView {
     display: flex;
@@ -502,7 +501,6 @@ h2 {
   h4{
     font-size: 12px;
   }
-
 }
 
 
