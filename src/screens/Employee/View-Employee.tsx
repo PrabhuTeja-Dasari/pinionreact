@@ -50,7 +50,7 @@ function ViewEmployee(){
   </div>
 <Avatar color="cyan" className='avatr-style' radius="xl" >MK</Avatar>
     <div className="input-name-section">
-    <p className="teamMembername-3">Srikanth</p>
+    <p className="teamMembername-1">Srikanth</p>
     <Tabs radius="md" defaultValue="Job & Pay">
    
       <Tabs.List>
