@@ -220,7 +220,9 @@ h2 {
   padding-left: 50px;
   flex-wrap: wrap;
  
-}@media (max-width: 460px) {  .teamMemberSection-2 {
+}@media (max-width: 460px) 
+{  
+  .teamMemberSection-2 {
     padding:0px;
   }   .teamMembername-1 {
       font-size: 15px;
@@ -238,7 +240,9 @@ h2 {
     padding:0px;
     margin: 0px;
     flex-wrap: wrap;
-    flex-shrink: -1;  }  .cord-side-section {
+    flex-shrink: -1;  }  
+    
+    .cord-side-section {
     display: flex;
     flex-direction: column;
     padding:0px;
