@@ -91,7 +91,7 @@ function DismissEmployee(){
                        </div>
 
                        <div className='look-out-letters'>
-                       <IconInfoCircle className='iconcircle'/>
+                       <IconInfoCircle className='iconinfocircle'/>
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
                        
                        </div>
@@ -101,10 +101,11 @@ function DismissEmployee(){
         
         <TextInput id = 'inputStyle2' placeholder='Enter email' onChange={e=>Setdata({...data,email:e.target.value})}></TextInput>
         </div>
-        <div className='textarea-section'></div>
+        <div className='textarea-section'>
         <h5>Dismissal notes (optional)</h5>
         <p>Only admins will see these notes.</p>
         <Textarea id = 'inputStyle2' placeholder='For example: Jordan moved out of the country to help his family' onChange={e=>Setdata({...data,notes:e.target.value})}></Textarea>
+        </div>
                                         </div>
     
                                     </div>
