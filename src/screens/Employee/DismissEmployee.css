@@ -18,10 +18,12 @@
     flex-direction: column;
 }
 .iconcircle{
-    width: 100px;
+    width: 80px;
+    padding-left: -30px;
 }
 .iconinfocircle{
     width: 50px;
+    padding-left: -30px;
 }
 
 
