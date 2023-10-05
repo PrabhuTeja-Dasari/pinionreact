@@ -38,10 +38,14 @@ function DismissEmployee(){
             <div className='row'>
                     <form>
                         <Stepper active={active}>
+                          
                             <Stepper.Step label= 'Enter Dismissal Details'>
                             <Container>
                                 <div className='row'>
                                 <Card>
+                                  
+                                  <h1>Dismiss</h1>
+                                  
                                     <div className='p-lg'>
                                       
             <div className='card-body'>
@@ -51,7 +55,7 @@ function DismissEmployee(){
                 Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
                 If you get one, make sure to pass that along to MyBizWhiz so we can help.
                 </div>
-                <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
+                <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If (fname) is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
         <div className='Date-aligns'>
         <h5>Employee's Last Day</h5>
         <DatePicker id = 'inputStyle2' placeholder="Pick date"  /*onChange={(selectedDate: Date | null) => {
@@ -63,19 +67,19 @@ function DismissEmployee(){
       }}*/ />
       </div>
       <div className='Radio-section'> 
-     <h1 className='Prefered-first-name pt-3 pb-3'>Did Uday choose to leave ?</h1>  
+     <h1 className='Prefered-first-name pt-3 pb-3'>Did (fname) choose to leave ?</h1>  
      <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
                      <div className='worker-type-container'>
                        <div className='radio-btn-container'>
                       <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" /*onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="Yes"}*/ />
                      <div className='labels-container'>
-                        <label htmlFor='radobtn' className='label-one'>Yes - Uday is leaving voluntarily</label>
+                        <label htmlFor='radobtn' className='label-one'>Yes - (fname) is leaving voluntarily</label>
                      </div>
                      </div>
                      <div className='radio-btn-container'>
                       <Radio value="Employee" id=" radobtn1" className="mt-1 mr-2" name="label" /*onChange={e=>Setdata({...data,leaving:e.target.value})} checked={data.leaving==="No"}*/ />
                      <div className='labels-container'>
-                        <label htmlFor='radobtn1' className='label-one'>No - Uday didn't choose to leave</label>
+                        <label htmlFor='radobtn1' className='label-one'>No - (fname) didn't choose to leave</label>
                      </div>
                      </div>
                      </div>
@@ -92,8 +96,8 @@ function DismissEmployee(){
                        
                        </div>
         <div className='email-section'>
-        <h5>Uday's Personal Email</h5>
-        <p>This is the email that Uday will use to sign into MyBizWhiz later for W-2 forms.</p>
+        <h5>(fname)'s Personal Email</h5>
+        <p>This is the email that (fname) will use to sign into MyBizWhiz later for W-2 forms.</p>
         <TextInput id = 'inputStyle2' placeholder='Enter email'></TextInput>
         </div>
         <div className='notes-section'>
@@ -121,11 +125,11 @@ function DismissEmployee(){
     Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
     If you get one, make sure to pass that along to MyBizWhiz so we can help.
         </Box>
-        <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If Uday is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
+        <p> You can edit the dismissal details up until (write fname dynamically) last day. Their employment info will stay in your account to reference later. If (fname) is taking a leave of absence or on furlough, skip them on payroll instead of dismissing them.</p>
         
-        <h5>Employee's Last Day</h5>
+        <h5> (fname) Last Day</h5>
         <p>{data.emplastdate}</p>
-     <h1 className='Prefered-first-name pt-3 pb-3'>Did Uday choose to leave ?</h1>  
+     <h1 className='Prefered-first-name pt-3 pb-3'>Did (fname) choose to leave ?</h1>  
      <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
      <p>{data.leaving}</p>
                         <h5>Reason For Dismissal (optional)</h5>
@@ -136,8 +140,8 @@ function DismissEmployee(){
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
                        </Card>
         </Container>
-        <h5>Uday's Personal Email</h5>
-        <p>This is the email that Uday will use to sign into MyBizWhiz later for W-2 forms.</p>
+        <h5>(fname)'s Personal Email</h5>
+        <p>This is the email that (fname) will use to sign into MyBizWhiz later for W-2 forms.</p>
         <p>{data.email}</p>
         <h5>Dismissal notes (optional)</h5>
         <p>Only admins will see these notes.</p>
