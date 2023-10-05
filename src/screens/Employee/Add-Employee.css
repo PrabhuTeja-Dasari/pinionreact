@@ -30,7 +30,7 @@ body {
     
 }
 
-.middile-name {
+.middle-name {
     flex-grow: 2;
 }
 
@@ -43,28 +43,28 @@ body {
 
 
 #customInputStyle{
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     background-color: #f0f5f7;
 }
 
 
 .input-style-2 {
     display: flex;
-    border-top: 0px;
+    border-top: none;
     flex-grow: 2;
-    border-left: 0px;
-    border-right: 0px;
+    border-left: none;
+    border-right: none;
     background-color: #f0f5f7;
    
 
 }
 #inputStyle2 {
     display: flex;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     background-color: #f0f5f7;
 
 
@@ -104,23 +104,14 @@ margin: 15px;
     height: 36px;
 }
 
-#yearInput{
-    height: 36px;
-}
 
-.input-style-3 {
 
-    display: flex;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    background-color: #f0f5f7;
-}
+
 #inputStyle3{
     display: flex;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     background-color: #f0f5f7;
 }
 
@@ -146,7 +137,7 @@ margin: 15px;
     margin: 10px;
 }
 
-.labels-conatiner {
+.labels-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -177,7 +168,7 @@ margin: 15px;
     padding: 18px;
 }
 
-
+amounflex-grow: 2
 .Employement-status-section {
     display: flex;
     flex-direction: column;

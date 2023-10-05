@@ -1,40 +1,33 @@
 import { useState } from 'react';
-import { Stepper, Button, Group,Title , TextInput,Radio, PasswordInput, Code,Select,FileInput,NumberInput,Container,Card} from '@mantine/core';
+import { Stepper, Button, Group,Title , TextInput,Radio, PasswordInput, Code,Select,FileInput,NumberInput,Container,Card, Checkbox} from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
+import moment from 'moment';
+
 import axios from 'axios'
 function AddEmployee(){
   const [active, setActive] = useState(0);
   const [data,Setdata]=useState({
-    fname:'',
-    mname:'',
-    lname:'',
-    dob:'',
-    gender:'',
-    marital:'',
-    photo:'',
-    pemail:'',
-    dname:'',
-    empid:'',
-    jdate:'',
-    empmode:'',
-    workmobile:'',
-    workemail:'',
-    financial:'',
-    pfname:'',
-    Country:'',
-    worker:'',
-    location:'',
-    state:'',
-    jobtitle:'',
-    deptid:'',
-    manager:'',
-    amount:'',
-    per:'',
-    commision:'',
-    empstatus:'',
-    tax:''
-
+   fname:'',
+   mname:'',
+   lname:'',
+   pfname:'',
+   pemail:'',
+   Country:'',
+   worker:'',
+   location:'',
+   jdate:'',
+   work:'',
+   jobtitle:'',
+   deptid:'',
+   manager:'',
+   empmode:'',
+   amount:'',
+   per:'',
+   commission:'',
+   empstatus:'',
+   tax:'',
+   dob:''
   })
 
   const submitdata=(e:any)=>{
@@ -48,26 +41,40 @@ function AddEmployee(){
   });
 
 
+
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+
+const personaledit=function(){
+  setActive((current)=>(current-3));
+}
+const roleedit=function(){
+  setActive((current)=>(current-2));
+}
+const compensationedit=function(){
+  setActive((current)=>(current-1));
+}
+
+const inputDate = moment(data.jdate, 'MMMM D, YYYY');
+const formattedDate = inputDate.format('DD/MM/YYYY');
   return(
 
-    <div  id="main-container">
-      <div className='row'>
-      <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+    <div id="main-container">
+      <div>
+      <div>
       <form >
     <Stepper active={active}>
       <Stepper.Step label="Personal Information">
         <Container>
-          <div className='row'>
+          <div>
           <Card shadow="sm"  radius="md" withBorder>
             <div className='p-lg'>
             <div className='card-body'>
-              {/* <h1 className='pb-4 main-heading'></h1> */}
-              <Title order={4} id="main-heading">Tell us who you'd like to add</Title>
+              
+              <Title order={4} >Tell us who you'd like to add</Title>
               <div className='Personal-Information-container'>
               <TextInput placeholder='Enter First Name' label="First Name" id='customInputStyle' className='first-name' value={data.fname} onChange={(e) => Setdata({ ...data, fname: e.target.value })}/>
             
-                <TextInput className='middile-name' placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
+                <TextInput className='middle-name' placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
                </div>
                 
 
@@ -89,26 +96,25 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  <div className='worker-type-container'>
                 
                 <div className='rodio-btn-container'>
-                  <Radio value="Employee" id=" radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
-                 <div className='labels-conatiner'>
+                  <Radio value="Employee" id="radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                 <div className='labels-container'>
                     <label htmlFor='radobtn' className='label-one'>Employee</label>
                     <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
                     with rights and benfits received through employeement.</label>
                  </div>
                  </div>
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id=" radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
-                 <div className='labels-conatiner'>
+                  <Radio value="Employee" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                 <div className='labels-container'>
                     <label htmlFor='radobtn1' className='label-one'>Individual Contractor</label>
                     <label htmlFor='radobtn1' className='label-two'>Indepedent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
                  </div>
                  </div>
 
 
-
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id=" radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
-                 <div className='labels-conatiner'>
+                  <Radio value="Employee" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                 <div className='labels-container'>
                     <label htmlFor='radobtn2' className='label-one'>Business Contractor</label>
                     <label htmlFor='radobtn2' className='label-two'>Indepedent Professional working on behalf of a business.</label>
                  </div>
@@ -133,22 +139,22 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
               <p className='last-name-style label-text'>Which location to select and learn about thier potential impacts on your business.</p>
-              <Select placeholder="Select Location" id="inputStyle2" data={['Work From Home', 'Work From Office', 'Hybrid']} value={data.location} onChange={(selectedOption) => Setdata({ ...data, location: selectedOption || '' })} />              
-                <h1 className='Prefered-first-name mt-3 pb-2'>Work State</h1>
+              <Select placeholder="Select Work" id="inputStyle2" data={['Work From Home', 'Work From Office', 'Hybrid']} value={data.work} onChange={(selectedOption) => Setdata({ ...data, work: selectedOption || '' })} />              
+                <h1 className='Prefered-first-name mt-3 pb-2'>Work Location</h1>
                 <p className='last-name-style label-text'>If this employee work from home,tell us the state where they work and live</p>
                 <Select placeholder="Select Location" id="inputStyle2" data={['Visakhapatnam,IN', 'Hyderabad,IN', 'Chicago,US']} value={data.location} onChange={(selectedOption) => Setdata({ ...data, location: selectedOption || '' })} />     
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
                <p className='last-name-style label-text'>Choose from your existing set of jobs or enter a new one.</p>
-               <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''}/>
+               <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''} onChange={(e)=>Setdata({...data,jobtitle:e.target.value})} />
 
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
                <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
                
-                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100'value={data.jdate ? new Date(data.jdate) : null} onChange={(selectedDate: Date | null) => {
+                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100'value={data.jdate} onChange={(selectedDate: Date | null) => {
     if (selectedDate !== null) {
       const formattedDate = formatDate(selectedDate);
-      Setdata({ ...data, dob: formattedDate });
+      Setdata({ ...data, jdate: formattedDate });
     }
   }}  />
 
@@ -172,22 +178,20 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
               <Select placeholder="Select Employement Type" id="inputStyle2" data={['Permanent', 'Contract']} value={data.empmode} onChange={(selectedOption) => Setdata({ ...data, empmode: selectedOption || '' })} />   
 
                 <div className='Employement-type-section'>
-                  <div>
+                  <div className='middle-name'>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Amount</h1>
                 <TextInput id="inputStyle3" placeholder='Enter Amount Value' className='mr-2 year-input' value={data.amount} onChange={e=>Setdata({...data,amount:e.target.value})}/>
                 </div>
                 <div className='per-year'>
                 <h1 className='Prefered-first-name'>Per</h1>
-                <select className='input-style-2'  value={data.per} onChange={e=>Setdata({...data,per:e.target.value})}>
-                  <option value="" disabled  >Select Month/Year</option>
-                   <option value="Month">Month</option>
-                   <option value="Year">Year</option>
-                </select> 
+                <Select id="inputStyle2" placeholder='Select Month/Year' data={['Month', 'Year']} value={data.per} onChange={(suggestedOption)=>Setdata({...data,per:suggestedOption || ''})}/>
+                 
+               
                 </div>
                 </div>
 
                 <div className='d-flex flex-row workerBtn p-2'>
-                 <input type="checkbox" id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commision:e.target.value})}/>
+                 <Checkbox id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commission:e.target.value})}/>
                  <div>
                     <label htmlFor='radobtn' className='label-two ' ></label>
                     This employee will receive commissions or other types of additional compensation.
@@ -195,20 +199,16 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
                  </div>
                 <div className='Employement-status-section'>
                <h1 className='Prefered-first-name'>Employement Status</h1>
-               <select className='input-style-2' value={data.empstatus} onChange={e=>Setdata({...data,empstatus:e.target.value})}>
-                <option value=''  disabled>Select Employement Status</option>
-                   <option value="Active">Active</option>
-                   <option value="Inactive">Inactive</option>
-                </select>
+               <Select id = 'inputStyle2' placeholder = 'Select Employment Status' data={['Active', 'Inactive']} value={data.empstatus} onChange={(suggestedOption)=>Setdata({...data,empstatus:suggestedOption || ''})}/>
+                
+                
                 </div>
                 <div className='Employement-status-section'>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Does {data.fname} have a special tax exemption status? (This is not common.)</h1>
                 <p className='last-name-style label-text'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
-                <select className='input-style-2 w-100 mb-5' value={data.tax} onChange={e=>Setdata({...data,tax:e.target.value})}>
-                  <option value='' disabled >Select Special Excemption Tax</option>
-                   <option value="Yes">Yes</option>
-                   <option value="No">No</option>
-                </select>    
+                <Select id = 'inputStyle2' placeholder='Select Tax' data = {['Yes', 'No']} value={data.tax} onChange={(suggestedOption)=>Setdata({...data,tax:suggestedOption || ''})}/>
+                 
+                  
                 </div>
                 </div>
                 </Card>
@@ -225,7 +225,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
           <div className='p-lg'>
           <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
-           <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
+           <h1 className='Prefered-first-name mt-3  pb-2 ' onClick={personaledit}>Edit</h1>
            </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>First Name</h1>
             <p>{data.fname || '\u00A0'}</p>
@@ -259,19 +259,19 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <div className='p-lg'>
           <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
-            <h1 className='Prefered-first-name mt-3  pb-2 '>Edit</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2 ' onClick={roleedit}>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work Location</h1>
             <p>{data.location || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work State</h1>
-            <p>{data.state || '\u00A0'}</p>
+            <p>{data.work || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Job Title</h1>
             <p>{data.jobtitle || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Start Date</h1>
-            <p>{data.jdate || '\u00A0'}</p>
+            <p>{formattedDate || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Department</h1>
             <p>{data.deptid || '\u00A0'}</p>
@@ -288,14 +288,16 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             <div className='p-lg '>
            <div className='role-and-edit-section'>
             <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
-            <h1 className='Prefered-first-name mt-3 pb-2 '>Edit</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2 ' onClick={compensationedit}>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
             <p>{data.empmode || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Amount </h1>
-            <p>{data.amount || '\u00A0'} {data.per || '\u00A0'}</p>
+            <p>{data.amount || '\u00A0'} </p>
             <hr/>
+            <h1 className='Prefered-first-name mt-3 pb-2'> Per</h1>
+            <p>{data.per || '\u00A0'} </p>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
             <p>{data.empstatus || '\u00A0'}</p>
             <hr/>
