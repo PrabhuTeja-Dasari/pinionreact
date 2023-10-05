@@ -42,10 +42,15 @@ function ViewEmployee(){
 
 <div className="main-container">
 <p className="teamMebername-1"><span className="teamMebername">Team member</span>/Srikanth</p>
+
 <div className="teamMemberSection-2">
+  <div id='mobileScreenView'>
+  <Avatar color="cyan" className='avatr-style-2' radius="xl" >MK</Avatar>
+  <p className="teamMembername-3">Srikanth</p>
+  </div>
 <Avatar color="cyan" className='avatr-style' radius="xl" >MK</Avatar>
     <div className="input-name-section">
-    <p className="teamMembername-2">Srikanth</p>
+    <p className="teamMembername-3">Srikanth</p>
     <Tabs radius="md" defaultValue="Job & Pay">
    
       <Tabs.List>
@@ -92,15 +97,15 @@ function ViewEmployee(){
 
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
-            <div className='sub-section-container5'>
+            <div className='sub-section-container6'>
         <h2 className='department-p'>Department</h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>ssaikiran ganji</p>
         </div>
-        <div className='sub-section-container5'>
+        <div className='sub-section-container6'>
         <h2 className='department-p'>Manager</h2>
         <p className='addname-p'>dublicate</p>
         </div>
-        <div className='sub-section-container5'>
+        <div className='sub-section-container6'>
         <h2 className='department-p'>Start date</h2>
         <p className='addname-p'>Dublicate</p>
         </div>
@@ -121,11 +126,11 @@ function ViewEmployee(){
 
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
-            <div className='sub-section-container5'>
+            <div className='sub-section-container6'>
         <h2 className='department-p'>Direct reports</h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>ssaikiran ganji</p>
         </div>
-        <div className='sub-section-container5'>
+        <div className='sub-section-container6'>
         <p className='color-p'> <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-notes icone-style" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#62b2b5" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
@@ -149,13 +154,13 @@ function ViewEmployee(){
     </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
-            <div className='sub-section-container5'>
+            <div className='sub-section-container6'>
         <h2 className='department-p'>Personel email</h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>ssaikiran ganji</p>
         </div>
-        <div className='sub-section-container5'>
+        <div className='sub-section-container6'>
         <h2 className='department-pp'>Work email</h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>ssaikiran ganji</p>
         </div>
         </div>
 
@@ -174,13 +179,13 @@ function ViewEmployee(){
     </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
-            <div className='sub-section-container5'>
+            <div className='sub-section-container6'>
         <h2 className='department-p'>Current Adress</h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>kumarmannapalem rd.</p>
         </div>
-        <div className='sub-section-container5'>
+        <div className='sub-section-container6'>
         <h2 className='department-pp'>phone </h2>
-        <p className='addname-p'>Duplicate </p>
+        <p className='addname-p'>91 98989065589 </p>
         </div>
         </div>
         </div>
@@ -198,9 +203,9 @@ function ViewEmployee(){
     </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
-            <div className='sub-section-container5'>
+            <div className='sub-section-container6'>
         <h2 className='department-p'>Employee Type </h2>
-        <p className='addname-p'>Duplicate</p>
+        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
         </div>
         </div>
 
@@ -218,28 +223,30 @@ function ViewEmployee(){
     </div>
     <div id='subContainerDownSection-3'>
         <div className='subContainerDownSection-4'>
-            <div className='sub-section-container5'>
-        <h2 className='department-p'>Employee Type </h2>
-        <p className='addname-p'>Duplicate</p>
-        </div>
-        <div className='sub-section-container5'>
-        <h2 className='department-pp'>Job Title </h2>
-        <p className='addname-p'>Duplicate</p>
-        </div>
-        <div className='sub-section-container5'>
-        <h2 className='department-pp'>Wage </h2>
-        <p className='addname-p'>Duplicate</p>
-        </div> 
-        <div className='sub-section-container5'>
-        <h2 className='department-p'>Default hours </h2>
-        <p className='addname-p'>Duplicate</p>
-        </div>
-        <div className='sub-section-container5'>
-        <h2 className='department-p'>Job Class Code </h2>
-        <p className='addname-p'>Duplicate</p>
-        </div>
+        <div className='sub-section-container6'>
+        <h2 className='department-p'>Employee Type</h2>
+        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
         </div>
 
+        <div className='sub-section-container6'>
+        <h2 className='department-p'>Job Title </h2>
+        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        </div>
+
+        <div className='sub-section-container6'>
+        <h2 className='department-p'>Wage </h2>
+        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        </div>
+
+        <div className='sub-section-container6'>
+        <h2 className='department-p'>Default hours </h2>
+        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        </div>
+        <div className='sub-section-container6'>
+        <h2 className='department-p'>Job Class Code </h2>
+        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        </div>
+        </div>
         </div>   
     </div>
   </div>

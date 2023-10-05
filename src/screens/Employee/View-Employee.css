@@ -6,8 +6,6 @@
   background-color: white;
   height: 100%;
   flex-wrap: wrap;
-    flex-shrink:-1;
-
 }
 body {
   margin: 0px;
@@ -26,9 +24,14 @@ body {
     padding-left: 70px;
     padding-bottom: 0px;
     flex-wrap: wrap;
-    flex-shrink:-1;
+    width: 1200px;
+   
 
     
+}
+
+#mobileScreenView {
+  display: none;
 }
 
 .teamMemberSection-2 {
@@ -37,7 +40,7 @@ body {
   padding-left: 30px;
   padding-top: 20px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
   
 }
@@ -49,15 +52,21 @@ body {
  color: black;
  font-weight: 400;
  flex-wrap: wrap;
- flex-shrink:-1;
-
- 
 }
+
+.teamMembername-3 {
+  font-size: 30px;
+  padding: 5px;
+  color: black;
+  font-weight: 500;
+}
+
+
 .avatar-and-name {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 .avatr-style {
@@ -65,7 +74,7 @@ body {
   height: 70px;
   border-radius: 50%;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 .teamMembername {
@@ -73,7 +82,7 @@ body {
   font-weight: 500;
   margin: 0px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 
@@ -83,14 +92,14 @@ body {
   font-weight: 500;
   color: black;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
   
 }
 
 .input-box-2 {
   margin: 0px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 .profile-section {
@@ -101,7 +110,7 @@ body {
   border-radius: 50%;
   padding-right: 10px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .input-name-section {
@@ -110,7 +119,7 @@ body {
   padding-top: 0px;
   margin-top: 0px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 
@@ -119,12 +128,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 .each_name {
   margin: 10px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .sub-container {
@@ -133,13 +142,13 @@ body {
   padding-right: 0px;
   margin-right: 0px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 .sub-container-down-section {
   display: flex;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 h3 {
@@ -147,7 +156,7 @@ h3 {
     font-weight: 600;
     padding-bottom: 10px;
     flex-wrap: wrap;
-    flex-shrink:-1;
+   
    
 }
 
@@ -155,9 +164,8 @@ h3 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
-
 
 
 #subContainerDownSection-2{
@@ -166,18 +174,9 @@ h3 {
   width: 450px;
   padding-top: 30px;
   flex-wrap: wrap;
-  flex-wrap: wrap;
-  flex-shrink:-1;
-
 
 }
-@media screen and (max-width: 560px) {
-  #subContainerDownSection-2{
-    width: 0px;
-    padding-top: 0px;
 
-  }
-}
 
 #subContainerDownSection-3 {
   display: flex;
@@ -186,44 +185,50 @@ h3 {
    padding-left: 50px; 
   align-items: center;
   flex-wrap: wrap;
-  flex-shrink:-1;
+
   
 }
 .heading-and-edit-section {
   display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
-flex-shrink:-1;
+
 }
 .department-p {
   margin-bottom: 5px;
-  flex-wrap: wrap;
-  flex-shrink:-1;
- 
+   width: 200px;
+  align-self: start;
 }
 .subContainerDownSection-4 {
-  padding-right: 50px;
   display : flex;
   flex-direction: column;
-  justify-content: flex-end;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
+  align-items: center;
 }
+
+
+.sub-section-container6 {
+   display: flex;
+   width: 400px;
+   align-items: center;
+}
+
+
 .workerPhone {
   padding-left: 80px;
   flex-wrap: wrap;
-  flex-shrink:-1;
 }
 .spanel {
   padding-left: 30px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 p {
   color: #808080;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .color-p {
@@ -234,26 +239,23 @@ p {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .icone-style {
   width: 20px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .department-pp {
     padding-left: 30px;
     flex-wrap: wrap;
-    flex-shrink:-1;
+    width: 200px;
+   
 }
 
-.sub-section-container5{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+
 
 .addname-p {
   padding-left: 20px;
@@ -267,7 +269,7 @@ h2 {
   color:#62b2b5;
   color: #808080;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 
@@ -279,18 +281,18 @@ h2 {
   border-radius: 10px;
   box-shadow: 10px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .sub-card-container-2 {
-   margin-bottom: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 #inputCard {
@@ -299,14 +301,14 @@ h2 {
   border-right: none;
   margin-bottom: 15px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .paystubs-heading {
   font-size:20px;
   font-weight: 700;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 .recent-payStubs {
   font-size: 17px;
@@ -314,7 +316,7 @@ h2 {
   font-weight: 700;
   padding-left: 5px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .paystubs-p {
@@ -322,7 +324,7 @@ h2 {
   font-weight: 500;
   color: black;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .sub-card-container-3 {
@@ -332,7 +334,7 @@ h2 {
   flex-wrap: wrap;
   padding-top: 5px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 
 }
 .recent-payStubs-2 {
@@ -341,7 +343,7 @@ h2 {
   font-weight: 700;
   padding-left: 5px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
  
 }
 
@@ -350,7 +352,7 @@ h2 {
   color: #808080;
   width: 300px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
 
 .cord-side-section {
@@ -358,5 +360,130 @@ h2 {
   flex-direction: column;
   padding-left: 50px;
   flex-wrap: wrap;
-  flex-shrink:-1;
+ 
 }
+
+@media (max-width: 560px) {
+
+
+
+
+  .teamMemberSection-2 {
+    padding:0px;
+  }
+
+   .teamMebername-1 {
+      font-size: 15px;
+   }
+
+  .teamMembername-2 {
+    font-size: 15px;
+  }  
+  .avatr-style {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cord-side-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   
+    padding:0px;
+    margin: 0px;
+    flex-wrap: wrap;
+    flex-shrink: -1;
+
+  }
+
+  .cord-side-section {
+    display: flex;
+    flex-direction: column;
+    padding:0px;
+    margin: 0px;
+    flex-wrap: wrap;
+   
+    flex-wrap: wrap;
+  }
+  .additional-p {
+    font-size: 5px;
+    color: #808080;
+    flex-wrap: wrap;
+   
+    padding:0px;
+    margin: 0px;
+    flex-wrap: wrap;
+
+  }
+   
+  .addname-p {
+      font-size: 14px;
+  
+  }
+  .sub-card-container-2{
+    margin: 0px;
+    padding: 0px;
+    flex-wrap: wrap;
+  }
+  #subContainerDownSection-main {
+    margin: 0px;
+    padding: 0px;
+  }
+  .sub-card-container {
+    padding: 20px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  #subContainerDownSection-2 {
+    width: 250px;
+    flex-wrap: wrap;
+    
+  }
+  .additional-p {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+  
+  }
+
+
+  p{
+    font-size: 12px;
+  }
+
+  .subContainerDownSection-4 {
+    width: 220px;
+    font-size: 12px;
+  }
+
+  .sub-section-container6 {
+     width: 200px;
+  }
+
+
+  .department-p {
+    width: 100px;
+  }
+  #mobileScreenView {
+    display: flex;
+    align-items: center;
+  }
+  .teamMembername-2 {
+    order: 1;
+  }
+
+  .avatr-style {
+    display: none;
+  }
+
+  .teamMembername-1 {
+    display: none;
+  }
+
+}
+
+
+
+
