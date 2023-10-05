@@ -1,5 +1,6 @@
 import {Stepper, Container, Card, Box,Group, Button, Radio, Select,TextInput,Textarea} from '@mantine/core';
 import { useState, useEffect } from 'react';
+
 import { DatePicker } from '@mantine/dates';
 import {IconInfoCircle} from '@tabler/icons-react';
 import './DismissEmployee.css'
@@ -44,8 +45,7 @@ function DismissEmployee(){
                                     <div className='p-lg'>
                                       
             <div className='card-body'>
-                <div className='look-out-letters fa fa-info-circle'>
-                
+                <div className='look-out-letters'>
                 Look out for letters from your health insurance carriers
                 Some carriers require a certain amount of employees to be enrolled in health insurance. If your company falls below their minimum, they'll send you a notice.
                 If you get one, make sure to pass that along to MyBizWhiz so we can help.
@@ -82,11 +82,10 @@ function DismissEmployee(){
                      <div className='Reason-align'>
                         <h5>Reason For Dismissal (optional)</h5>
                         <p>We wont report this anywhere, but we'll record it for your in case you need to use it later.</p>
-                       <Select placeholder='Choose one' id = 'inputStyle2' data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']}  /*onChange={(e:any)=>Setdata({...data,reason:e.target.value})}*/  />
+                       <Select placeholder='Choose one' id = 'inputStyle2' data = {['Career Advancement', 'Compensation', 'Leave of absence', 'Personal Reasons', 'Reloaction', 'Return to School', 'Type of work', 'Other']} onChange={(e:any)=>Setdata({...data,reason:e.target.value})}  />
                        </div>
 
                        <div className='look-out-letters'>
-                       
                         
                        Final payroll moved to the offboarding checklist Once you've scheduled a dismissal, you can run or update the final payroll method from the offboarding checklist.
                        
