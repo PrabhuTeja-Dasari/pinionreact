@@ -27,12 +27,9 @@ body {
 .first-name {
     flex-grow: 2;
     margin-right: 10px;
-    
 }
 
-
-
-.middile-name {
+.middle-name {
     flex-grow: 1;
 }
 
