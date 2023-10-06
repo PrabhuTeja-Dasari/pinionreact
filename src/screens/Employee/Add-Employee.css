@@ -30,16 +30,13 @@ body {
     
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 4e29c2299f3968f5d3499a6337e04ef5e599f6a3
-.middle-name {
-    flex-grow: 2;
+
+.middile-name {
+    flex-grow: 1;
 }
 
-<<<<<<< HEAD
-=======
+
 #checkbox-container{
     display: flex;
     margin-right: 10px;
@@ -49,7 +46,6 @@ body {
 
 
 
->>>>>>> 4e29c2299f3968f5d3499a6337e04ef5e599f6a3
 .main-heading {
     font-size: 20px;
     font-weight: normal;
