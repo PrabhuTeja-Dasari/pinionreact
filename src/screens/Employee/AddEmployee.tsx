@@ -152,11 +152,11 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
                <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
                
                 <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100' value={data.jdate} onChange={(selectedDate: Date | null) => {
-    if (selectedDate !== null) {
-      const formattedDate = formatDate(selectedDate);
-      Setdata({ ...data, jdate: formattedDate });
-    }
-  }}  />
+                  if (selectedDate !== null) {
+                    const formattedDate = formatDate(selectedDate);
+                    Setdata({ ...data, jdate: formattedDate });
+                  }
+                }}  />
 
                 <h1 className='Prefered-first-name mt-3'>Department</h1>
                 <TextInput id="inputStyle2" placeholder='Enter Department Name' value={data.deptid} onChange={(e)=>Setdata({...data,deptid:e.target.value})}/>
@@ -190,12 +190,10 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
                 </div>
                 </div>
 
-                <div className='d-flex flex-row workerBtn p-2'>
-                 <Checkbox id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commission:e.target.value})}/>
-                 <div>
-                    <label htmlFor='radobtn' className='label-two ' ></label>
-                    This employee will receive commissions or other types of additional compensation.
-                 </div>
+                <div className='workerBtn p-2'>
+                 <Checkbox id='radobtn5' className='mr-2' name="label1" value="Yes" onChange={e=>Setdata({...data,commission:e.target.value})}/>
+                    <label htmlFor='radobtn5' className='label-two'>This employee will receive commissions or other types of additional compensation.</label>
+
                  </div>
                 <div className='Employement-status-section'>
                <h1 className='Prefered-first-name'>Employement Status</h1>

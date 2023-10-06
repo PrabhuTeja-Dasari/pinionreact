@@ -30,11 +30,9 @@ body {
     
 }
 
-.middile-name {
+.middle-name {
     flex-grow: 2;
 }
-
-
 
 .main-heading {
     font-size: 20px;
@@ -69,14 +67,10 @@ body {
 
 
 }
-
 .compansation-subcontainer{
-margin: 15px;
-
+    margin: 15px;
 
 }
-
-
 
 .last-name-style {
     margin:0px;
@@ -176,6 +170,9 @@ margin: 15px;
 
 }
 
+.workerBtn {
+    display: flex;
+}
 
 .reviw-information {
 margin-bottom: 15px;
