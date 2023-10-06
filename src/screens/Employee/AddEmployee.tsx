@@ -92,6 +92,8 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
                 <Select placeholder="Select Country" id="inputStyle2" value={data.Country|| ''} data={['India', 'United States', 'United Kingdom']} onChange={(selectedOption) => Setdata({ ...data, Country: selectedOption||'' })}/>              
+                
+                
                 <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
                  <div className='worker-type-container'>
                 
@@ -104,7 +106,7 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
                  </div>
                  </div>
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                  <Radio value="Individual Contractor" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Individual Contractor"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn1' className='label-one'>Individual Contractor</label>
                     <label htmlFor='radobtn1' className='label-two'>Indepedent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
@@ -113,7 +115,7 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
 
 
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                  <Radio value="Business Contractor" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Business Contractor"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn2' className='label-one'>Business Contractor</label>
                     <label htmlFor='radobtn2' className='label-two'>Indepedent Professional working on behalf of a business.</label>
@@ -190,13 +192,9 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
                 </div>
                 </div>
 
-                <div className='d-flex flex-row workerBtn p-2'>
-                 <Checkbox id='radobtn' className=' mr-2' name="label" value="Yes" onChange={e=>Setdata({...data,commission:e.target.value})}/>
-                 <div>
-                    <label htmlFor='radobtn' className='label-two ' ></label>
-                    This employee will receive commissions or other types of additional compensation.
-                 </div>
-                 </div>
+              
+                
+                
                 <div className='Employement-status-section'>
                <h1 className='Prefered-first-name'>Employement Status</h1>
                <Select id = 'inputStyle2' placeholder = 'Select Employment Status' data={['Active', 'Inactive']} value={data.empstatus} onChange={(suggestedOption)=>Setdata({...data,empstatus:suggestedOption || ''})}/>
@@ -224,7 +222,7 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
         <Card shadow="sm"  radius="md" withBorder>
           <div className='p-lg'>
           <div className='role-and-edit-section'>
-            <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Personal Information</h1>
            <h1 className='Prefered-first-name mt-3  pb-2 ' onClick={personaledit}>Edit</h1>
            </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>First Name</h1>
@@ -258,7 +256,7 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
           <Card shadow="sm"  radius="md" withBorder>
             <div className='p-lg'>
           <div className='role-and-edit-section'>
-            <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Role Information</h1>
             <h1 className='Prefered-first-name mt-3  pb-2 ' onClick={roleedit}>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work Location</h1>
@@ -287,8 +285,8 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
           <Card shadow="sm" radius="md" withBorder>
             <div className='p-lg '>
            <div className='role-and-edit-section'>
-            <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
-            <h1 className='Prefered-first-name mt-3 pb-2 ' onClick={compensationedit}>Edit</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Compensation Information</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2' onClick={compensationedit}>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
             <p>{data.empmode || '\u00A0'}</p>
@@ -298,6 +296,7 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'> Per</h1>
             <p>{data.per || '\u00A0'} </p>
+            <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
             <p>{data.empstatus || '\u00A0'}</p>
             <hr/>
@@ -312,9 +311,9 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
           <div className='biz-whiz'>
           <Card shadow="sm"  radius="md" withBorder>
             <div className='p-lg'>
-           <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
-      <label className='label-text'>{data.jdate}</label>
-      <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.</p>
+           <h1 className='Prefered-first-name pb-2'>{data.fname}'s Start Date</h1>
+      <label className='label-textone'>{data.jdate}</label>
+      <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname}'s start date on thier checklist.</p>
       </div>
       </Card>
       </div>
