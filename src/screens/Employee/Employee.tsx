@@ -29,6 +29,7 @@ function Employee() {
   const[getpermanent,Setpermanent]=useState<companydetails[]>([]);
   const[currentPage,Setcurrentpage]=useState(1);
   const [itemsperpage]=useState(10);
+  const[searchdata,setsearchdata]=useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -116,7 +117,7 @@ function Employee() {
 
       <Tabs.Panel value="active">
        <div className='pepole-section'>
-       <TextInput id='inputTextPeople' icon={<IconSearch size={14} />}  placeholder='Search People...'/>
+       <TextInput id='inputTextPeople' icon={<IconSearch size={14} />}  placeholder='Search People...' value={searchdata} onChange={(e)=>setsearchdata(e.target.value)}/>
        <div className='nameSection'>
       <Table striped highlightOnHover withBorder withColumnBorders>
      <thead>

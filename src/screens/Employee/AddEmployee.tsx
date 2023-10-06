@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Stepper, Button, Group,Title , TextInput,Radio, PasswordInput, Code,Select,FileInput,NumberInput,Container,Card, Checkbox} from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import './Add-Employee.css'
@@ -28,11 +28,57 @@ function AddEmployee(){
    empstatus:'',
    tax:'',
    dob:''
-  })
+  });
+  const inputDate = moment(data.jdate, 'MMMM D, YYYY');
+const formattedDate = inputDate.format('YYYY-MM-DD')+'T07:29:59.455Z';
+
+
+  interface jobtitles{
+    designationName: any;
+    designationId: any;
+    jobtitle:string
+  }
+  const[jobtitle,setjobtitle]=useState<jobtitles[]>([]);
+
+  useEffect(()=>{
+    const getjobtitle=async()=>{
+      const jobtitleresponse = await axios.get('https://localhost:7190/api/Designation/GetAllDesignation');
+      console.log(jobtitleresponse.data);
+      setjobtitle(jobtitleresponse.data);
+    }
+    getjobtitle();
+  },[])
 
   const submitdata=(e:any)=>{
     e.preventDefault();
     console.log(data);
+    var obj={
+      "firstname": data.fname,
+      "middleName": data.mname,
+      "lastName": data.lname,
+      "preferedFirstName": data.pfname,
+      "email": data.pemail,
+      "designation": data.jobtitle,
+      "startDate": formattedDate,
+      "employeeType": data.empmode,
+      "employmentStatus": data.empstatus,
+      "amount": data.amount,
+      "amountPer": data.per,
+      "additionalCompensation": false,
+      "taxExemption": false
+    }
+    let json=JSON.stringify(obj);
+    let pjson=JSON.parse(json);
+    console.log(pjson);
+    const addemployeeresponse=async()=>{
+      try{
+        const response = await axios.post('https://localhost:7097/api/Employee/create',pjson);
+        console.log(response)
+      }catch(err){
+        console.error("Failed to insert the data",err);
+      }
+    }
+    addemployeeresponse();
    
   }
   const nextStep = () =>
@@ -54,8 +100,7 @@ const compensationedit=function(){
   setActive((current)=>(current-1));
 }
 
-const inputDate = moment(data.jdate, 'MMMM D, YYYY');
-const formattedDate = inputDate.format('DD/MM/YYYY');
+
   return(
 
     <div id="main-container">
@@ -146,14 +191,35 @@ const formattedDate = inputDate.format('DD/MM/YYYY');
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
                <p className='last-name-style label-text'>Choose from your existing set of jobs or enter a new one.</p>
-               <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''} onChange={(e)=>Setdata({...data,jobtitle:e.target.value})} />
+               {/* <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''} onChange={(e)=>Setdata({...data,jobtitle:e.target.value})} /> */}
+               <Select
+  id="inputStyle2"
+  placeholder="Select Job Title"
+  data={jobtitle.map((x, index) => ({
+    label: x.designationName,
+    value: x.designationName,
+    key: x.designationId
+  }))}
+  onChange={(selectedOption) => {
+    // Extract the label from the selected option
+    const selectedLabel = selectedOption;
+    console.log(selectedLabel);
+
+    // Now, you can set the selected label to your data state
+    Setdata({ ...data, jobtitle: selectedLabel });
+  }}
+/>
+
+
+
 
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
                <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
                
-                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100'value={data.jdate} onChange={(selectedDate: Date | null) => {
+                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100' value={data.jdate} onChange={(selectedDate: Date | null) => {
     if (selectedDate !== null) {
       const formattedDate = formatDate(selectedDate);
+      console.log(formattedDate);
       Setdata({ ...data, jdate: formattedDate });
     }
   }}  />
