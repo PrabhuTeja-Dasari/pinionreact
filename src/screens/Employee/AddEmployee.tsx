@@ -252,8 +252,7 @@ const compensationedit=function(){
                 <div className='per-year'>
                 <h1 className='Prefered-first-name'>Per</h1>
                 <Select id="inputStyle2" placeholder='Select Month/Year' data={['Month', 'Year']} value={data.per} onChange={(suggestedOption)=>Setdata({...data,per:suggestedOption || ''})}/>
-                 
-               
+                
                 </div>
                 </div>
 
