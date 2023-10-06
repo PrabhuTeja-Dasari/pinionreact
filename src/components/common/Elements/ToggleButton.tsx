@@ -41,7 +41,7 @@ export default function SegmentedToggle() {
     //   />
     // </Group>
     <ActionIcon
-      variant="outline"
+      variant="default"
       color={dark ? 'yellow' : 'blue'}
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
@@ -49,4 +49,5 @@ export default function SegmentedToggle() {
       {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
     </ActionIcon>
   )
+  
 }

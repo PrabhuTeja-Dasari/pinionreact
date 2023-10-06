@@ -74,7 +74,7 @@ function Employee() {
   return (
     <Container size="xl">
      <Card shadow="sm" radius="md" withBorder>
-      <div className='main-conatiner'>
+      <div className='main-container'>
       <div>
       <Text size="xl" fw={700}>Team Members</Text>
       <p>You have Active Team Members</p>
