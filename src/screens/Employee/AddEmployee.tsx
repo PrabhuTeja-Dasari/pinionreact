@@ -118,9 +118,8 @@ const compensationedit=function(){
               <Title order={4} >Tell us who you'd like to add</Title>
               <div className='Personal-Information-container'>
               <TextInput placeholder='Enter First Name' label="First Name" id='customInputStyle' className='first-name' value={data.fname} onChange={(e) => Setdata({ ...data, fname: e.target.value })}/>
-            
-                <TextInput className='middle-name' placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
-               </div>
+              <TextInput className='middle-name' placeholder='Enter Middle Initial' label="Middle Initial (optional)" id="customInputStyle" value={data.mname} onChange={(e)=>Setdata({...data,mname:e.target.value})}/>
+              </div>
                 
 
                 <TextInput placeholder='Enter Last Name' label="Last Name" id="inputStyle2" value={data.lname} onChange={(e)=>Setdata({...data,lname:e.target.value})} />
@@ -137,8 +136,6 @@ const compensationedit=function(){
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Country</h1>
                 <Select placeholder="Select Country" id="inputStyle2" value={data.Country|| ''} data={['India', 'United States', 'United Kingdom']} onChange={(selectedOption) => Setdata({ ...data, Country: selectedOption||'' })}/>              
-                
-                
                 <h1 className='Prefered-first-name pt-3 pb-3'>Worker type</h1>  
                  <div className='worker-type-container'>
                 
@@ -151,7 +148,7 @@ const compensationedit=function(){
                  </div>
                  </div>
                  <div className='rodio-btn-container'>
-                  <Radio value="Individual Contractor" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Individual Contractor"} />
+                  <Radio value="Employee" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn1' className='label-one'>Individual Contractor</label>
                     <label htmlFor='radobtn1' className='label-two'>Indepedent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
@@ -160,7 +157,7 @@ const compensationedit=function(){
 
 
                  <div className='rodio-btn-container'>
-                  <Radio value="Business Contractor" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Business Contractor"} />
+                  <Radio value="Employee" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn2' className='label-one'>Business Contractor</label>
                     <label htmlFor='radobtn2' className='label-two'>Indepedent Professional working on behalf of a business.</label>
@@ -194,27 +191,23 @@ const compensationedit=function(){
                 <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
                <p className='last-name-style label-text'>Choose from your existing set of jobs or enter a new one.</p>
                {/* <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''} onChange={(e)=>Setdata({...data,jobtitle:e.target.value})} /> */}
-               <Select
-  id="inputStyle2"
-  placeholder="Select Job Title"
-  data={jobtitle.map((x, index) => ({
-    label: x.designationName,
-    value: x.designationName,
-    key: x.designationId
-  }))}
-  onChange={(selectedOption) => {
-    // Extract the label from the selected option
-    const selectedLabel = selectedOption;
-    console.log(selectedLabel);
+                              <Select
+                  id="inputStyle2"
+                  placeholder="Select Job Title"
+                  data={jobtitle.map((x, index) => ({
+                    label: x.designationName,
+                    value: x.designationName,
+                    key: x.designationId
+                  }))}
+                  onChange={(selectedOption) => {
+                    // Extract the label from the selected option
+                    const selectedLabel = selectedOption;
+                    console.log(selectedLabel);
 
-    // Now, you can set the selected label to your data state
-    Setdata({ ...data, jobtitle: selectedLabel });
-  }}
-/>
-
-
-
-
+                    // Now, you can set the selected label to your data state
+                    Setdata({ ...data, jobtitle: selectedLabel });
+                  }}
+                />
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
                <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
                
@@ -256,14 +249,13 @@ const compensationedit=function(){
                 </div>
                 </div>
 
-              
-                
-                
+                <div className='workerBtn p-2'>
+                 <Checkbox id='radobtn5' className='mr-2' name="label1" value="Yes" onChange={e=>Setdata({...data,commission:e.target.value})}/>
+                    <label htmlFor='radobtn5' className='label-two'>This employee will receive commissions or other types of additional compensation.</label>
+                 </div>
                 <div className='Employement-status-section'>
                <h1 className='Prefered-first-name'>Employement Status</h1>
                <Select id = 'inputStyle2' placeholder = 'Select Employment Status' data={['Active', 'Inactive']} value={data.empstatus} onChange={(suggestedOption)=>Setdata({...data,empstatus:suggestedOption || ''})}/>
-                
-                
                 </div>
                 <div className='Employement-status-section'>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Does {data.fname} have a special tax exemption status? (This is not common.)</h1>
@@ -286,7 +278,7 @@ const compensationedit=function(){
         <Card shadow="sm"  radius="md" withBorder>
           <div className='p-lg'>
           <div className='role-and-edit-section'>
-            <h1 className='Prefered-first-name mt-3  pb-2'>Personal Information</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Personal</h1>
            <h1 className='Prefered-first-name mt-3  pb-2 ' onClick={personaledit}>Edit</h1>
            </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>First Name</h1>
@@ -320,7 +312,7 @@ const compensationedit=function(){
           <Card shadow="sm"  radius="md" withBorder>
             <div className='p-lg'>
           <div className='role-and-edit-section'>
-            <h1 className='Prefered-first-name mt-3  pb-2'>Role Information</h1>
+            <h1 className='Prefered-first-name mt-3  pb-2'>Role</h1>
             <h1 className='Prefered-first-name mt-3  pb-2 ' onClick={roleedit}>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3  pb-2'>Work Location</h1>
@@ -349,8 +341,8 @@ const compensationedit=function(){
           <Card shadow="sm" radius="md" withBorder>
             <div className='p-lg '>
            <div className='role-and-edit-section'>
-            <h1 className='Prefered-first-name mt-3 pb-2'>Compensation Information</h1>
-            <h1 className='Prefered-first-name mt-3 pb-2' onClick={compensationedit}>Edit</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2'>Compensation</h1>
+            <h1 className='Prefered-first-name mt-3 pb-2 ' onClick={compensationedit}>Edit</h1>
             </div>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Type</h1>
             <p>{data.empmode || '\u00A0'}</p>
@@ -360,7 +352,6 @@ const compensationedit=function(){
             <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'> Per</h1>
             <p>{data.per || '\u00A0'} </p>
-            <hr/>
             <h1 className='Prefered-first-name mt-3 pb-2'>Employement Status</h1>
             <p>{data.empstatus || '\u00A0'}</p>
             <hr/>
@@ -375,9 +366,9 @@ const compensationedit=function(){
           <div className='biz-whiz'>
           <Card shadow="sm"  radius="md" withBorder>
             <div className='p-lg'>
-           <h1 className='Prefered-first-name pb-2'>{data.fname}'s Start Date</h1>
-      <label className='label-textone'>{data.jdate}</label>
-      <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname}'s start date on thier checklist.</p>
+           <h1 className='Prefered-first-name mt-3 pb-2'>{data.fname}'s Start Date</h1>
+      <label className='label-text'>{data.jdate}</label>
+      <p>MyBizWhiz onboarding gets {data.fname} ready for day one on your team. You can always update {data.fname} start date on thier checklist.</p>
       </div>
       </Card>
       </div>
