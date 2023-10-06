@@ -7,13 +7,26 @@ body {
     box-sizing: border-box;
 
 }
+#main-bg-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
+.btn-container {
+    align-self: self-end;
+}
 #main-container {
     height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
+
 
 
 .Personal-Information-container {

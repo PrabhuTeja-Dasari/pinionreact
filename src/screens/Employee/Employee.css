@@ -19,7 +19,6 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-
 }
 
 #sub-container {
@@ -48,33 +47,7 @@
 }
 
 
-@media (min-width:250px) {
-  #inputTextPeople {
-    width: 250px;
-  }
-}
 
-@media (min-width:456px) {
-  #inputTextPeople {
-    width: 300px;
-    margin-bottom: 8px;
-    
-  }
-}
-
-
-@media (min-width:776px) {
-  #inputTextPeople {
-    width: 450px;
-    margin-bottom: 10px;
-  }
-}
-@media (min-width:996px) {
-  #inputTextPeople {
-    width: 650px;
-    margin-bottom: 10px;
-  }
-}
 
 
 .nameSection {

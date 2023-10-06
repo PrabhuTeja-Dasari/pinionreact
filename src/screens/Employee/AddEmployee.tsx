@@ -103,14 +103,14 @@ const compensationedit=function(){
 
   return(
 
-    <div id="main-container">
+    <div id='main-bg-container'>
       <div>
       <div>
       <form >
     <Stepper active={active}>
       <Stepper.Step label="Personal Information">
         <Container>
-          <div>
+          <div >
           <Card shadow="sm"  radius="md" withBorder>
             <div className='p-lg'>
             <div className='card-body'>
