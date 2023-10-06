@@ -30,10 +30,26 @@ body {
     
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e29c2299f3968f5d3499a6337e04ef5e599f6a3
 .middle-name {
     flex-grow: 2;
 }
 
+<<<<<<< HEAD
+=======
+#checkbox-container{
+    display: flex;
+    margin-right: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+
+
+>>>>>>> 4e29c2299f3968f5d3499a6337e04ef5e599f6a3
 .main-heading {
     font-size: 20px;
     font-weight: normal;
@@ -110,8 +126,21 @@ body {
 }
 
 .label-text{
-   font-size: 14px;
-    color: #696969;
+   font-size: 15px;
+    color: #969d9d;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.label-textone{
+    font-size: 25px;
+    color: #47d3d6;
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
 
 
@@ -143,6 +172,7 @@ body {
         font-weight: 500;
         margin: 0px;
         padding: 0px;
+        
     }
     
 .label-two {
