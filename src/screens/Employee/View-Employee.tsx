@@ -5,29 +5,49 @@ import { useNavigate, Link, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import {IconFileText,IconStar,IconPencil,IconList,IconChevronRight  } from '@tabler/icons'
 import { useLocation } from 'react-router-dom';
+import {useState,useEffect} from 'react'
 function ViewEmployee(){
+
+  interface Viewdata{
+    preferedFirstName:string,
+    department:string,
+    manager:string,
+    startDate:string,
+    managerrole:string,
+    email:string,
+    workemail:string,
+    current:string,
+    phonenumber:string,
+    employeeType:string,
+    jobtitle:string,
+    amount:string,
+    amountPer:string,
+    hours:string,
+    classcode:string
+    
+  }
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const dataparms = params.get('data');
+const [getdata, setdata] = useState<Viewdata[]>([]);
+
     if(dataparms){
     const data = JSON.parse(decodeURIComponent(dataparms));
     let parseddata=data;
-    let editdata=async()=>{
+    console.log(parseddata)
+    useEffect(()=>{
+      let editdata=async()=>{
         try{
-            var obj={
-                "userId":parseddata
-            }
-            const editresponse = await axios.post('https://localhost:7190/api/Employee/GetEmployeeById',obj);
-            console.log(editresponse.data[0])
-    
-     
-    
+            const editresponse = await axios.get('http://localhost:5084/api/Employee/'+parseddata);
+            console.log(editresponse.data)
+            setdata(editresponse.data)
         }catch(err){
-            console.error("Error Fetchin data:",err)
+            console.error("Error Fetching data:",err)
       }
-    
     }
     editdata();
+    },[])
+   
 }else{
     console.log("Not Found")
 }  
@@ -36,7 +56,7 @@ function ViewEmployee(){
         <Container size="xl">
         <Card shadow="sm" radius="md" withBorder>
   <div className="main-container">
-<p className="teamMembername-1"><span className="teamMebername">Team member</span>/Srikanth</p>
+<p className="teamMembername-1"><span className="teamMebername">Team member</span>/{getdata.preferedFirstName}</p>
 
 <div className="teamMemberSection-2">
   <div id='mobileScreenView'>
@@ -45,7 +65,7 @@ function ViewEmployee(){
   </div>
 <Avatar color="cyan" className='avatr-style' radius="xl" >MK</Avatar>
     <div className="input-name-section">
-    <p className="teamMembername-1">Srikanth</p>
+    <p className="teamMembername-1">{getdata.preferedFirstName}</p>
     <Tabs radius="md" defaultValue="Job & Pay">
    
       <Tabs.List>
@@ -94,15 +114,15 @@ function ViewEmployee(){
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container6'>
         <h2 className='department-p'>Department</h2>
-        <p className='addname-p'>ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.department|| '-'}</p>
         </div>
         <div className='sub-section-container6'>
         <h2 className='department-p'>Manager</h2>
-        <p className='addname-p'>dublicate</p>
+        <p className='addname-p'>{getdata.manager|| '-'}</p>
         </div>
         <div className='sub-section-container6'>
         <h2 className='department-p'>Start date</h2>
-        <p className='addname-p'>Dublicate</p>
+        <p className='addname-p'>{getdata.startDate}</p>
         </div>
         </div>
         </div>
@@ -123,7 +143,7 @@ function ViewEmployee(){
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container6'>
         <h2 className='department-p'>Direct reports</h2>
-        <p className='addname-p'>ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.managerrole||'Not a manager'}</p>
         </div>
         <div className='sub-section-container6'>
         <p className='color-p'> <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-notes icone-style" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#62b2b5" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -151,11 +171,11 @@ function ViewEmployee(){
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container6'>
         <h2 className='department-p'>Personel email</h2>
-        <p className='addname-p'>ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.email}</p>
         </div>
         <div className='sub-section-container6'>
         <h2 className='department-pp'>Work email</h2>
-        <p className='addname-p'>ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.workemail||'-'}</p>
         </div>
         </div>
 
@@ -176,11 +196,11 @@ function ViewEmployee(){
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container6'>
         <h2 className='department-p'>Current Adress</h2>
-        <p className='addname-p'>kumarmannapalem rd.</p>
+        <p className='addname-p'>{getdata.current|| '-'}</p>
         </div>
         <div className='sub-section-container6'>
         <h2 className='department-pp'>phone </h2>
-        <p className='addname-p'>91 98989065589 </p>
+        <p className='addname-p'>{getdata.phonenumber|| '-'}</p>
         </div>
         </div>
         </div>
@@ -200,7 +220,7 @@ function ViewEmployee(){
         <div className='subContainerDownSection-4'>
             <div className='sub-section-container6'>
         <h2 className='department-p'>Employee Type </h2>
-        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.employeeType}</p>
         </div>
         </div>
 
@@ -220,26 +240,26 @@ function ViewEmployee(){
         <div className='subContainerDownSection-4'>
         <div className='sub-section-container6'>
         <h2 className='department-p'>Employee Type</h2>
-        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.employeeType}</p>
         </div>
 
         <div className='sub-section-container6'>
         <h2 className='department-p'>Job Title </h2>
-        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.jobtitle||'-'}</p>
         </div>
 
         <div className='sub-section-container6'>
         <h2 className='department-p'>Wage </h2>
-        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.amount} {getdata.amountPer}</p>
         </div>
 
         <div className='sub-section-container6'>
         <h2 className='department-p'>Default hours </h2>
-        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.hours || '-'}</p>
         </div>
         <div className='sub-section-container6'>
         <h2 className='department-p'>Job Class Code </h2>
-        <p className='addname-p'>ssaikiran ganji ssaikiran ganji</p>
+        <p className='addname-p'>{getdata.classcode||'-'}</p>
         </div>
         </div>
         </div>   

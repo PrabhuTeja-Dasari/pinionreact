@@ -18,7 +18,7 @@ function AddEmployee(){
    location:'',
    jdate:'',
    work:'',
-   jobtitle:'',
+   designation:'',
    deptid:'',
    manager:'',
    empmode:'',
@@ -48,7 +48,7 @@ const formattedDate = inputDate.format('YYYY-MM-DD')+'T07:29:59.455Z';
     }
     getjobtitle();
   },[])
-
+  const initialJobtitles = ''; 
   const submitdata=(e:any)=>{
     e.preventDefault();
     console.log(data);
@@ -58,22 +58,24 @@ const formattedDate = inputDate.format('YYYY-MM-DD')+'T07:29:59.455Z';
       "lastName": data.lname,
       "preferedFirstName": data.pfname,
       "email": data.pemail,
-      "designation": data.jobtitle,
+      "designation": data.designation,
       "startDate": formattedDate,
       "employeeType": data.empmode,
       "employmentStatus": data.empstatus,
       "amount": data.amount,
       "amountPer": data.per,
-      "additionalCompensation": false,
-      "taxExemption": false
+      "additionalCompensation": true,
+      "taxExemption": true
     }
     let json=JSON.stringify(obj);
     let pjson=JSON.parse(json);
     console.log(pjson);
     const addemployeeresponse=async()=>{
       try{
-        const response = await axios.post('https://localhost:7097/api/Employee/create',pjson);
+        const response = await axios.post('http://localhost:5084/api/Employee/create',pjson);
         console.log(response)
+        alert('Data Submitted Successfully')
+        location.reload();
       }catch(err){
         console.error("Failed to insert the data",err);
       }
@@ -85,6 +87,24 @@ const formattedDate = inputDate.format('YYYY-MM-DD')+'T07:29:59.455Z';
   setActive((current) => {
     return current < 3 ? current + 1 : current;
   });
+
+  interface labeldata{
+    displayname:string,
+    description:string
+  }
+  const[getlabeldata,setlabeldata]=useState<labeldata[]>([]);
+  useEffect(()=>{
+    const getresponsedata=async()=>{
+      try{
+        const getlabelresponse = await axios.get('http://localhost:5084/api/Employee/GetFieldsMetaData');
+        console.log(getlabelresponse.data)
+        setlabeldata(getlabelresponse.data);
+      }catch(err){
+        console.error("error getting data",err);
+      }
+    }
+    getresponsedata();
+  },[])
 
 
 
@@ -124,13 +144,11 @@ const compensationedit=function(){
 
                 <TextInput placeholder='Enter Last Name' label="Last Name" id="inputStyle2" value={data.lname} onChange={(e)=>Setdata({...data,lname:e.target.value})} />
                <h1 className='Prefered-first-name mt-3'>Prefered first name(if any)</h1>
-               <p className='label-text'>MyBizWhiz will use this name to refer to this person in communications 
-                where their legal first name is required (offer letter, onboarding emails, org etc)</p>
+               <p className='label-text'>{getlabeldata.length > 0 ? getlabeldata[0].description : ''}</p>
                 <TextInput placeholder=' Enter Prefered First Name'id="inputStyle2" value={data.pfname} onChange={(e)=>Setdata({...data,pfname:e.target.value})}/>
 
                 <h1 className='Prefered-first-name mt-3'>Personal Email</h1>
-               <p className='label-text'>Use an existing address that's not associated with your company. This team member will use 
-                this email to sign in to MyBizWhiz and receive certain personal info.
+               <p className='label-text'>{getlabeldata.length > 0 ? getlabeldata[1].description : ''}
                </p>
                 <TextInput id="inputStyle2" value={data.pemail} placeholder='Enter Personal Email' onChange={(e)=>Setdata({...data,pemail:e.target.value})}/>
 
@@ -143,24 +161,23 @@ const compensationedit=function(){
                   <Radio value="Employee" id="radobtn" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn' className='label-one'>Employee</label>
-                    <label htmlFor='radobtn' className='label-two'>Worker paid on hourly or salaried wage 
-                    with rights and benfits received through employeement.</label>
+                    <label htmlFor='radobtn' className='label-two'>{getlabeldata.length > 0 ? getlabeldata[2].description : ''}.</label>
                  </div>
                  </div>
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                  <Radio value="Individual Contractor" id="radobtn1" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Individual Contractor"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn1' className='label-one'>Individual Contractor</label>
-                    <label htmlFor='radobtn1' className='label-two'>Indepedent Professional engaged under contract for a specific project or projects,usually on a short term basis.</label>
+                    <label htmlFor='radobtn1' className='label-two'>{getlabeldata.length > 0 ? getlabeldata[3].description : ''}.</label>
                  </div>
                  </div>
 
 
                  <div className='rodio-btn-container'>
-                  <Radio value="Employee" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Employee"} />
+                  <Radio value="Business Contractor" id="radobtn2" className="mt-1 mr-2" name="label" onChange={e=>Setdata({...data,worker:e.target.value})} checked={data.worker==="Business Contractor"} />
                  <div className='labels-container'>
                     <label htmlFor='radobtn2' className='label-one'>Business Contractor</label>
-                    <label htmlFor='radobtn2' className='label-two'>Indepedent Professional working on behalf of a business.</label>
+                    <label htmlFor='radobtn2' className='label-two'>{getlabeldata.length > 0 ? getlabeldata[4].description : ''}.</label>
                  </div>
                  </div>
 
@@ -182,14 +199,14 @@ const compensationedit=function(){
               <h1 className='pb-4 main-heading'>Tell us about Prefered {data.fname}'s role</h1>
               
               <h1 className='Prefered-first-name mt-3 pb-2'>Where will {data.fname} work ?</h1>
-              <p className='last-name-style label-text'>Which location to select and learn about thier potential impacts on your business.</p>
+              <p className='last-name-style label-text'>{getlabeldata.length > 0 ? getlabeldata[5].description : ''}.</p>
               <Select placeholder="Select Work" id="inputStyle2" data={['Work From Home', 'Work From Office', 'Hybrid']} value={data.work} onChange={(selectedOption) => Setdata({ ...data, work: selectedOption || '' })} />              
                 <h1 className='Prefered-first-name mt-3 pb-2'>Work Location</h1>
-                <p className='last-name-style label-text'>If this employee work from home,tell us the state where they work and live</p>
+                <p className='last-name-style label-text'>{getlabeldata.length > 0 ? getlabeldata[6].description : ''}</p>
                 <Select placeholder="Select Location" id="inputStyle2" data={['Visakhapatnam,IN', 'Hyderabad,IN', 'Chicago,US']} value={data.location} onChange={(selectedOption) => Setdata({ ...data, location: selectedOption || '' })} />     
 
                 <h1 className='Prefered-first-name mt-3 pb-2'>Job Title</h1>
-               <p className='last-name-style label-text'>Choose from your existing set of jobs or enter a new one.</p>
+               <p className='last-name-style label-text'>{getlabeldata.length > 0 ? getlabeldata[7].description : ''}</p>
                {/* <TextInput id='inputStyle2' placeholder='Enter Job Title' className='w-100' value={data.jobtitle || ''} onChange={(e)=>Setdata({...data,jobtitle:e.target.value})} /> */}
                               <Select
                   id="inputStyle2"
@@ -205,13 +222,13 @@ const compensationedit=function(){
                     console.log(selectedLabel);
 
                     // Now, you can set the selected label to your data state
-                    Setdata({ ...data, jobtitle: selectedLabel });
+                    Setdata({ ...data, designation: selectedLabel || '' });
                   }}
                 />
                <h1 className='Prefered-first-name mt-3'>Start Date</h1>
-               <p className='last-name-style label-text'>Your employee's first day of work at your company.</p>
+               <p className='last-name-style label-text'>{getlabeldata.length > 0 ? getlabeldata[8].description : ''}</p>
                
-                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100' value={data.jdate} onChange={(selectedDate: Date | null) => {
+                <DatePicker placeholder="Pick date" id="inputStyle2" className='w-100' onChange={(selectedDate: Date | null) => {
                   if (selectedDate !== null) {
                     const formattedDate = formatDate(selectedDate);
                     Setdata({ ...data, jdate: formattedDate });
@@ -221,7 +238,7 @@ const compensationedit=function(){
                 <h1 className='Prefered-first-name mt-3'>Department</h1>
                 <TextInput id="inputStyle2" placeholder='Enter Department Name' value={data.deptid} onChange={(e)=>Setdata({...data,deptid:e.target.value})}/>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Manager</h1>
-                <p className='last-name-style label-text'>Managers can approve hours and time off.Based on your settings.they may also be able to access or edit information about thier requests.</p>
+                <p className='last-name-style label-text'>{getlabeldata.length > 0 ? getlabeldata[9].description : ''}</p>
                 <TextInput id="inputStyle2" placeholder='Enter Manager Name' value={data.manager} onChange={e=>Setdata({...data,manager:e.target.value})} className='w-100'/>
                 </div>
                 </Card>
@@ -259,7 +276,7 @@ const compensationedit=function(){
                 </div>
                 <div className='Employement-status-section'>
                 <h1 className='Prefered-first-name mt-3 pb-2'>Does {data.fname} have a special tax exemption status? (This is not common.)</h1>
-                <p className='last-name-style label-text'>Certain types of employees are exempt from taxes, such as non-resident aliens (visa-holders). members of clergy or religioud holders,news papers,vendors,family employees,owners and coporate officers.</p>
+                <p className='last-name-style label-text'>{getlabeldata.length > 0 ? getlabeldata[10].description : ''}</p>
                 <Select id = 'inputStyle2' placeholder='Select Tax' data = {['Yes', 'No']} value={data.tax} onChange={(suggestedOption)=>Setdata({...data,tax:suggestedOption || ''})}/>
                  
                   
@@ -322,7 +339,7 @@ const compensationedit=function(){
             <p>{data.work || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Job Title</h1>
-            <p>{data.jobtitle || '\u00A0'}</p>
+            <p>{data.jobtitles || '\u00A0'}</p>
             <hr/>
             <h1 className='Prefered-first-name mt-3  pb-2'>Start Date</h1>
             <p>{formattedDate || '\u00A0'}</p>

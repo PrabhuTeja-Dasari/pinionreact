@@ -49,13 +49,13 @@ function App() {
               <Route index element={<Dashboard />} />
               <Route path="/TeamMembers" element={<Employee />} />
               <Route path="/AddTeamMember" element={<AddEmployee />} />
-              <Route path="/EditEmployee" element={<EditEmployee />} />
+              <Route path="/EditTeamMember" element={<EditEmployee />} />
               <Route path='/Performance' element={<Performance/>}/>
               <Route path='/TimeOff' element={<TimeOff/>}/>
               <Route path='/TimeTracking' element={<TimeTracking/>}/>
               <Route path='/CompanyDetails' element={<CompanyDetails/>}/>
               <Route path='/Documents' element={<Documents/>}/>
-              <Route path='/ViewEmployee' element ={<ViewEmployee/>}/>
+              <Route path='/ViewTeamMember' element ={<ViewEmployee/>}/>
               <Route path ='/Document' element={<Document/>}/>
               <Route path='/DismissTeamMember' element={<DismissEmployee/>}/>
               <Route path="*" element={<NotFound />} />
