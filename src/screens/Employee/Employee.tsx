@@ -73,18 +73,16 @@ function Employee() {
     fetchData();
   }, []);
   return (
-    <Container size="xl">
+    <Container size='xl'>
      <Card shadow="sm" radius="md" withBorder>
-      <div className='main-conatiner'>
-      <div>
+      <div id='main-container'>
+      <div id='sub-container'>
       <Text size="xl" fw={700}>Team Members</Text>
       <p>You have Active Team Members</p>
-      
       </div>
       <div>
       <Button variant='default' onClick={addteam}>Add a Team Member</Button>
       </div>
-      
       </div>
       <Tabs defaultValue="active">
       <Tabs.List>
@@ -123,7 +121,7 @@ function Employee() {
      <thead>
       <tr>
       <th>#</th>
-      <th >Name</th>
+      <th>Name</th>
       <th>Department</th>
       <th>Job Title</th>
       <th>Employement Type</th>

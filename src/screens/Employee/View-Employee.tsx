@@ -6,7 +6,6 @@ import axios from 'axios';
 import {IconFileText,IconStar,IconPencil,IconList,IconChevronRight  } from '@tabler/icons'
 import { useLocation } from 'react-router-dom';
 function ViewEmployee(){
-
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const dataparms = params.get('data');
@@ -36,12 +35,8 @@ function ViewEmployee(){
     return(
         <Container size="xl">
         <Card shadow="sm" radius="md" withBorder>
-
-
-        
-
-<div className="main-container">
-<p className="teamMebername-1"><span className="teamMebername">Team member</span>/Srikanth</p>
+  <div className="main-container">
+<p className="teamMembername-1"><span className="teamMebername">Team member</span>/Srikanth</p>
 
 <div className="teamMemberSection-2">
   <div id='mobileScreenView'>
@@ -113,7 +108,7 @@ function ViewEmployee(){
         </div>
     </div>
 
-    <div id='subContainerDownSection-2'>
+    <div id ='subContainerDownSection-2'>
     <div className='heading-and-edit-section'>
     <h3>manager role</h3>
     <p className='color-p'>      <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-pencil icone-style" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#62b2b5" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -146,7 +141,7 @@ function ViewEmployee(){
     <div id='subContainerDownSection-2'>
     <div className='heading-and-edit-section'>
     <h3>Email</h3>
-    <p className='color-p'>      <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-pencil icone-style" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#62b2b5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <p className='color-p'> <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-pencil icone-style" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#62b2b5" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
   <path d="M13.5 6.5l4 4" />
