@@ -58,7 +58,7 @@ const HeaderBar: React.FC<HeaderBarType> = ({ opened, setOpened }) => {
         <NavAction />
       </div> */}
       <div className="hidden md:block textcontainer" >
-        <ToggleButton  />
+        <ToggleButton  />&nbsp;&nbsp;&nbsp;
         <Menu shadow="md" width={200}>
         <Menu.Target>
         <Avatar src={null} alt="no image here" id='avatars' className='text-container' />
