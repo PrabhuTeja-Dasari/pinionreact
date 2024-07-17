@@ -8,28 +8,11 @@ import { useLocation } from 'react-router-dom';
 import {useState,useEffect} from 'react'
 function ViewEmployee(){
 
-  interface Viewdata{
-    preferedFirstName:string,
-    department:string,
-    manager:string,
-    startDate:string,
-    managerrole:string,
-    email:string,
-    workemail:string,
-    current:string,
-    phonenumber:string,
-    employeeType:string,
-    jobtitle:string,
-    amount:string,
-    amountPer:string,
-    hours:string,
-    classcode:string
-    
-  }
+
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const dataparms = params.get('data');
-const [getdata, setdata] = useState<Viewdata[]>([]);
+const [getdata, setdata] = useState<any[]>([]);
 
     if(dataparms){
     const data = JSON.parse(decodeURIComponent(dataparms));
